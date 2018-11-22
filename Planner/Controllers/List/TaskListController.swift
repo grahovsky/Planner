@@ -15,7 +15,29 @@ class TaskListController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+//        let category = Category(context: categoryDao.context)
+//        category.name = "Спорт"
+//        try! categoryDao.context.save()
+//
+//        let priority = Priority(context: priorityDao.context)
+//        priority.name = "high"
+//        priority.index = 100
+//        try! priorityDao.context.save()
+//
+//        let task = Task(context: taskDao.context)
+//        task.name = "Сходить в зал"
+//        task.category = category
+//        task.priority = priority
+//        task.completed = false
+//
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+//        let someDateTime = formatter.date(from: "2018/11/25 21:00")
+//
+//        task.deadline = someDateTime
+//        try! taskDao.context.save()
+        
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
 //

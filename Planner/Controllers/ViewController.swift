@@ -8,6 +8,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
 
+
     }
 
     // вызывается, если не хватает памяти (чтобы очистить ресурсы)
