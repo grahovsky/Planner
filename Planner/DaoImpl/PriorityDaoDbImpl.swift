@@ -4,54 +4,44 @@ import UIKit
 import CoreData
 
 // реализация DAO для работы с приоритетами
-class PriorityDaoDbImpl : CrudPriority{
+class PriorityDaoDbImpl : Crud{
 
-    var context:NSManagedObjectContext {
-        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // контекст для работы с БД
-    }
-
-    // сохранение всех изменений контекста
-    func save(){
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    }
-
-
+    //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
+    typealias Item = Priority
+    
     // паттерн синглтон
     static let current = PriorityDaoDbImpl()
+    
     private init(){}
 
-
-    
-    var priorities:[Priority]!
-
-
+    var items:[Item]!
 
     // MARK: dao
 
-    func getAll() -> [Priority] {
-        let fetchRequest: NSFetchRequest<Priority> = Priority.fetchRequest()
+    func getAll() -> [Item] {
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
         do {
-            priorities = try context.fetch(fetchRequest)
+            items = try context.fetch(fetchRequest)
         } catch {
             fatalError("Fetching Failed")
         }
 
-        return priorities
+        return items
     }
 
 
 
-    func delete(_ priority: Priority) {
-        context.delete(priority)
+    func delete(_ item: Item) {
+        context.delete(item)
         save()
     }
 
 
 
-    func addOrUpdate(_ priority: Priority){
-        if !priorities.contains(priority){
-            priorities.append(priority)
+    func addOrUpdate(_ item: Item){
+        if !items.contains(item){
+            items.append(item)
         }
 
         save()

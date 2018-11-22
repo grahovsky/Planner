@@ -15,14 +15,13 @@
 		22759C791FDEA6E500E9A1E0 /* Planner.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 22759C771FDEA6E500E9A1E0 /* Planner.xcdatamodeld */; };
 		22759C7B1FDEA6E500E9A1E0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 22759C7A1FDEA6E500E9A1E0 /* Assets.xcassets */; };
 		22759C7E1FDEA6E500E9A1E0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22759C7C1FDEA6E500E9A1E0 /* LaunchScreen.storyboard */; };
-		22A98B77202589400051183B /* CrudTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B76202589400051183B /* CrudTask.swift */; };
-		22A98B7920258A0B0051183B /* CrudCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B7820258A0B0051183B /* CrudCategory.swift */; };
-		22A98B7B20258A1C0051183B /* CrudPriority.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B7A20258A1C0051183B /* CrudPriority.swift */; };
 		22A98B802025922E0051183B /* PriorityDaoDbImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B7D2025922E0051183B /* PriorityDaoDbImpl.swift */; };
 		22A98B812025922E0051183B /* CategoryDaoDbImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B7E2025922E0051183B /* CategoryDaoDbImpl.swift */; };
 		22A98B822025922E0051183B /* TaskDaoDbImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B7F2025922E0051183B /* TaskDaoDbImpl.swift */; };
 		22E01EC82014C2FB004B5989 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E01EC72014C2FB004B5989 /* TaskListCell.swift */; };
 		22E92C751FE16FC3001F8493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E92C741FE16FC3001F8493 /* Main.storyboard */; };
+		B50B860821A7336200AD0AB8 /* Crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B860721A7336200AD0AB8 /* Crud.swift */; };
+		B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B860921A7397700AD0AB8 /* CrudExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,14 +35,13 @@
 		22759C7A1FDEA6E500E9A1E0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		22759C7D1FDEA6E500E9A1E0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		22759C7F1FDEA6E500E9A1E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		22A98B76202589400051183B /* CrudTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudTask.swift; sourceTree = "<group>"; };
-		22A98B7820258A0B0051183B /* CrudCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudCategory.swift; sourceTree = "<group>"; };
-		22A98B7A20258A1C0051183B /* CrudPriority.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudPriority.swift; sourceTree = "<group>"; };
 		22A98B7D2025922E0051183B /* PriorityDaoDbImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PriorityDaoDbImpl.swift; sourceTree = "<group>"; };
 		22A98B7E2025922E0051183B /* CategoryDaoDbImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDaoDbImpl.swift; sourceTree = "<group>"; };
 		22A98B7F2025922E0051183B /* TaskDaoDbImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDaoDbImpl.swift; sourceTree = "<group>"; };
 		22E01EC72014C2FB004B5989 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		22E92C741FE16FC3001F8493 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		B50B860721A7336200AD0AB8 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
+		B50B860921A7397700AD0AB8 /* CrudExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +58,7 @@
 		220CD7DD201B5C86001B1D2D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				B50B860921A7397700AD0AB8 /* CrudExtension.swift */,
 				220CD7DE201B5C97001B1D2D /* TaskExtension.swift */,
 				220CD7E0201B5CDC001B1D2D /* DateExtension.swift */,
 			);
@@ -128,9 +127,7 @@
 		22A98B75202588790051183B /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				22A98B76202589400051183B /* CrudTask.swift */,
-				22A98B7820258A0B0051183B /* CrudCategory.swift */,
-				22A98B7A20258A1C0051183B /* CrudPriority.swift */,
+				B50B860721A7336200AD0AB8 /* Crud.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -227,12 +224,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				220CD7DF201B5C97001B1D2D /* TaskExtension.swift in Sources */,
-				22A98B77202589400051183B /* CrudTask.swift in Sources */,
+				B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */,
 				220CD7E1201B5CDC001B1D2D /* DateExtension.swift in Sources */,
 				22759C731FDEA6E500E9A1E0 /* ViewController.swift in Sources */,
-				22A98B7B20258A1C0051183B /* CrudPriority.swift in Sources */,
-				22A98B7920258A0B0051183B /* CrudCategory.swift in Sources */,
 				22A98B812025922E0051183B /* CategoryDaoDbImpl.swift in Sources */,
+				B50B860821A7336200AD0AB8 /* Crud.swift in Sources */,
 				22759C711FDEA6E500E9A1E0 /* AppDelegate.swift in Sources */,
 				22A98B822025922E0051183B /* TaskDaoDbImpl.swift in Sources */,
 				22A98B802025922E0051183B /* PriorityDaoDbImpl.swift in Sources */,

@@ -4,59 +4,50 @@ import UIKit
 import CoreData
 
 // реализация DAO для работы с задачами
-class TaskDaoDbImpl: CrudTask{
+class TaskDaoDbImpl: Crud{
 
-    var context:NSManagedObjectContext {
-        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // контекст для работы с БД
-    }
-
-    // сохранение всех изменений контекста
-    func save(){
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    }
-
-
-
+    //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
+    typealias Item = Task
+    
     // доступ к другим DAO
     let categoryDao = CategoryDaoDbImpl.current
     let priorityDao = PriorityDaoDbImpl.current
 
-    var tasks: [Task]! // актуальные объекты, которые были выбраны из БД
-
+    var items: [Item]! // актуальные объекты, которые были выбраны из БД
 
     // синглтон
     static let current = TaskDaoDbImpl()
+   
     private init(){}
-
 
     // MARK: dao
 
-    func getAll() -> [Task] {
+    func getAll() -> [Item] {
 
-        let fetchRequest: NSFetchRequest<Task> = Task.fetchRequest()
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
         do {
-            tasks = try context.fetch(fetchRequest)
+            items = try context.fetch(fetchRequest)
         } catch {
             fatalError("Fetching Failed")
         }
 
-        return tasks
+        return items
 
     }
 
 
 
-    func delete(_ task: Task) {
-        context.delete(task)
+    func delete(_ item: Item) {
+        context.delete(item)
         save()
     }
 
 
 
-    func addOrUpdate(_ task: Task)  {
-        if !tasks.contains(task){
-            tasks.append(task)
+    func addOrUpdate(_ item: Item)  {
+        if !items.contains(item){
+            items.append(item)
         }
 
         save()

@@ -4,55 +4,46 @@ import UIKit
 import Foundation
 
 // реализация DAO для работы с категорями
-class CategoryDaoDbImpl: CrudCategory{
+class CategoryDaoDbImpl: Crud {
 
-    var context:NSManagedObjectContext {
-        return (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext // контекст для работы с БД
-    }
-
-    // сохранение всех изменений контекста
-    func save(){
-        (UIApplication.shared.delegate as! AppDelegate).saveContext()
-    }
-
-
-
+    //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
+    typealias Item = Category
+    
     // паттерн синглтон
     static let current = CategoryDaoDbImpl()
+    
     private init(){}
-
-
-    var categories:[Category]!
-
+    
+    var items:[Item]!
 
     // MARK: dao
 
-    func getAll() -> [Category] {
+    func getAll() -> [Item] {
 
-        let fetchRequest: NSFetchRequest<Category> = Category.fetchRequest()
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
         do {
-            categories = try context.fetch(fetchRequest)
+            items = try context.fetch(fetchRequest)
         } catch {
             fatalError("Fetching Failed")
         }
 
-        return categories
+        return items
 
     }
 
 
-    func delete(_ category: Category) {
-        context.delete(category)
+    func delete(_ item: Item) {
+        context.delete(item)
         save()
     }
 
 
 
-    func addOrUpdate(_ category:Category){
+    func addOrUpdate(_ item:Item){
 
-        if !categories.contains(category){
-            categories.append(category)
+        if !items.contains(item){
+            items.append(item)
         }
 
         save()
