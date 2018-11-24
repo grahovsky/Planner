@@ -2,6 +2,7 @@
 import UIKit
 import CoreData
 
+//контроллер для отображения списка задач
 class TaskListController: UITableViewController {
 
     let dateFormatter = DateFormatter()
@@ -217,14 +218,37 @@ class TaskListController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        switch segue.identifier { // проверяем название segue
+        case "UpdateTask":
+            
+            // приводим sender к типу ячейки
+            let selectedCell = sender as! TaskListCell
+            
+            // получаем доступ к целевому контроллеру segue.destination
+            guard let controller = segue.destination as? TaskDetailsController else { fatalError("error") }
+            
+            // получаем индекс по номеру выбранной ячейки
+            let selectedIndex = (tableView.indexPath(for: selectedCell)?.row)!
+            
+            // получаем выбранную задачу
+            let selectedTask = taskDao.items[selectedIndex]
+            
+            controller.title = "Редактирование"
+            controller.task = selectedTask
+            
+        default:
+            return
+        }
+    
     }
-    */
+    
 
 }
