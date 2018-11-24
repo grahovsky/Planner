@@ -1,7 +1,18 @@
 
 import UIKit
 
+// в какой секции какие данные будут храниться (во избежание антипаттерна magic number)
+enum Section: Int {
+    case Name = 0
+    case Category = 1
+    case Priority = 2
+    case Deadline = 3
+    case Info = 4
+}
+
 class TaskDetailsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     // текущая задача для редактирования (либо для создания новой задачи)
     var task: Task!
@@ -79,7 +90,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         
         // какую секцию в данный момент заполняем
         switch indexPath.section { // имя
-        case 0:
+        case Section.Name.rawValue:
             
             // получаем ссылку на ячейку
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTaskName", for: indexPath) as? TaskNameCell else {
@@ -94,7 +105,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             return cell
             
             
-        case 1: // категория
+        case Section.Category.rawValue: // категория
             
             // получаем ссылку на ячейку
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTaskCategory", for: indexPath) as? TaskCategoryCell else {
@@ -117,7 +128,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             return cell
             
             
-        case 2: // приоритет
+        case Section.Priority.rawValue: // приоритет
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTaskPriority", for: indexPath) as? TaskPriorityCell else {
                 fatalError("cell type")
@@ -138,7 +149,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             
             return cell
             
-        case 3: // дата
+        case Section.Deadline.rawValue: // дата
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTaskDeadline", for: indexPath) as? TaskDeadlineCell else {
                 fatalError("cell type")
@@ -159,7 +170,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             
             return cell
             
-        case 4: // доп. текстовая информация
+        case Section.Info.rawValue: // доп. текстовая информация
             
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTaskInfo", for: indexPath) as? TaskInfoCell else {
@@ -191,11 +202,11 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section {
-        case 0: return "Название"
-        case 1: return "Категория"
-        case 2: return "Приоритет"
-        case 3: return "Дата"
-        case 4: return "Доп. инфо"
+        case Section.Name.rawValue: return "Название"
+        case Section.Category.rawValue: return "Категория"
+        case Section.Priority.rawValue: return "Приоритет"
+        case Section.Deadline.rawValue: return "Дата"
+        case Section.Info.rawValue: return "Доп. инфо"
         default: return ""
         }
         
@@ -215,6 +226,8 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     
         task.name = textTaskName.text
         task.info = textTaskInfo.text
+        task.category = taskCategory
+        task.priority = taskPriority
         
         delegаte.done(source: self, data: nil)
         
@@ -236,18 +249,43 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         case "SelectCategory":
             if let controller = segue.destination as? CategoryListController {
                 controller.selectedCategory = taskCategory
+                controller.delegаte = self
             }
         case "SelectPriority":
             if let controller = segue.destination as? PriorityListController {
                 controller.selectedPriority = taskPriority
+                controller.delegаte = self
             }
         default:
             return
         }
         
+    }
+    
+}
+
+extension TaskDetailsController: ActionResultDelegate {
+    
+    func done(source: UIViewController, data: Any?) {
         
+        if source is CategoryListController {
+            
+            taskCategory = data as? Category
+            
+            tableView.reloadRows(at: [IndexPath(row: 0, section: Section.Category.rawValue)], with: .fade)
+            
+        } else if source is PriorityListController {
+            
+            taskPriority = data as? Priority
+            
+            tableView.reloadRows(at: [IndexPath(row: 0, section: Section.Priority.rawValue)], with: .fade)
+        }
+        
+    }
+    
+    func cancel(source: UIViewController, data: Any?) {
+    
     }
     
     
 }
-
