@@ -10,8 +10,8 @@ class TaskDaoDbImpl: Crud{
     typealias Item = Task
     
     // доступ к другим DAO
-    let categoryDao = CategoryDaoDbImpl.current
-    let priorityDao = PriorityDaoDbImpl.current
+    let categoryDAO = CategoryDaoDbImpl.current
+    let priorityDAO = PriorityDaoDbImpl.current
 
     var items: [Item]! // актуальные объекты, которые были выбраны из БД
 

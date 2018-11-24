@@ -223,6 +223,31 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     
     }
     
+    // MARK: prepare
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        if segue.identifier == nil {
+            return
+        }
+        
+        switch segue.identifier! {
+        case "SelectCategory":
+            if let controller = segue.destination as? CategoryListController {
+                controller.selectedCategory = taskCategory
+            }
+        case "SelectPriority":
+            if let controller = segue.destination as? PriorityListController {
+                controller.selectedPriority = taskPriority
+            }
+        default:
+            return
+        }
+        
+        
+    }
+    
     
 }
 

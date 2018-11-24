@@ -17,14 +17,14 @@ class TaskListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let category = Category(context: categoryDao.context)
-//        category.name = "Спорт"
-//        try! categoryDao.context.save()
+//        let category = Category(context: categoryDAO.context)
+//        category.name = "Семья"
+//        try! categoryDAO.context.save()
 //
-//        let priority = Priority(context: priorityDao.context)
-//        priority.name = "high"
-//        priority.index = 100
-//        try! priorityDao.context.save()
+//        let priority = Priority(context: priorityDAO.context)
+//        priority.name = "Средний"
+//        priority.index = 2
+//        try! priorityDAO.context.save()
 //
 //        let task = Task(context: taskDao.context)
 //        task.name = "Сходить в зал"

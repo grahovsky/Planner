@@ -12,7 +12,9 @@ class PriorityDaoDbImpl : Crud{
     // паттерн синглтон
     static let current = PriorityDaoDbImpl()
     
-    private init(){}
+    private init() {
+        items = getAll()
+    }
 
     var items:[Item]!
 
