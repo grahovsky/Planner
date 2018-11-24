@@ -155,14 +155,30 @@
 		22E01EC62014C2A5004B5989 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				22E01EC72014C2FB004B5989 /* TaskListCell.swift */,
+				B522E33C21A99A1F00B8FAF8 /* TaskDetails */,
+				B522E33D21A99A2D00B8FAF8 /* TaskList */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		B522E33C21A99A1F00B8FAF8 /* TaskDetails */ = {
+			isa = PBXGroup;
+			children = (
 				B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */,
 				B522E33421A9783200B8FAF8 /* TaskCategoryCell.swift */,
 				B522E33621A98DFB00B8FAF8 /* TaskPriorityCell.swift */,
 				B522E33821A98E2E00B8FAF8 /* TaskDeadlineCell.swift */,
 				B522E33A21A98E3E00B8FAF8 /* TaskInfoCell.swift */,
 			);
-			path = Cells;
+			path = TaskDetails;
+			sourceTree = "<group>";
+		};
+		B522E33D21A99A2D00B8FAF8 /* TaskList */ = {
+			isa = PBXGroup;
+			children = (
+				22E01EC72014C2FB004B5989 /* TaskListCell.swift */,
+			);
+			path = TaskList;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
