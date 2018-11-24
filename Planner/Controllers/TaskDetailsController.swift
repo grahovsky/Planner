@@ -6,13 +6,35 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     // текущая задача для редактирования (либо для создания новой задачи)
     var task: Task!
     
+    // поля для задачи, чтобы не работать напрямую с сылкой
+    var taskName: String?
+    var taskInfo: String?
+    var taskPriority: Priority?
+    var taskCategory: Category?
+    var taskDeadline: Date?
+    
     let dateFormatter = DateFormatter()
+    
+    var delegаte: ActionResultDelegate! // для уведомления и вызова функции из контроллера списка задач
+    
+    
+    // для хранения ссылок на компоненты из ячеек
+    var textTaskName: UITextField!
+    var textTaskInfo: UITextView!
     
     // вызывается после инициализации
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dateFormatter.dateStyle = .short
+        
+        if let task = task {
+            taskName = task.name
+            taskInfo = task.info
+            taskPriority = task.priority
+            taskCategory = task.category
+            taskDeadline = task.deadline
+        }
 
     }
 
@@ -65,7 +87,9 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             }
             
             // заполняем компонент данными из задачи
-            cell.textTaskName.text = task.name
+            cell.textTaskName.text = taskName
+            
+            textTaskName = cell.textTaskName //для использования компонента вне метода tableView
             
             return cell
             
@@ -80,7 +104,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             // будет хранить конечный текст для отображения
             var value:String
             
-            if let name = task.category?.name {
+            if let name = taskCategory?.name {
                 value = name
             } else {
                 value = "Не выбрано"
@@ -102,7 +126,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             // будет хранить конечный текст для отображения
             var value:String
             
-            if let name = task.priority?.name {
+            if let name = taskPriority?.name {
                 value = name
             } else {
                 value = "Не выбрано"
@@ -123,7 +147,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             // будет хранить конечный текст для отображения
             var value:String
             
-            if let date = task.deadline {
+            if let date = taskDeadline {
                 //dateFormatter.dateFormat = "dd/MM/yy"
                 value = dateFormatter.string(from: date)
             } else {
@@ -145,7 +169,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             // будет хранить конечный текст для отображения
             var value:String
             
-            if let name = task.info {
+            if let name = taskInfo {
                 value = name
             } else {
                 value = ""
@@ -153,6 +177,8 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             
             // заполняем компонент данными из задачи
             cell.textTaskInfo.text = value
+            
+            textTaskInfo = cell.textTaskInfo
             
             return cell
             
@@ -185,6 +211,17 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    @IBAction func tapSave(_ sender: UIBarButtonItem) {
+    
+        task.name = textTaskName.text
+        task.info = textTaskInfo.text
+        
+        delegаte.done(source: self, data: nil)
+        
+        navigationController?.popViewController(animated: true)
+        
+    
+    }
     
     
 }

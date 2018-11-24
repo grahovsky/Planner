@@ -294,7 +294,11 @@
                                 <action selector="tapCancel:" destination="BYZ-38-t0r" id="AmK-85-8me"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YsG-0e-IMZ"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="YsG-0e-IMZ">
+                            <connections>
+                                <action selector="tapSave:" destination="BYZ-38-t0r" id="5nq-9U-evO"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

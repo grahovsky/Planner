@@ -27,6 +27,7 @@
 		B522E33721A98DFB00B8FAF8 /* TaskPriorityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33621A98DFB00B8FAF8 /* TaskPriorityCell.swift */; };
 		B522E33921A98E2E00B8FAF8 /* TaskDeadlineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33821A98E2E00B8FAF8 /* TaskDeadlineCell.swift */; };
 		B522E33B21A98E3E00B8FAF8 /* TaskInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33A21A98E3E00B8FAF8 /* TaskInfoCell.swift */; };
+		B522E34021A9A20B00B8FAF8 /* ActionResultsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33F21A9A20B00B8FAF8 /* ActionResultsDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +53,7 @@
 		B522E33621A98DFB00B8FAF8 /* TaskPriorityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPriorityCell.swift; sourceTree = "<group>"; };
 		B522E33821A98E2E00B8FAF8 /* TaskDeadlineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDeadlineCell.swift; sourceTree = "<group>"; };
 		B522E33A21A98E3E00B8FAF8 /* TaskInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoCell.swift; sourceTree = "<group>"; };
+		B522E33F21A9A20B00B8FAF8 /* ActionResultsDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResultsDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +122,7 @@
 		22759C6F1FDEA6E500E9A1E0 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				B522E33E21A9A1F300B8FAF8 /* Delegates */,
 				22A98B7C202592090051183B /* DaoImpl */,
 				22A98B75202588790051183B /* DAO */,
 				220CD7DD201B5C86001B1D2D /* Extensions */,
@@ -179,6 +182,14 @@
 				22E01EC72014C2FB004B5989 /* TaskListCell.swift */,
 			);
 			path = TaskList;
+			sourceTree = "<group>";
+		};
+		B522E33E21A9A1F300B8FAF8 /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				B522E33F21A9A20B00B8FAF8 /* ActionResultsDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -259,6 +270,7 @@
 				220CD7E1201B5CDC001B1D2D /* DateExtension.swift in Sources */,
 				22759C731FDEA6E500E9A1E0 /* TaskDetailsController.swift in Sources */,
 				22A98B812025922E0051183B /* CategoryDaoDbImpl.swift in Sources */,
+				B522E34021A9A20B00B8FAF8 /* ActionResultsDelegate.swift in Sources */,
 				B50B860821A7336200AD0AB8 /* Crud.swift in Sources */,
 				22759C711FDEA6E500E9A1E0 /* AppDelegate.swift in Sources */,
 				22A98B822025922E0051183B /* TaskDaoDbImpl.swift in Sources */,
