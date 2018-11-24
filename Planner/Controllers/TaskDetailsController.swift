@@ -175,6 +175,17 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         
     }
 
-
+    // MARK: @IBActions
+    
+    
+    // закрытие контроллера без сохранения
+    @IBAction func tapCancel(_ sender: UIBarButtonItem) {
+        
+       navigationController?.popViewController(animated: true)
+        
+    }
+    
+    
+    
 }
 
