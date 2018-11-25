@@ -34,6 +34,7 @@
 		B522E34B21A9E07800B8FAF8 /* PriorityListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34A21A9E07800B8FAF8 /* PriorityListController.swift */; };
 		B522E34D21AAEFEA00B8FAF8 /* DictonaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */; };
 		B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */; };
+		B522E35221AB2AE800B8FAF8 /* TaskInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -66,6 +67,7 @@
 		B522E34A21A9E07800B8FAF8 /* PriorityListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityListController.swift; sourceTree = "<group>"; };
 		B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictonaryController.swift; sourceTree = "<group>"; };
 		B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTapButton.swift; sourceTree = "<group>"; };
+		B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				22759C721FDEA6E500E9A1E0 /* TaskDetailsController.swift */,
+				B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */,
 			);
 			path = TaskDetails;
 			sourceTree = "<group>";
@@ -300,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */,
+				B522E35221AB2AE800B8FAF8 /* TaskInfoController.swift in Sources */,
 				220CD7DF201B5C97001B1D2D /* TaskExtension.swift in Sources */,
 				B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */,
 				220CD7E1201B5CDC001B1D2D /* DateExtension.swift in Sources */,

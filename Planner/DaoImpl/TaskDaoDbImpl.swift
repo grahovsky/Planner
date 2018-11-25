@@ -19,7 +19,7 @@ class TaskDaoDbImpl: Crud{
     static let current = TaskDaoDbImpl()
    
     private init() {
-        getAll()
+        items = getAll()
     }
 
     // MARK: dao

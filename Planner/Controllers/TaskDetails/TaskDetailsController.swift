@@ -280,6 +280,11 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
                 controller.selectedItem = taskPriority
                 controller.delegаte = self
             }
+        case "EditTaskInfo":
+            if let controller = segue.destination as? TaskInfoController {
+                controller.taskInfo = taskInfo
+                controller.delegаte = self
+            }
         default:
             return
         }
@@ -292,17 +297,27 @@ extension TaskDetailsController: ActionResultDelegate {
     
     func done(source: UIViewController, data: Any?) {
         
-        if source is CategoryListController {
+        switch source {
+        case is CategoryListController:
             
             taskCategory = data as? Category
             
             tableView.reloadRows(at: [IndexPath(row: 0, section: Section.Category.rawValue)], with: .fade)
             
-        } else if source is PriorityListController {
+        case is PriorityListController:
             
             taskPriority = data as? Priority
             
             tableView.reloadRows(at: [IndexPath(row: 0, section: Section.Priority.rawValue)], with: .fade)
+       
+        case is TaskInfoController:
+            
+            taskInfo = data as? String
+            
+            tableView.reloadRows(at: [IndexPath(row: 0, section: Section.Info.rawValue)], with: .fade)
+            
+        default:
+            print()
         }
         
     }
