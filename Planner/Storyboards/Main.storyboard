@@ -55,7 +55,7 @@
                                             </constraints>
                                             <state key="normal" title="buttonInfo" image="note"/>
                                         </button>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qp-1Z-zYr">
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Qp-1Z-zYr" customClass="AreaTapButton" customModule="Planner" customModuleProvider="target">
                                             <rect key="frame" x="340" y="17.5" width="25" height="25"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="25" id="FmC-hr-WZz"/>
@@ -215,20 +215,34 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BX8-BH-vTH">
-                                                    <rect key="frame" x="10" y="5" width="355" height="33.5"/>
+                                                    <rect key="frame" x="10" y="5" width="325" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ce-bb-LV9" customClass="AreaTapButton" customModule="Planner" customModuleProvider="target">
+                                                    <rect key="frame" x="345" y="12" width="20" height="20"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="20" id="4Pf-PH-NbN"/>
+                                                        <constraint firstAttribute="width" constant="20" id="vFt-AK-CpB"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="clear"/>
+                                                    <connections>
+                                                        <action selector="tapDateClear:" destination="BYZ-38-t0r" eventType="touchUpInside" id="t4c-EC-HbA"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="BX8-BH-vTH" firstAttribute="leading" secondItem="6tA-2g-yLO" secondAttribute="leading" constant="10" id="2Qj-dv-0bf"/>
-                                                <constraint firstAttribute="trailing" secondItem="BX8-BH-vTH" secondAttribute="trailing" constant="10" id="Zlb-eu-0hN"/>
+                                                <constraint firstItem="0Ce-bb-LV9" firstAttribute="centerY" secondItem="6tA-2g-yLO" secondAttribute="centerY" id="WbS-uR-ydn"/>
+                                                <constraint firstItem="BX8-BH-vTH" firstAttribute="trailing" secondItem="0Ce-bb-LV9" secondAttribute="leading" constant="-10" id="Zlb-eu-0hN"/>
                                                 <constraint firstAttribute="bottom" secondItem="BX8-BH-vTH" secondAttribute="bottom" constant="5" id="qc2-tA-Mig"/>
                                                 <constraint firstItem="BX8-BH-vTH" firstAttribute="top" secondItem="6tA-2g-yLO" secondAttribute="top" constant="5" id="yK0-wc-7xV"/>
+                                                <constraint firstAttribute="trailing" secondItem="0Ce-bb-LV9" secondAttribute="trailing" constant="10" id="z6b-hd-jb5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="buttonClearDeadline" destination="0Ce-bb-LV9" id="wbO-It-TsO"/>
                                             <outlet property="labelTaskDeadLine" destination="BX8-BH-vTH" id="KUf-jq-K7x"/>
                                         </connections>
                                     </tableViewCell>
@@ -506,6 +520,7 @@
     </scenes>
     <resources>
         <image name="check_gray" width="60" height="60"/>
+        <image name="clear" width="30" height="30"/>
         <image name="note" width="50" height="59"/>
     </resources>
 </document>

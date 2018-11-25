@@ -161,8 +161,11 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             if let date = taskDeadline {
                 //dateFormatter.dateFormat = "dd/MM/yy"
                 value = dateFormatter.string(from: date)
+                cell.buttonClearDeadline.isHidden = false
             } else {
                 value = "Не указано"
+                cell.labelTaskDeadLine.textColor = UIColor.lightGray
+                cell.buttonClearDeadline.isHidden = true
             }
             
             // заполняем компонент данными из задачи
@@ -228,6 +231,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         task.info = textTaskInfo.text
         task.category = taskCategory
         task.priority = taskPriority
+        task.deadline = taskDeadline
         
         delegаte.done(source: self, data: nil)
         
@@ -242,6 +246,18 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    @IBAction func tapDateClear(_ sender: UIButton) {
+    
+        taskDeadline = nil
+        
+        // определяем индекс строки по нажатой кнопке в ячейке
+        // let viewPosition = sender.convert(CGPoint.zero, to: tableView) // координата относительно tableView
+        // let indexPath = tableView.indexPathForRow(at: viewPosition)!
+        
+        // обращаемся к 0 строке секции Deadline
+        tableView.reloadRows(at: [IndexPath(row: 0, section: Section.Deadline.rawValue)], with: .none)
+        
+    }
     
     
     // MARK: prepare

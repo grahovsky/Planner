@@ -11,6 +11,7 @@ import UIKit
 class TaskDeadlineCell: UITableViewCell {
 
     @IBOutlet weak var labelTaskDeadLine: UILabel!
+    @IBOutlet weak var buttonClearDeadline: AreaTapButton!
     
     override func awakeFromNib() {
         super.awakeFromNib()
