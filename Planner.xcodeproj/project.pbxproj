@@ -32,6 +32,7 @@
 		B522E34521A9D5FF00B8FAF8 /* CategoryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34421A9D5FF00B8FAF8 /* CategoryListCell.swift */; };
 		B522E34721A9DFC200B8FAF8 /* PriorityListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34621A9DFC200B8FAF8 /* PriorityListCell.swift */; };
 		B522E34B21A9E07800B8FAF8 /* PriorityListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34A21A9E07800B8FAF8 /* PriorityListController.swift */; };
+		B522E34D21AAEFEA00B8FAF8 /* DictonaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +63,7 @@
 		B522E34421A9D5FF00B8FAF8 /* CategoryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListCell.swift; sourceTree = "<group>"; };
 		B522E34621A9DFC200B8FAF8 /* PriorityListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityListCell.swift; sourceTree = "<group>"; };
 		B522E34A21A9E07800B8FAF8 /* PriorityListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityListController.swift; sourceTree = "<group>"; };
+		B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictonaryController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				22162C432011D694000AAED5 /* TaskListController.swift */,
+				B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */,
 				B522E34221A9D58200B8FAF8 /* CategoryListController.swift */,
 				B522E34A21A9E07800B8FAF8 /* PriorityListController.swift */,
 			);
@@ -306,6 +309,7 @@
 				22759C791FDEA6E500E9A1E0 /* Planner.xcdatamodeld in Sources */,
 				B522E33321A9761B00B8FAF8 /* TaskNameCell.swift in Sources */,
 				B522E33721A98DFB00B8FAF8 /* TaskPriorityCell.swift in Sources */,
+				B522E34D21AAEFEA00B8FAF8 /* DictonaryController.swift in Sources */,
 				B522E34521A9D5FF00B8FAF8 /* CategoryListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -224,7 +224,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
     
-        task.name = textTaskName.text
+        task.name = taskName
         task.info = textTaskInfo.text
         task.category = taskCategory
         task.priority = taskPriority
@@ -235,6 +235,14 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         
     
     }
+    
+    @IBAction func taskNameChanged(_ sender: UITextField) {
+        
+        taskName = textTaskName.text
+        
+    }
+    
+    
     
     // MARK: prepare
     
@@ -248,12 +256,12 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         switch segue.identifier! {
         case "SelectCategory":
             if let controller = segue.destination as? CategoryListController {
-                controller.selectedCategory = taskCategory
+                controller.selectedItem = taskCategory
                 controller.delegаte = self
             }
         case "SelectPriority":
             if let controller = segue.destination as? PriorityListController {
-                controller.selectedPriority = taskPriority
+                controller.selectedItem = taskPriority
                 controller.delegаte = self
             }
         default:

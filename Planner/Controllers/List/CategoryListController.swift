@@ -8,23 +8,16 @@
 
 import UIKit
 
-class CategoryListController: UIViewController {
-
+class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
+    
     @IBOutlet weak var tableView: UITableView!
-    
-    let categoryDAO = CategoryDaoDbImpl.current
-    
-    var selectedCategory: Category! // текущая категория задачи
-    
-    var currentCheckedIndexPath: IndexPath!
-    
-    var delegаte: ActionResultDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
-
+        dictTableView = tableView
+        DAO = CategoryDaoDbImpl.current
     }
     
     
@@ -34,66 +27,34 @@ class CategoryListController: UIViewController {
     // закрытие контроллера без сохранения
     @IBAction func tapCancel(_ sender: UIBarButtonItem) {
         
-        navigationController?.popViewController(animated: true)
+        cancel()
         
     }
     
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
-             
-        delegаte.done(source: self, data: selectedCategory)
         
-        navigationController?.popViewController(animated: true)
-        
+        save()
         
     }
     
     
     @IBAction func tapCheckCategory(_ sender: UIButton) {
         
-        // определяем индекс строки по нажатой кнопке в ячейке
-        let viewPosition = sender.convert(CGPoint.zero, to: tableView) // координата относительно tableView
-        let indexPath = self.tableView.indexPathForRow(at: viewPosition)!
-        
-        // определяем выбранную категорию
-        let category = categoryDAO.items[indexPath.row]
-        
-        if indexPath != currentCheckedIndexPath { // если текущая строка не была выделена
-            
-            selectedCategory = category // сохраняем выбранную категорию
-            
-            if let currentCheckedIndexPath = currentCheckedIndexPath { // снимаем выделение с прошлой выбранной строки (т.к. selectedCategory - изменена
-                tableView.reloadRows(at: [currentCheckedIndexPath], with: .none)
-            }
-            
-        } else { // если строка была выделена - снимаем выделение
-            
-            selectedCategory = nil
-            currentCheckedIndexPath = nil
-            
-        }
-        
-        // обновляем вид нажатой строки 
-        tableView.reloadRows(at: [indexPath], with: .none)
+        checkItem(sender)
         
     }
     
-}
-
-// MARK: tableView
-
-extension CategoryListController: UITableViewDataSource, UITableViewDelegate {
+    // MARK: tableView
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryDAO.items.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as? CategoryListCell else { fatalError("fatal erroe with cell") }
         
-        let category = categoryDAO.items[indexPath.row]
+        cell.selectionStyle = .none // чтобы не выделялась строка
         
-        if selectedCategory != nil && selectedCategory == category {
+        let category = DAO.items[indexPath.row]
+        
+        if selectedItem != nil && selectedItem == category {
             currentCheckedIndexPath = indexPath
             cell.buttonCheckCategory.setImage(UIImage(named: "check_green"), for: .normal)
         } else {
@@ -105,6 +66,5 @@ extension CategoryListController: UITableViewDataSource, UITableViewDelegate {
         return cell
         
     }
-    
     
 }
