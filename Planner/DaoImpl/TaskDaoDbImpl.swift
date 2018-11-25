@@ -18,7 +18,9 @@ class TaskDaoDbImpl: Crud{
     // синглтон
     static let current = TaskDaoDbImpl()
    
-    private init(){}
+    private init() {
+        getAll()
+    }
 
     // MARK: dao
 

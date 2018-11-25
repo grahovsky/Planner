@@ -11,9 +11,6 @@ class TaskListController: UITableViewController {
     let categoryDAO = CategoryDaoDbImpl.current
     let priorityDAO = PriorityDaoDbImpl.current
 
-    var taskList:[Task]! // коллекция, которая будет заполняться из БД
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,7 +49,7 @@ class TaskListController: UITableViewController {
 
 //        db.initData()// запускаем только 1 раз для заполнения таблиц
 
-        taskList = taskDAO.getAll()
+        // taskList = taskDAO.getAll()
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -86,7 +83,7 @@ class TaskListController: UITableViewController {
 
     // сколько будет записей в каждой секции
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskList.count
+        return taskDAO.items.count
     }
 
 
@@ -98,7 +95,7 @@ class TaskListController: UITableViewController {
             fatalError("cell type")
         }
 
-        let task = taskList[indexPath.row]
+        let task = taskDAO.items[indexPath.row]
 
         cell.labelTaskName.text = task.name
         cell.labelTaskCategory.text = (task.category?.name ?? "")
@@ -171,11 +168,7 @@ class TaskListController: UITableViewController {
 
         if editingStyle == .delete {
 
-            taskDAO.delete(taskList[indexPath.row]) // удалить задачу из БД
-
-            // удалить саму строку и объект из коллекции (массива)
-            taskList.remove(at: indexPath.row)
-            tableView.deleteRows(at: [indexPath], with: .top)
+            deleteTask(indexPath)
 
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
@@ -251,7 +244,32 @@ class TaskListController: UITableViewController {
     
     }
     
+    //MARK: actions
+    @IBAction func  deleteFromTaskDetails(segue: UIStoryboardSegue) {
+     
+        guard segue.source is TaskDetailsController else { return }
+        
+        if segue.identifier == "DeleteTaskFromDetails", let selectedIndexPath = tableView.indexPathForSelectedRow {
+            
+            deleteTask(selectedIndexPath)
+            
+        }
+        
+    }
     
+    //MARK: DAO
+    
+    func deleteTask(_ indexPath: IndexPath) {
+        
+        let task = taskDAO.items[indexPath.row]
+        
+        taskDAO.delete(task) // удалить задачу из БД
+        
+        // удалить саму строку и объект из коллекции (массива)
+        taskDAO.items.remove(at: indexPath.row)
+        tableView.deleteRows(at: [indexPath], with: .top)
+        
+    }
 
 
 }

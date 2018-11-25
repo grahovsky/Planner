@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -278,16 +279,19 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="NSO-bB-mfw"/>
                                 </connections>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="cD2-Q3-XqZ">
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="cD2-Q3-XqZ">
                                 <rect key="frame" x="0.0" y="617" width="375" height="50"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v1a-f2-tlW">
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
-                                        <state key="normal" title="Button"/>
+                                        <color key="backgroundColor" name="button_delete"/>
+                                        <connections>
+                                            <segue destination="02H-IF-2ag" kind="unwind" identifier="DeleteTaskFromDetails" unwindAction="deleteFromTaskDetailsWithSegue:" id="3A9-uJ-SGg"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRk-zq-2RO">
                                         <rect key="frame" x="187.5" y="0.0" width="187.5" height="50"/>
-                                        <state key="normal" title="Button"/>
+                                        <color key="backgroundColor" name="button_complete"/>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -324,6 +328,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="02H-IF-2ag" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="957.60000000000002" y="45.42728635682159"/>
         </scene>
@@ -522,5 +527,11 @@
         <image name="check_gray" width="60" height="60"/>
         <image name="clear" width="30" height="30"/>
         <image name="note" width="50" height="59"/>
+        <namedColor name="button_complete">
+            <color red="0.1803921568627451" green="0.80000000000000004" blue="0.44313725490196076" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="button_delete">
+            <color red="1" green="0.47450980392156861" blue="0.47450980392156861" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>
