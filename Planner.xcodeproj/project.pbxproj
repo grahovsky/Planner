@@ -33,6 +33,7 @@
 		B522E34721A9DFC200B8FAF8 /* PriorityListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34621A9DFC200B8FAF8 /* PriorityListCell.swift */; };
 		B522E34B21A9E07800B8FAF8 /* PriorityListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34A21A9E07800B8FAF8 /* PriorityListController.swift */; };
 		B522E34D21AAEFEA00B8FAF8 /* DictonaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */; };
+		B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		B522E34621A9DFC200B8FAF8 /* PriorityListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityListCell.swift; sourceTree = "<group>"; };
 		B522E34A21A9E07800B8FAF8 /* PriorityListController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriorityListController.swift; sourceTree = "<group>"; };
 		B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictonaryController.swift; sourceTree = "<group>"; };
+		B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTapButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 		22759C6F1FDEA6E500E9A1E0 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				B522E34E21AAFE2300B8FAF8 /* UIViews */,
 				B522E33E21A9A1F300B8FAF8 /* Delegates */,
 				22A98B7C202592090051183B /* DaoImpl */,
 				22A98B75202588790051183B /* DAO */,
@@ -215,6 +218,14 @@
 			path = TaskDetails;
 			sourceTree = "<group>";
 		};
+		B522E34E21AAFE2300B8FAF8 /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */,
+			);
+			path = UIViews;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -288,6 +299,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */,
 				220CD7DF201B5C97001B1D2D /* TaskExtension.swift in Sources */,
 				B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */,
 				220CD7E1201B5CDC001B1D2D /* DateExtension.swift in Sources */,
