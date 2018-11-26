@@ -246,6 +246,23 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
+    @IBAction func tapDeleteTask(_ sender: UIButton) {
+    
+        let dialogMessage = UIAlertController(title: "Подтверждение", message: "Действительно хотите удалить?", preferredStyle: .actionSheet)
+        
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            self.performSegue(withIdentifier: "DeleteTaskFromDetails", sender: self)
+        }
+    
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        
+        dialogMessage.addAction(okAction)
+        dialogMessage.addAction(cancelAction)
+        
+        present(dialogMessage, animated: true, completion: nil)
+    
+    }
+    
     @IBAction func tapDateClear(_ sender: UIButton) {
     
         taskDeadline = nil

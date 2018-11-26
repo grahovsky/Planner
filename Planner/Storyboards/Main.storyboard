@@ -290,7 +290,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="187.5" height="50"/>
                                         <color key="backgroundColor" name="button_delete"/>
                                         <connections>
-                                            <segue destination="02H-IF-2ag" kind="unwind" identifier="DeleteTaskFromDetails" unwindAction="deleteFromTaskDetailsWithSegue:" id="3A9-uJ-SGg"/>
+                                            <action selector="tapDeleteTask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="H7d-Bc-vyF"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRk-zq-2RO">
@@ -329,6 +329,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="9AY-Xq-KrN" id="nsU-bL-XIb"/>
+                        <segue destination="02H-IF-2ag" kind="unwind" identifier="DeleteTaskFromDetails" unwindAction="deleteFromTaskDetailsWithSegue:" id="p5F-7Z-2rV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
