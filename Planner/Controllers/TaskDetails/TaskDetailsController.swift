@@ -100,6 +100,10 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             // заполняем компонент данными из задачи
             cell.textTaskName.text = taskName
             
+            if (cell.textTaskName.text?.isEmpty)! {
+                cell.textTaskName.becomeFirstResponder()
+            }
+            
             textTaskName = cell.textTaskName //для использования компонента вне метода tableView
             
             return cell
@@ -117,8 +121,10 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             
             if let name = taskCategory?.name {
                 value = name
+                cell.labelTaskCategory.textColor = .darkText
             } else {
                 value = "Не выбрано"
+                cell.labelTaskCategory.textColor = .lightGray
             }
             
             // заполняем компонент данными из задачи
@@ -139,8 +145,10 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             
             if let name = taskPriority?.name {
                 value = name
+                cell.labelTaskPriority.textColor = .darkText
             } else {
                 value = "Не выбрано"
+                cell.labelTaskPriority.textColor = .lightGray
             }
             
             // заполняем компонент данными из задачи
@@ -227,7 +235,11 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
     
-        task.name = taskName
+        if let taskName = taskName, !taskName.isEmpty {
+            task.name = taskName
+        } else {
+            task.name = "Новая задача"
+        }
         task.info = textTaskInfo.text
         task.category = taskCategory
         task.priority = taskPriority
@@ -344,7 +356,9 @@ extension TaskDetailsController: ActionResultDelegate {
             
             taskInfo = data as? String
             
-            tableView.reloadRows(at: [IndexPath(row: 0, section: Section.Info.rawValue)], with: .fade)
+//            tableView.reloadRows(at: [IndexPath(row: 0, section: Section.Info.rawValue)], with: .fade)
+            
+            textTaskInfo.text = taskInfo
             
         default:
             print()

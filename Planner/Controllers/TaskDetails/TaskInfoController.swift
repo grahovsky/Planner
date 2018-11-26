@@ -19,7 +19,13 @@ class TaskInfoController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        title = "Доп. инфо"
+        
+        // фокусируемся на компоненте для открытия клавиатуры
+        textViewTaskInfo.becomeFirstResponder()
+        
         textViewTaskInfo.text = taskInfo
+    
     }
     
     @IBAction func tapCancel(_ sender: UIBarButtonItem) {

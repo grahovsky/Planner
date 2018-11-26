@@ -238,7 +238,8 @@ class TaskListController: UITableViewController {
             guard let controller = segue.destination as? TaskDetailsController else { fatalError("error") }
             
             let task = Task(context: taskDAO.context)
-            task.name = "Новая задача"
+            // task.name = "Новая задача"
+            task.name = nil
             
             controller.title = "Создание"
             controller.task = task
