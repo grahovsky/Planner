@@ -233,7 +233,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         task.priority = taskPriority
         task.deadline = taskDeadline
         
-        delegаte.done(source: self, data: nil)
+        delegаte.done(source: self, data: task)
         
         navigationController?.popViewController(animated: true)
         
@@ -246,21 +246,34 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
-    @IBAction func tapDeleteTask(_ sender: UIButton) {
-    
-        let dialogMessage = UIAlertController(title: "Подтверждение", message: "Действительно хотите удалить?", preferredStyle: .actionSheet)
+    func confirmAction(text: String, segueName: String) {
+        
+        let dialogMessage = UIAlertController(title: "Подтверждение", message: text, preferredStyle: .actionSheet)
         
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
-            self.performSegue(withIdentifier: "DeleteTaskFromDetails", sender: self)
+            self.performSegue(withIdentifier: segueName, sender: self)
         }
-    
+        
         let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
         
         dialogMessage.addAction(okAction)
         dialogMessage.addAction(cancelAction)
         
         present(dialogMessage, animated: true, completion: nil)
+        
+    }
     
+    @IBAction func tapDeleteTask(_ sender: UIButton) {
+        
+        confirmAction(text: "Действительно хотите удалить задачу?", segueName: "DeleteTaskFromDetails")
+    
+    }
+    
+    
+    @IBAction func tapCompleteTask(_ sender: UIButton) {
+        
+        confirmAction(text: "Действительно хотите выполнить задачу?", segueName: "CompleteTaskFromDetails")
+        
     }
     
     @IBAction func tapDateClear(_ sender: UIButton) {

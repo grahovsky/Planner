@@ -10,6 +10,12 @@ class TaskListController: UITableViewController {
     let taskDAO = TaskDaoDbImpl.current
     let categoryDAO = CategoryDaoDbImpl.current
     let priorityDAO = PriorityDaoDbImpl.current
+    
+    let taskListSection = 0
+    
+    var taskCount: Int {
+       return taskDAO.items.count
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,13 +70,6 @@ class TaskListController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
-   
-
-
-    
-
-
-
 
     // MARK: tableView
 
@@ -85,8 +84,6 @@ class TaskListController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return taskDAO.items.count
     }
-
-
 
     // отображение данных в строке
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -153,7 +150,29 @@ class TaskListController: UITableViewController {
         }else{
             cell.labelDeadline.text = ""
         }
-
+        
+        if task.completed {
+            
+            cell.buttonCompleteTask.setImage(UIImage(named: "check_green"), for: .normal)
+            cell.labelTaskName.textColor = .lightGray
+            cell.labelTaskCategory.textColor = .lightGray
+            cell.labelDeadline.textColor = .lightGray
+            cell.buttonTaskInfo.setImage(UIImage(named: "note_gray"), for: .normal)
+            cell.labelPriority.backgroundColor = UIColor.lightGray
+            
+            cell.selectionStyle = .none // не отображаем выделение выбранной строки
+            
+        } else {
+          
+            cell.buttonCompleteTask.setImage(UIImage(named: "check_gray"), for: .normal)
+            cell.labelTaskName.textColor = .black
+            cell.labelTaskCategory.textColor = .black
+            cell.labelDeadline.textColor = .black
+            cell.buttonTaskInfo.setImage(UIImage(named: "note"), for: .normal)
+            
+            cell.selectionStyle = .default
+            
+        }
 
         return cell
     }
@@ -174,42 +193,18 @@ class TaskListController: UITableViewController {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }
     }
-
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let task = taskDAO.items[indexPath.row]
+        
+        if task.completed {
+            return
+        }
+        
+        performSegue(withIdentifier: "UpdateTask", sender: tableView.cellForRow(at: indexPath))
+        
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
 
     
     // MARK: - Navigation
@@ -233,9 +228,20 @@ class TaskListController: UITableViewController {
             
             // получаем выбранную задачу
             let selectedTask = taskDAO.items[selectedIndex]
-            
+
             controller.title = "Редактирование"
             controller.task = selectedTask
+            controller.delegаte = self
+        
+        case "CreateTask":
+            
+            guard let controller = segue.destination as? TaskDetailsController else { fatalError("error") }
+            
+            let task = Task(context: taskDAO.context)
+            task.name = "Новая задача"
+            
+            controller.title = "Создание"
+            controller.task = task
             controller.delegаte = self
             
         default:
@@ -257,6 +263,18 @@ class TaskListController: UITableViewController {
         
     }
     
+    @IBAction func  completeFromTaskDetails(segue: UIStoryboardSegue) {
+        
+        guard segue.source is TaskDetailsController else { return }
+        
+        if segue.identifier == "CompleteTaskFromDetails", let selectedIndexPath = tableView.indexPathForSelectedRow {
+            
+            completeTask(selectedIndexPath)
+            
+        }
+        
+    }
+    
     //MARK: DAO
     
     func deleteTask(_ indexPath: IndexPath) {
@@ -270,8 +288,31 @@ class TaskListController: UITableViewController {
         tableView.deleteRows(at: [indexPath], with: .top)
         
     }
+    
+    func completeTask(_ indexPath: IndexPath) {
+        
+        let task = taskDAO.items[indexPath.row]
+        task.completed = !task.completed
+        taskDAO.addOrUpdate(task)
+        
+        // обновляем вид нажатой строки
+        tableView.reloadRows(at: [indexPath], with: .fade)
+        
+    }
 
-
+    @IBAction func tapCompleteTask(_ sender: UIButton) {
+    
+        // определяем индекс строки по нажатой кнопке в ячейке
+        let viewPosition = sender.convert(CGPoint.zero, to: tableView) // координата относительно tableView
+        let indexPath = tableView.indexPathForRow(at: viewPosition)!
+        
+        // принимаем вызов только из TaskListCell
+        guard (tableView.cellForRow(at: indexPath) as? TaskListCell) != nil else { fatalError("cell type") }
+        
+        completeTask(indexPath)
+        
+    }
+    
 }
 
 //MARK: ActionResultDelegate
@@ -287,6 +328,17 @@ extension TaskListController: ActionResultDelegate {
                 
                 taskDAO.save() // сохраняем измененную задачу (все изменения контекста)
                 tableView.reloadRows(at: [selectedIndexPath], with: .fade) // обновляем строку (не всю таблицу)
+                
+            } else {
+                
+                let task = data as! Task
+                taskDAO.addOrUpdate(task)
+                
+                // индекс для новой задачи
+                let indexPath = IndexPath(item: taskCount-1, section: taskListSection)
+                
+                // вставляем запись в конец списка
+                tableView.insertRows(at: [indexPath], with: .top)
                 
             }
         }
