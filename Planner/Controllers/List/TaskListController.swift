@@ -11,7 +11,13 @@ class TaskListController: UITableViewController {
     let categoryDAO = CategoryDaoDbImpl.current
     let priorityDAO = PriorityDaoDbImpl.current
     
-    let taskListSection = 0
+    let quickTaskSection = 0
+    let taskListSection = 1
+    
+    let sectionCount = 2
+    
+    var textQuickTask: UITextField!
+    
     
     var taskCount: Int {
        return taskDAO.items.count
@@ -44,25 +50,7 @@ class TaskListController: UITableViewController {
         
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
-//
-//        // симулятор загрузки формы (чтобы успеть посмотреть launchscreen) - в рабочем проекте естественно нужно будет удалить
-//        for i in 0...200000 {
-//            print(i)
-//        }
 
-
-
-
-//        db.initData()// запускаем только 1 раз для заполнения таблиц
-
-        // taskList = taskDAO.getAll()
-
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,124 +65,197 @@ class TaskListController: UITableViewController {
 
     // сколько секций нужно отображать в таблице
     override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        return sectionCount
     }
 
     // сколько будет записей в каждой секции
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return taskDAO.items.count
+        
+        switch section {
+        case quickTaskSection:
+            return 1
+        case taskListSection:
+            return taskCount
+        default:
+            return 0
+        }
+            
     }
 
     // отображение данных в строке
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTask", for: indexPath) as? TaskListCell else{
-            fatalError("cell type")
-        }
-
-        let task = taskDAO.items[indexPath.row]
-
-        cell.labelTaskName.text = task.name
-        cell.labelTaskCategory.text = (task.category?.name ?? "")
-
-
-        // задаем цвет по приоритету
-        if let priority = task.priority{
-
-            switch priority.index{
-            case 1:
-                cell.labelPriority.backgroundColor = UIColor(named: "low")
-            case 2:
-                cell.labelPriority.backgroundColor = UIColor(named: "normal")
-            case 3:
-                cell.labelPriority.backgroundColor = UIColor(named: "high")
-            default:
+        
+        switch indexPath.section {
+        case quickTaskSection:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellQuickTask", for: indexPath) as? QuickTaskCell else{
+                fatalError("cell type")
+            }
+            textQuickTask = cell.textQuickTask
+            textQuickTask.placeholder = "введите быструю задачу"
+            return cell
+        
+        case taskListSection:
+            
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTask", for: indexPath) as? TaskListCell else{
+                fatalError("cell type")
+            }
+            
+            let task = taskDAO.items[indexPath.row]
+            
+            cell.labelTaskName.text = task.name
+            cell.labelTaskCategory.text = (task.category?.name ?? "")
+            
+            // задаем цвет по приоритету
+            if let priority = task.priority {
+                
+                switch priority.index{
+                case 1:
+                    cell.labelPriority.backgroundColor = UIColor(named: "low")
+                case 2:
+                    cell.labelPriority.backgroundColor = UIColor(named: "normal")
+                case 3:
+                    cell.labelPriority.backgroundColor = UIColor(named: "high")
+                default:
+                    cell.labelPriority.backgroundColor = UIColor.white
+                }
+                
+            } else {
                 cell.labelPriority.backgroundColor = UIColor.white
             }
-
-        }else{
-            cell.labelPriority.backgroundColor = UIColor.white
-        }
-
-
-        cell.labelDeadline.textColor = .lightGray
-
-        // отображать или нет иконку блокнота
-        if task.info == nil || (task.info?.isEmpty)!{
-            cell.buttonTaskInfo.isHidden = true // скрыть
-        }else{
-            cell.buttonTaskInfo.isHidden = false // показать
-        }
-
-
-
-        // текст для отображения кол-ва дней по задаче
-        if let diff = task.daysLeft(){
-
-            switch diff {
-            case 0:
-                cell.labelDeadline.text = "Сегодня" // TODO: локализация
-            case 1:
-                cell.labelDeadline.text = "Завтра"
-            case 0...:
-                cell.labelDeadline.text = "\(diff) дн."
-
-            case ..<0:
-                cell.labelDeadline.textColor = .red
-                cell.labelDeadline.text = "\(diff) дн."
-
-            default:
+            
+            cell.labelDeadline.textColor = .lightGray
+            
+            // отображать или нет иконку блокнота
+            if task.info == nil || (task.info?.isEmpty)!{
+                cell.buttonTaskInfo.isHidden = true // скрыть
+            }else{
+                cell.buttonTaskInfo.isHidden = false // показать
+            }
+            
+            // текст для отображения кол-ва дней по задаче
+            if let diff = task.daysLeft(){
+                
+                switch diff {
+                case 0:
+                    cell.labelDeadline.text = "Сегодня" // TODO: локализация
+                case 1:
+                    cell.labelDeadline.text = "Завтра"
+                case 0...:
+                    cell.labelDeadline.text = "\(diff) дн."
+                    
+                case ..<0:
+                    cell.labelDeadline.textColor = .red
+                    cell.labelDeadline.text = "\(diff) дн."
+                    
+                default:
+                    cell.labelDeadline.text = ""
+                }
+                
+            } else {
                 cell.labelDeadline.text = ""
             }
-
-        }else{
-            cell.labelDeadline.text = ""
+            
+            if task.completed {
+                
+                cell.buttonCompleteTask.setImage(UIImage(named: "check_green"), for: .normal)
+                cell.labelTaskName.textColor = .lightGray
+                cell.labelTaskCategory.textColor = .lightGray
+                cell.labelDeadline.textColor = .lightGray
+                cell.buttonTaskInfo.setImage(UIImage(named: "note_gray"), for: .normal)
+                cell.labelPriority.backgroundColor = UIColor.lightGray
+                
+                cell.selectionStyle = .none // не отображаем выделение выбранной строки
+                
+            } else {
+                
+                cell.buttonCompleteTask.setImage(UIImage(named: "check_gray"), for: .normal)
+                cell.labelTaskName.textColor = .black
+                cell.labelTaskCategory.textColor = .black
+                cell.labelDeadline.textColor = .black
+                cell.buttonTaskInfo.setImage(UIImage(named: "note"), for: .normal)
+                
+                cell.selectionStyle = .default
+                
+            }
+            
+            return cell
+            
+        default:
+            
+            return UITableViewCell()
+            
         }
-        
-        if task.completed {
-            
-            cell.buttonCompleteTask.setImage(UIImage(named: "check_green"), for: .normal)
-            cell.labelTaskName.textColor = .lightGray
-            cell.labelTaskCategory.textColor = .lightGray
-            cell.labelDeadline.textColor = .lightGray
-            cell.buttonTaskInfo.setImage(UIImage(named: "note_gray"), for: .normal)
-            cell.labelPriority.backgroundColor = UIColor.lightGray
-            
-            cell.selectionStyle = .none // не отображаем выделение выбранной строки
-            
-        } else {
-          
-            cell.buttonCompleteTask.setImage(UIImage(named: "check_gray"), for: .normal)
-            cell.labelTaskName.textColor = .black
-            cell.labelTaskCategory.textColor = .black
-            cell.labelDeadline.textColor = .black
-            cell.buttonTaskInfo.setImage(UIImage(named: "note"), for: .normal)
-            
-            cell.selectionStyle = .default
-            
-        }
 
-        return cell
     }
-
+    
     // установка высоты строки
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-
-    // удаление строки
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
-        if editingStyle == .delete {
-
-            deleteTask(indexPath)
-
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+        
+        switch indexPath.section {
+        case 0:
+            return 40
+        default:
+            return 60
         }
     }
     
+ 
+    
+    override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        
+        let delete = UITableViewCell.EditingStyle.delete
+        
+        return delete
+        
+    }
+    
+    // собственные наборы действий для строк
+//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+//
+//        switch indexPath.section {
+//        case taskListSection:
+//            let delete  = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
+//                self.deleteTask(indexPath)
+//            }
+//            return [delete]
+//        default:
+//            return []
+//        }
+//
+//    }
+    
+    // какие строки можно редактировать
+    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        
+        if indexPath.section == quickTaskSection {
+            return false
+        }
+        
+        return true
+        
+    }
+    
+    // удаление строки не используется, т.к. editActionsForRowAt
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+
+        if indexPath.section == taskListSection {
+
+            if editingStyle == .delete {
+
+                deleteTask(indexPath)
+
+            } else if editingStyle == .insert {
+                // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            }
+
+        }
+
+    }
+    
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        guard indexPath.section != quickTaskSection else { return }
         
         let task = taskDAO.items[indexPath.row]
         
@@ -314,6 +375,34 @@ class TaskListController: UITableViewController {
         
     }
     
+    @IBAction func quickTaskAdd(_ sender: UITextField) {
+    
+        let task = Task(context: taskDAO.context)
+        task.name = sender.text
+        sender.text = nil
+        createTask(task)
+    
+    }
+    
+    func createTask(_ task: Task) {
+        
+        if let name = task.name?.trimmingCharacters(in: .whitespacesAndNewlines), !name.isEmpty {
+            task.name = name
+        } else {
+            task.name = "Новая задача"
+        }
+        
+        taskDAO.addOrUpdate(task)
+        
+        // индекс для новой задачи
+        let indexPath = IndexPath(item: taskCount-1, section: taskListSection)
+        
+        // вставляем запись в конец списка
+        tableView.insertRows(at: [indexPath], with: .top)
+        
+    }
+    
+    
 }
 
 //MARK: ActionResultDelegate
@@ -333,13 +422,8 @@ extension TaskListController: ActionResultDelegate {
             } else {
                 
                 let task = data as! Task
-                taskDAO.addOrUpdate(task)
                 
-                // индекс для новой задачи
-                let indexPath = IndexPath(item: taskCount-1, section: taskListSection)
-                
-                // вставляем запись в конец списка
-                tableView.insertRows(at: [indexPath], with: .top)
+                createTask(task)
                 
             }
         }

@@ -20,8 +20,36 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellQuickTask" id="3uh-OT-0mJ" customClass="QuickTaskCell" customModule="Planner" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3uh-OT-0mJ" id="0kk-uR-RNv">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZjL-5N-NRe">
+                                            <rect key="frame" x="16" y="11" width="343" height="22"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
+                                            <connections>
+                                                <action selector="quickTaskAdd:" destination="ABY-Q6-nzl" eventType="editingDidEnd" id="3ZG-Yp-9cl"/>
+                                            </connections>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="ZjL-5N-NRe" firstAttribute="leading" secondItem="0kk-uR-RNv" secondAttribute="leadingMargin" id="X4s-A1-1Ga"/>
+                                        <constraint firstItem="ZjL-5N-NRe" firstAttribute="trailing" secondItem="0kk-uR-RNv" secondAttribute="trailingMargin" id="i9N-FK-0AT"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="ZjL-5N-NRe" secondAttribute="bottom" id="osv-L8-3nP"/>
+                                        <constraint firstItem="ZjL-5N-NRe" firstAttribute="top" secondItem="0kk-uR-RNv" secondAttribute="topMargin" id="zDE-u5-GjF"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="textQuickTask" destination="ZjL-5N-NRe" id="DHQ-g4-yBw"/>
+                                </connections>
+                            </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTask" rowHeight="60" id="QUy-pB-lYW" customClass="TaskListCell" customModule="Planner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="60"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QUy-pB-lYW" id="Caw-tA-wMl">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
@@ -124,7 +152,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wBP-ue-uEA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="170" y="46"/>
+            <point key="canvasLocation" x="168.80000000000001" y="45.42728635682159"/>
         </scene>
         <!--Task Details Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -149,7 +177,7 @@
                                                     <rect key="frame" x="10" y="5" width="355" height="33.5"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                                     <connections>
                                                         <action selector="taskNameChanged:" destination="BYZ-38-t0r" eventType="editingChanged" id="oRn-aW-wSV"/>
                                                     </connections>
@@ -605,6 +633,6 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="U9G-D1-O9N"/>
+        <segue reference="MGf-VC-Ecw"/>
     </inferredMetricsTieBreakers>
 </document>
