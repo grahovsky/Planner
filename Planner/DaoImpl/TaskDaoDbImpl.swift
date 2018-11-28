@@ -4,7 +4,7 @@ import UIKit
 import CoreData
 
 // реализация DAO для работы с задачами
-class TaskDaoDbImpl: Crud{
+class TaskDaoDbImpl: TaskDAO {
 
     //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
     typealias Item = Task
@@ -55,7 +55,38 @@ class TaskDaoDbImpl: Crud{
         save()
     }
 
-
+    // поиск по имени задачи
+    func search(text: String) -> [Task] {
+        
+        // объект-контейнер для выборки данных
+        let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
+        
+        // объект-контейнер для добавления условий
+        var predicate: NSPredicate
+        // массив параметров любого типа
+        var params = [Any]()
+        
+        // прописываем само условие
+        let sql = "name CONTAINTS[c] %@" // [c] - case insensitive, %@ параметр
+        
+        params.append(text) // указываем значение параметров
+        
+        // добавляем условие и параметры
+        predicate = NSPredicate(format: sql, argumentArray: params)
+        
+        // добавляем предикат в контейнер запоса
+        fetchRequest.predicate = predicate
+        
+        do {
+            items = try context.fetch(fetchRequest) // выполняем запрос с предикатом (предикатов может быть много)
+        } catch {
+            fatalError("Fetching Failed")
+        }
+        
+        return items
+        
+        
+    }
 
 
 
