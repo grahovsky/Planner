@@ -1,5 +1,5 @@
 PODS:
-  - GCCalendar (2.4.0)
+  - GCCalendar (2.4.1)
 
 DEPENDENCIES:
   - GCCalendar
@@ -9,7 +9,7 @@ SPEC REPOS:
     - GCCalendar
 
 SPEC CHECKSUMS:
-  GCCalendar: f242806c2936535fac44be3bda81d94e54d25557
+  GCCalendar: b9d584a3e437f9af5b0ab23030e7ed46affc3b23
 
 PODFILE CHECKSUM: 4af592d6a5435eb6ab20e7ae3a9d10882638a02e
 

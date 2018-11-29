@@ -37,6 +37,7 @@
 		B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */; };
 		B522E35221AB2AE800B8FAF8 /* TaskInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */; };
 		B546231E21AE617000B81B1F /* CommonSearchDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546231D21AE617000B81B1F /* CommonSearchDAO.swift */; };
+		B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A411FA21B0659D008C281F /* GCCalendar.framework */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTapButton.swift; sourceTree = "<group>"; };
 		B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoController.swift; sourceTree = "<group>"; };
 		B546231D21AE617000B81B1F /* CommonSearchDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSearchDAO.swift; sourceTree = "<group>"; };
+		B5A411FA21B0659D008C281F /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -83,6 +85,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */,
 				6849E896E9C1BD1F3E80674B /* Pods_Planner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +96,7 @@
 		0B5A073FA9189EF526DBB3F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5A411FA21B0659D008C281F /* GCCalendar.framework */,
 				9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */,
 			);
 			name = Frameworks;
