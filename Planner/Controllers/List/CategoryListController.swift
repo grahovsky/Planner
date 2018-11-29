@@ -18,6 +18,7 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         // Do any additional setup after loading the view.
         dictTableView = tableView
         DAO = CategoryDaoDbImpl.current
+        DAO.getAll()
     }
     
     

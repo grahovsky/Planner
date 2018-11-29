@@ -20,6 +20,7 @@
 		22A98B822025922E0051183B /* TaskDaoDbImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B7F2025922E0051183B /* TaskDaoDbImpl.swift */; };
 		22E01EC82014C2FB004B5989 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E01EC72014C2FB004B5989 /* TaskListCell.swift */; };
 		22E92C751FE16FC3001F8493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E92C741FE16FC3001F8493 /* Main.storyboard */; };
+		6849E896E9C1BD1F3E80674B /* Pods_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */; };
 		B50B860821A7336200AD0AB8 /* Crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B860721A7336200AD0AB8 /* Crud.swift */; };
 		B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B860921A7397700AD0AB8 /* CrudExtension.swift */; };
 		B522E33321A9761B00B8FAF8 /* TaskNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */; };
@@ -35,7 +36,7 @@
 		B522E34D21AAEFEA00B8FAF8 /* DictonaryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */; };
 		B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */; };
 		B522E35221AB2AE800B8FAF8 /* TaskInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */; };
-		B546231E21AE617000B81B1F /* TaskDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546231D21AE617000B81B1F /* TaskDAO.swift */; };
+		B546231E21AE617000B81B1F /* CommonSearchDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546231D21AE617000B81B1F /* CommonSearchDAO.swift */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -55,6 +56,8 @@
 		22A98B7F2025922E0051183B /* TaskDaoDbImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDaoDbImpl.swift; sourceTree = "<group>"; };
 		22E01EC72014C2FB004B5989 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
 		22E92C741FE16FC3001F8493 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9979425144FBD7CD114CA42F /* Pods-Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.debug.xcconfig"; sourceTree = "<group>"; };
+		9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B860721A7336200AD0AB8 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
 		B50B860921A7397700AD0AB8 /* CrudExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudExtension.swift; sourceTree = "<group>"; };
 		B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNameCell.swift; sourceTree = "<group>"; };
@@ -70,8 +73,9 @@
 		B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictonaryController.swift; sourceTree = "<group>"; };
 		B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTapButton.swift; sourceTree = "<group>"; };
 		B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoController.swift; sourceTree = "<group>"; };
-		B546231D21AE617000B81B1F /* TaskDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDAO.swift; sourceTree = "<group>"; };
+		B546231D21AE617000B81B1F /* CommonSearchDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSearchDAO.swift; sourceTree = "<group>"; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
+		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,12 +83,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6849E896E9C1BD1F3E80674B /* Pods_Planner.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B5A073FA9189EF526DBB3F8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0C2397DA9233703DFB097FC3 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9979425144FBD7CD114CA42F /* Pods-Planner.debug.xcconfig */,
+				DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		220CD7DD201B5C86001B1D2D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +151,8 @@
 			children = (
 				22759C6F1FDEA6E500E9A1E0 /* Planner */,
 				22759C6E1FDEA6E500E9A1E0 /* Products */,
+				0C2397DA9233703DFB097FC3 /* Pods */,
+				0B5A073FA9189EF526DBB3F8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,7 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				B50B860721A7336200AD0AB8 /* Crud.swift */,
-				B546231D21AE617000B81B1F /* TaskDAO.swift */,
+				B546231D21AE617000B81B1F /* CommonSearchDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -242,9 +266,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 22759C821FDEA6E500E9A1E0 /* Build configuration list for PBXNativeTarget "Planner" */;
 			buildPhases = (
+				FC25659B59351F82AADC89BD /* [CP] Check Pods Manifest.lock */,
 				22759C691FDEA6E500E9A1E0 /* Sources */,
 				22759C6A1FDEA6E500E9A1E0 /* Frameworks */,
 				22759C6B1FDEA6E500E9A1E0 /* Resources */,
+				368843310CE49438A0D2AE19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +329,53 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		368843310CE49438A0D2AE19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Planner/Pods-Planner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GCCalendar/GCCalendar.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCCalendar.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Planner/Pods-Planner-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FC25659B59351F82AADC89BD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Planner-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		22759C691FDEA6E500E9A1E0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -321,7 +394,7 @@
 				B522E34321A9D58200B8FAF8 /* CategoryListController.swift in Sources */,
 				22759C711FDEA6E500E9A1E0 /* AppDelegate.swift in Sources */,
 				B522E34721A9DFC200B8FAF8 /* PriorityListCell.swift in Sources */,
-				B546231E21AE617000B81B1F /* TaskDAO.swift in Sources */,
+				B546231E21AE617000B81B1F /* CommonSearchDAO.swift in Sources */,
 				22A98B822025922E0051183B /* TaskDaoDbImpl.swift in Sources */,
 				B522E33B21A98E3E00B8FAF8 /* TaskInfoCell.swift in Sources */,
 				22A98B802025922E0051183B /* PriorityDaoDbImpl.swift in Sources */,
@@ -465,6 +538,7 @@
 		};
 		22759C831FDEA6E500E9A1E0 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9979425144FBD7CD114CA42F /* Pods-Planner.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -480,6 +554,7 @@
 		};
 		22759C841FDEA6E500E9A1E0 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

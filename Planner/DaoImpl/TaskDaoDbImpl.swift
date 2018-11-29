@@ -4,7 +4,7 @@ import UIKit
 import CoreData
 
 // реализация DAO для работы с задачами
-class TaskDaoDbImpl: TaskDAO {
+class TaskDaoDbImpl: CommonSearchDAO {
 
     //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
     typealias Item = Task
@@ -67,7 +67,7 @@ class TaskDaoDbImpl: TaskDAO {
         var params = [Any]()
         
         // прописываем само условие
-        let sql = "name CONTAINTS[c] %@" // [c] - case insensitive, %@ параметр
+        let sql = "name CONTAINS[c] %@" // [c] - case insensitive, %@ параметр
         
         params.append(text) // указываем значение параметров
         

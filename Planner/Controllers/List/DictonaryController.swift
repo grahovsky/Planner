@@ -10,7 +10,7 @@ import UIKit
 
 // общий класс для контроллеров по работе со справочными значениями (в данный момент: категории, приоритеты)
 // процесс заполнения таблиц будет реализовываться в дочерних классах, в данном классе - весь общий функционал
-class DictonaryController<T:Crud>: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate {
 
     var dictTableView: UITableView! // ссылка на компонент, нужно заполнять по факту уже из дочернего класса
     
@@ -22,10 +22,22 @@ class DictonaryController<T:Crud>: UIViewController, UITableViewDataSource, UITa
     
     var delegаte: ActionResultDelegate! // для передачи выбранного элемента обратно в контроллер
     
+    var searchController: UISearchController! // поисковый элемент, который будет добавляться поверх таблицы задач
+    
+    var searchBarText:String! // текущий текст для поиска
+    
+    // для сокращения кода
+    var searchBar: UISearchBar {
+        return searchController.searchBar
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        setupSearchController()
+        searchController.searchBar.searchBarStyle = .prominent
         
     }
     
@@ -55,6 +67,9 @@ class DictonaryController<T:Crud>: UIViewController, UITableViewDataSource, UITa
         // обновляем вид нажатой строки
         dictTableView.reloadRows(at: [indexPath], with: .none)
         
+        // если пользователь выбрал значение - закрывать поисковое окно
+        searchController.isActive = false
+        
     }
     
     func cancel() {
@@ -69,7 +84,7 @@ class DictonaryController<T:Crud>: UIViewController, UITableViewDataSource, UITa
         delegаte.done(source: self, data: selectedItem)
         
     }
- 
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return DAO.items.count
@@ -82,4 +97,72 @@ class DictonaryController<T:Crud>: UIViewController, UITableViewDataSource, UITa
         
     }
     
+    //MARK: search
+    
+    func setupSearchController() {
+        
+        searchController = UISearchController(searchResultsController: nil) // nil - отоброжение результата поиска в этом же view
+        
+        searchController.dimsBackgroundDuringPresentation = false // затемнять фон при поиске (затемненная область не доступна)
+        
+        definesPresentationContext = true // для правильного отображения внутри таблицы, без параметра может выходить поверх таблицы
+        
+        searchBar.placeholder = "Начните вводить название"
+        searchBar.backgroundColor = .white
+        
+        searchController.searchResultsUpdater = self
+        searchBar.delegate = self
+        
+        searchBar.showsScopeBar = false // чтобы не показывалось ничего под строкой поиска
+        
+        searchBar.showsCancelButton = false
+        searchBar.setShowsCancelButton(false, animated: false)
+        
+        searchBar.searchBarStyle = .minimal
+        
+        searchController.hidesNavigationBarDuringPresentation = false // закрытие navigaton bar компонентом поиска
+        
+        // из-за особенностей реализации от версии iOS
+        if #available(iOS 11.0, *) { // для iOS 11 и выше
+            navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            dictTableView.tableHeaderView = searchBar
+        }
+        
+    }
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        if !(searchBar.text?.isEmpty)! { // искать только если есть текст
+            searchBarText = searchBar.text!
+            DAO.search(text: searchController.searchBar.text!)
+            dictTableView.reloadData()
+            currentCheckedIndexPath = nil // обнуляем галочку
+            searchBar.placeholder = searchBarText // сохраняем поисковый текст
+        } else {
+            DAO.getAll()
+            dictTableView.reloadData()
+            searchBar.placeholder = "Начните вводить название"
+        }
+    }
+    
+    // обязательно нажать Найти для поиска
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        return false
+    }
+    
+    // поиск после окончания ввода данных нажатия Найти
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+//        if !(searchController.searchBar.text?.isEmpty)! { // искать только если есть текст
+//            DAO.search(text: searchController.searchBar.text!)
+//            dictTableView.reloadData()
+//        }
+    }
+    
+    // при отмене поиска показываем все записи
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.placeholder = "Начните вводить название"
+        DAO.getAll()
+        dictTableView.reloadData()
+    }
 }

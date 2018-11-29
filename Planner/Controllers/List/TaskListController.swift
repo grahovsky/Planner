@@ -18,6 +18,7 @@ class TaskListController: UITableViewController {
     
     var textQuickTask: UITextField!
     
+    var searchController: UISearchController! // поисковый элемент, который будет добавляться поверх таблицы задач
     
     var taskCount: Int {
        return taskDAO.items.count
@@ -50,6 +51,8 @@ class TaskListController: UITableViewController {
         
         dateFormatter.dateStyle = .short
         dateFormatter.timeStyle = .none
+        
+        setupSearchController()
 
     }
 
@@ -434,4 +437,66 @@ extension TaskListController: ActionResultDelegate {
         
     }
 
+}
+
+//обработка действий при поиске
+extension TaskListController: UISearchResultsUpdating {
+    
+    func updateSearchResults(for searchController: UISearchController) {
+        // вызывается после каждого нажатия или когда просто активируется поиск
+        // не используем
+        // будем использовать searchBarTextDidEndEditing при окончании ввода текста
+    }
+
+
+}
+
+extension TaskListController: UISearchBarDelegate {
+    
+    // обязательно нажать Найти для поиска
+    func searchBarShouldEndEditing(_ searchBar: UISearchBar) -> Bool {
+        return true
+    }
+    
+    // поиск после окончания ввода данных нажатия Найти
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        if !(searchController.searchBar.text?.isEmpty)! { // искать только если есть текст
+            taskDAO.search(text: searchController.searchBar.text!)
+            tableView.reloadData()
+        }
+    }
+    
+    // при отмене поиска показываем все записи
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        searchController.searchBar.text = ""
+        taskDAO.getAll()
+        tableView.reloadData()
+    }
+    
+    func setupSearchController() {
+        
+        searchController = UISearchController(searchResultsController: nil) // nil - отоброжение результата поиска в этом же view
+        
+        searchController.dimsBackgroundDuringPresentation = false // затемнять фон при поиске (затемненная область не доступна)
+        
+        definesPresentationContext = true // для правильного отображения внутри таблицы, без параметра может выходить поверх таблицы
+        
+        searchController.searchBar.placeholder = "Поиск по названию"
+        searchController.searchBar.backgroundColor = .white
+        
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        
+        searchController.searchBar.showsScopeBar = false // чтобы не показывалось ничего под строкой поиска
+        
+        // из-за особенностей реализации от версии iOS
+        if #available(iOS 11.0, *) { // для iOS 11 и выше
+            navigationItem.searchController = searchController
+            navigationItem.hidesSearchBarWhenScrolling = false
+        } else {
+            tableView.tableHeaderView = searchController.searchBar
+        }
+        
+    }
+    
 }

@@ -20,6 +20,7 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         // Do any additional setup after loading the view.
         dictTableView = tableView
         DAO = PriorityDaoDbImpl.current
+        DAO.getAll()
         
         DAO.items.sort(by: { $0.index < $1.index })
     }
