@@ -39,6 +39,7 @@
 		B546231E21AE617000B81B1F /* CommonSearchDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546231D21AE617000B81B1F /* CommonSearchDAO.swift */; };
 		B55C20F221B3252B006B1310 /* DatetimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F121B3252B006B1310 /* DatetimePickerController.swift */; };
 		B55C20F421B3263D006B1310 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */; };
+		B55C20F621B4607F006B1310 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55C20F521B4607F006B1310 /* SideMenu.framework */; };
 		B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A411FA21B0659D008C281F /* GCCalendar.framework */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
@@ -79,6 +80,7 @@
 		B546231D21AE617000B81B1F /* CommonSearchDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSearchDAO.swift; sourceTree = "<group>"; };
 		B55C20F121B3252B006B1310 /* DatetimePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatetimePickerController.swift; sourceTree = "<group>"; };
 		B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
+		B55C20F521B4607F006B1310 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5A411FA21B0659D008C281F /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55C20F621B4607F006B1310 /* SideMenu.framework in Frameworks */,
 				B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */,
 				6849E896E9C1BD1F3E80674B /* Pods_Planner.framework in Frameworks */,
 			);
@@ -100,6 +103,7 @@
 		0B5A073FA9189EF526DBB3F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B55C20F521B4607F006B1310 /* SideMenu.framework */,
 				B5A411FA21B0659D008C281F /* GCCalendar.framework */,
 				9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */,
 			);
@@ -350,12 +354,14 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Planner/Pods-Planner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GCCalendar/GCCalendar.framework",
+				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCCalendar.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

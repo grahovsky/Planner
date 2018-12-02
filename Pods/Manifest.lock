@@ -1,16 +1,20 @@
 PODS:
   - GCCalendar (2.4.1)
+  - SideMenu (5.0.3)
 
 DEPENDENCIES:
   - GCCalendar
+  - SideMenu
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - GCCalendar
+    - SideMenu
 
 SPEC CHECKSUMS:
   GCCalendar: b9d584a3e437f9af5b0ab23030e7ed46affc3b23
+  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
 
-PODFILE CHECKSUM: 4af592d6a5435eb6ab20e7ae3a9d10882638a02e
+PODFILE CHECKSUM: 2f6d9c504887f9e6716c3b2b71c0b1c5afb21c26
 
 COCOAPODS: 1.5.3

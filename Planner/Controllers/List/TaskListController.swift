@@ -255,10 +255,12 @@ class TaskListController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         
-        switch segue.identifier { // проверяем название segue
+        guard let identifier = segue.identifier else {
+            return
+        }
+        
+        switch identifier { // проверяем название segue
         case "UpdateTask":
             
             // приводим sender к типу ячейки

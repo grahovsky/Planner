@@ -7,5 +7,6 @@ target 'Planner' do
 
   # Pods for Planner
 pod 'GCCalendar'
+pod 'SideMenu'
 
 end
