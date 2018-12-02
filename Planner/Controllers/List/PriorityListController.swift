@@ -22,7 +22,8 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         DAO = PriorityDaoDbImpl.current
         DAO.getAll()
         
-        DAO.items.sort(by: { $0.index < $1.index })
+        // используем sortDescriptors в DAO
+        //DAO.items.sort(by: { $0.index < $1.index })
     }
     
     // MARK: @IBActions

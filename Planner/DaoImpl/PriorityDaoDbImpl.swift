@@ -23,6 +23,10 @@ class PriorityDaoDbImpl: CommonSearchDAO{
     func getAll() -> [Item] {
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
+        // добавляем сортировку
+        let sort = NSSortDescriptor(key: #keyPath(Priority.index), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
+        
         do {
             items = try context.fetch(fetchRequest)
         } catch {
@@ -70,6 +74,10 @@ class PriorityDaoDbImpl: CommonSearchDAO{
         
         // добавляем предикат в контейнер запоса
         fetchRequest.predicate = predicate
+        
+        // добавляем сортировку
+        let sort = NSSortDescriptor(key: #keyPath(Priority.index), ascending: true)
+        fetchRequest.sortDescriptors = [sort]
         
         do {
             items = try context.fetch(fetchRequest) // выполняем запрос с предикатом (предикатов может быть много)

@@ -28,6 +28,10 @@ class TaskDaoDbImpl: CommonSearchDAO {
 
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
+        // добавляем сортировку
+        let sort = NSSortDescriptor(key: #keyPath(Task.name), ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+        fetchRequest.sortDescriptors = [sort]
+        
         do {
             items = try context.fetch(fetchRequest)
         } catch {
@@ -76,6 +80,10 @@ class TaskDaoDbImpl: CommonSearchDAO {
         
         // добавляем предикат в контейнер запоса
         fetchRequest.predicate = predicate
+        
+        // добавляем сортировку
+        let sort = NSSortDescriptor(key: #keyPath(Task.name), ascending: true, selector: #selector(NSString.caseInsensitiveCompare(_:)))
+        fetchRequest.sortDescriptors = [sort]
         
         do {
             items = try context.fetch(fetchRequest) // выполняем запрос с предикатом (предикатов может быть много)
