@@ -37,6 +37,8 @@
 		B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */; };
 		B522E35221AB2AE800B8FAF8 /* TaskInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */; };
 		B546231E21AE617000B81B1F /* CommonSearchDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546231D21AE617000B81B1F /* CommonSearchDAO.swift */; };
+		B55C20F221B3252B006B1310 /* DatetimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F121B3252B006B1310 /* DatetimePickerController.swift */; };
+		B55C20F421B3263D006B1310 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */; };
 		B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A411FA21B0659D008C281F /* GCCalendar.framework */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +77,8 @@
 		B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTapButton.swift; sourceTree = "<group>"; };
 		B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoController.swift; sourceTree = "<group>"; };
 		B546231D21AE617000B81B1F /* CommonSearchDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSearchDAO.swift; sourceTree = "<group>"; };
+		B55C20F121B3252B006B1310 /* DatetimePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatetimePickerController.swift; sourceTree = "<group>"; };
+		B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B5A411FA21B0659D008C281F /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
@@ -117,6 +121,7 @@
 				B50B860921A7397700AD0AB8 /* CrudExtension.swift */,
 				220CD7DE201B5C97001B1D2D /* TaskExtension.swift */,
 				220CD7E0201B5CDC001B1D2D /* DateExtension.swift */,
+				B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -251,6 +256,7 @@
 			children = (
 				22759C721FDEA6E500E9A1E0 /* TaskDetailsController.swift */,
 				B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */,
+				B55C20F121B3252B006B1310 /* DatetimePickerController.swift */,
 			);
 			path = TaskDetails;
 			sourceTree = "<group>";
@@ -389,6 +395,7 @@
 				B522E35221AB2AE800B8FAF8 /* TaskInfoController.swift in Sources */,
 				220CD7DF201B5C97001B1D2D /* TaskExtension.swift in Sources */,
 				B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */,
+				B55C20F221B3252B006B1310 /* DatetimePickerController.swift in Sources */,
 				220CD7E1201B5CDC001B1D2D /* DateExtension.swift in Sources */,
 				22759C731FDEA6E500E9A1E0 /* TaskDetailsController.swift in Sources */,
 				B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */,
@@ -399,6 +406,7 @@
 				22759C711FDEA6E500E9A1E0 /* AppDelegate.swift in Sources */,
 				B522E34721A9DFC200B8FAF8 /* PriorityListCell.swift in Sources */,
 				B546231E21AE617000B81B1F /* CommonSearchDAO.swift in Sources */,
+				B55C20F421B3263D006B1310 /* UIViewControllerExtension.swift in Sources */,
 				22A98B822025922E0051183B /* TaskDaoDbImpl.swift in Sources */,
 				B522E33B21A98E3E00B8FAF8 /* TaskInfoCell.swift in Sources */,
 				22A98B802025922E0051183B /* PriorityDaoDbImpl.swift in Sources */,

@@ -5,8 +5,6 @@ import CoreData
 //контроллер для отображения списка задач
 class TaskListController: UITableViewController {
 
-    let dateFormatter = DateFormatter()
-
     let taskDAO = TaskDaoDbImpl.current
     let categoryDAO = CategoryDaoDbImpl.current
     let priorityDAO = PriorityDaoDbImpl.current
@@ -48,9 +46,6 @@ class TaskListController: UITableViewController {
 //
 //        task.deadline = someDateTime
 //        try! taskDao.context.save()
-        
-        dateFormatter.dateStyle = .short
-        dateFormatter.timeStyle = .none
         
         setupSearchController()
 
@@ -137,27 +132,7 @@ class TaskListController: UITableViewController {
             }
             
             // текст для отображения кол-ва дней по задаче
-            if let diff = task.daysLeft(){
-                
-                switch diff {
-                case 0:
-                    cell.labelDeadline.text = "Сегодня" // TODO: локализация
-                case 1:
-                    cell.labelDeadline.text = "Завтра"
-                case 0...:
-                    cell.labelDeadline.text = "\(diff) дн."
-                    
-                case ..<0:
-                    cell.labelDeadline.textColor = .red
-                    cell.labelDeadline.text = "\(diff) дн."
-                    
-                default:
-                    cell.labelDeadline.text = ""
-                }
-                
-            } else {
-                cell.labelDeadline.text = ""
-            }
+            handleDeadline(label: cell.labelDeadline, data: task.deadline)
             
             if task.completed {
                 

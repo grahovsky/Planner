@@ -1,5 +1,6 @@
 
 import Foundation
+import UIKit
 
 // доп. функции для работы задачами
 extension Task {
@@ -14,7 +15,7 @@ extension Task {
         return (self.deadline?.offsetFrom(date: Date().today))!
 
     }
-
+    
 
 }
 

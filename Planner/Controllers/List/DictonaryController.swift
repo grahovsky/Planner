@@ -74,13 +74,13 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
     
     func cancel() {
         
-        navigationController?.popViewController(animated: true)
+        closeController()
         
     }
     
     func save() {
         
-        cancel()
+        closeController()
         delegаte.done(source: self, data: selectedItem)
         
     }

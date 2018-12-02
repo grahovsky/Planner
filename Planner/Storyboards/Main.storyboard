@@ -253,9 +253,23 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BX8-BH-vTH">
-                                                    <rect key="frame" x="10" y="5" width="325" height="33.5"/>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aK1-WF-2ik">
+                                                    <rect key="frame" x="10" y="5" width="265" height="33.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <state key="normal" title="Button">
+                                                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    </state>
+                                                    <connections>
+                                                        <action selector="tapDatetimePicker:" destination="BYZ-38-t0r" eventType="touchUpInside" id="90F-Nq-mau"/>
+                                                        <segue destination="C7x-yz-1H6" kind="presentation" identifier="SelectDatetime" id="rxE-tU-3WS"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="labelDeadline" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7A1-nU-iRN">
+                                                    <rect key="frame" x="280" y="5" width="60" height="33.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="60" id="xWc-gJ-b5U"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -272,17 +286,22 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="BX8-BH-vTH" firstAttribute="leading" secondItem="6tA-2g-yLO" secondAttribute="leading" constant="10" id="2Qj-dv-0bf"/>
+                                                <constraint firstAttribute="bottom" secondItem="7A1-nU-iRN" secondAttribute="bottom" constant="5" id="4dq-9I-58k"/>
+                                                <constraint firstItem="7A1-nU-iRN" firstAttribute="leading" secondItem="aK1-WF-2ik" secondAttribute="trailing" constant="5" id="OiS-FE-0M6"/>
+                                                <constraint firstItem="0Ce-bb-LV9" firstAttribute="leading" secondItem="7A1-nU-iRN" secondAttribute="trailing" constant="5" id="Tbk-sk-nxT"/>
+                                                <constraint firstItem="7A1-nU-iRN" firstAttribute="top" secondItem="6tA-2g-yLO" secondAttribute="top" constant="5" id="WVp-3l-gfR"/>
                                                 <constraint firstItem="0Ce-bb-LV9" firstAttribute="centerY" secondItem="6tA-2g-yLO" secondAttribute="centerY" id="WbS-uR-ydn"/>
-                                                <constraint firstItem="BX8-BH-vTH" firstAttribute="trailing" secondItem="0Ce-bb-LV9" secondAttribute="leading" constant="-10" id="Zlb-eu-0hN"/>
-                                                <constraint firstAttribute="bottom" secondItem="BX8-BH-vTH" secondAttribute="bottom" constant="5" id="qc2-tA-Mig"/>
-                                                <constraint firstItem="BX8-BH-vTH" firstAttribute="top" secondItem="6tA-2g-yLO" secondAttribute="top" constant="5" id="yK0-wc-7xV"/>
+                                                <constraint firstItem="aK1-WF-2ik" firstAttribute="leading" secondItem="6tA-2g-yLO" secondAttribute="leading" constant="10" id="XYH-Et-605"/>
+                                                <constraint firstItem="aK1-WF-2ik" firstAttribute="top" secondItem="6tA-2g-yLO" secondAttribute="top" constant="5" id="gZk-sy-2j2"/>
+                                                <constraint firstItem="7A1-nU-iRN" firstAttribute="centerY" secondItem="6tA-2g-yLO" secondAttribute="centerY" id="gte-zG-KzW"/>
+                                                <constraint firstAttribute="bottom" secondItem="aK1-WF-2ik" secondAttribute="bottom" constant="5" id="lpx-BP-Lf5"/>
                                                 <constraint firstAttribute="trailing" secondItem="0Ce-bb-LV9" secondAttribute="trailing" constant="10" id="z6b-hd-jb5"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="buttonClearDeadline" destination="0Ce-bb-LV9" id="wbO-It-TsO"/>
-                                            <outlet property="labelTaskDeadLine" destination="BX8-BH-vTH" id="KUf-jq-K7x"/>
+                                            <outlet property="buttonDatetimePicker" destination="aK1-WF-2ik" id="p79-KR-29T"/>
+                                            <outlet property="labelDeadline" destination="7A1-nU-iRN" id="0fo-9p-MWU"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellTaskInfo" rowHeight="120" id="ES2-ap-YOI" customClass="TaskInfoCell" customModule="Planner" customModuleProvider="target">
@@ -429,6 +448,86 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZPW-8s-T15" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="958" y="886"/>
+        </scene>
+        <!--Datetime Picker Controller-->
+        <scene sceneID="rBk-Si-K66">
+            <objects>
+                <viewController id="C7x-yz-1H6" customClass="DatetimePickerController" customModule="Planner" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7tW-4j-zeM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dcW-6M-Mj6">
+                                <rect key="frame" x="0.0" y="20" width="375" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qa4-b8-RTe">
+                                        <rect key="frame" x="0.0" y="0.0" width="125" height="40"/>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="tapCancel:" destination="C7x-yz-1H6" eventType="touchUpInside" id="cl0-IE-IEL"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hg2-8P-EG2">
+                                        <rect key="frame" x="125" y="0.0" width="125" height="40"/>
+                                        <state key="normal" title="Today"/>
+                                        <connections>
+                                            <action selector="tapToday:" destination="C7x-yz-1H6" eventType="touchUpInside" id="BBL-dc-TRE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqY-Oa-LI5">
+                                        <rect key="frame" x="250" y="0.0" width="125" height="40"/>
+                                        <state key="normal" title="Save"/>
+                                        <connections>
+                                            <action selector="tapSave:" destination="C7x-yz-1H6" eventType="touchUpInside" id="4Gb-0O-JeO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="hrv-ct-Cwh"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDd-RO-PCF" customClass="GCCalendarView" customModule="GCCalendar">
+                                <rect key="frame" x="0.0" y="60" width="375" height="567"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="jXN-XN-2li">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MtA-X9-wFy">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="1SY-O6-diw"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="jXN-XN-2li" firstAttribute="top" secondItem="DDd-RO-PCF" secondAttribute="bottom" id="2Yl-Lw-Nh0"/>
+                            <constraint firstItem="zV4-MJ-KxQ" firstAttribute="trailing" secondItem="dcW-6M-Mj6" secondAttribute="trailing" id="Djg-mh-g5z"/>
+                            <constraint firstItem="DDd-RO-PCF" firstAttribute="leading" secondItem="zV4-MJ-KxQ" secondAttribute="leading" id="E4q-jz-hy6"/>
+                            <constraint firstItem="zV4-MJ-KxQ" firstAttribute="trailing" secondItem="jXN-XN-2li" secondAttribute="trailing" id="Ff5-Uk-KBD"/>
+                            <constraint firstItem="DDd-RO-PCF" firstAttribute="top" secondItem="dcW-6M-Mj6" secondAttribute="bottom" id="LLY-EL-Dmw"/>
+                            <constraint firstItem="dcW-6M-Mj6" firstAttribute="leading" secondItem="zV4-MJ-KxQ" secondAttribute="leading" id="OBW-Z5-Qy1"/>
+                            <constraint firstItem="dcW-6M-Mj6" firstAttribute="top" secondItem="zV4-MJ-KxQ" secondAttribute="top" id="Sxy-3b-qjP"/>
+                            <constraint firstItem="zV4-MJ-KxQ" firstAttribute="bottom" secondItem="jXN-XN-2li" secondAttribute="bottom" id="XfG-bc-HjB"/>
+                            <constraint firstItem="jXN-XN-2li" firstAttribute="leading" secondItem="zV4-MJ-KxQ" secondAttribute="leading" id="ZxO-ZC-cfz"/>
+                            <constraint firstItem="zV4-MJ-KxQ" firstAttribute="trailing" secondItem="DDd-RO-PCF" secondAttribute="trailing" id="bpo-sY-Hzx"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="zV4-MJ-KxQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="calendarView" destination="DDd-RO-PCF" id="9yf-43-tHq"/>
+                        <outlet property="labelMonthName" destination="MtA-X9-wFy" id="zZm-me-VPC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="AqU-Sa-us4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="959" y="-652"/>
         </scene>
         <!--Title-->
         <scene sceneID="gue-bu-fKK">
