@@ -139,9 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				22162C432011D694000AAED5 /* TaskListController.swift */,
-				B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */,
 				B522E34221A9D58200B8FAF8 /* CategoryListController.swift */,
 				B522E34A21A9E07800B8FAF8 /* PriorityListController.swift */,
+				B522E34C21AAEFEA00B8FAF8 /* DictonaryController.swift */,
 			);
 			path = List;
 			sourceTree = "<group>";

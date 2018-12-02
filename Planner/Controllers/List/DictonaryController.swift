@@ -91,10 +91,22 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
         
     }
     
+    
+    // MARK: must implemented
+    
+    // получение всех объектов с сортировкой
+    func getAll() -> [T.Item]{
+        fatalError("not implemented")
+    }
+    
+    // поиск объектов с сортировкой
+    func search(_ text:String) -> [T.Item]{
+        fatalError("not implemented")
+    }
+    
+    // этот метод должен реализовывать дочерний класс
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        fatalError("not implemented") //обязательно override
-        
+        fatalError("not implemented")
     }
     
     //MARK: search
@@ -133,16 +145,12 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        if !(searchBar.text?.isEmpty)! { // искать только если есть текст
+        if !(searchBar.text?.isEmpty)!{ // искать, только если есть текст
             searchBarText = searchBar.text!
-            DAO.search(text: searchController.searchBar.text!)
-            dictTableView.reloadData()
-            currentCheckedIndexPath = nil // обнуляем галочку
-            searchBar.placeholder = searchBarText // сохраняем поисковый текст
-        } else {
-            DAO.getAll()
-            dictTableView.reloadData()
-            searchBar.placeholder = "Начните вводить название"
+            search(searchBarText) // этот метод должен быть реализован в дочернем классе
+            dictTableView.reloadData()  //  обновляем всю таблицу
+            currentCheckedIndexPath = nil // чтобы не было двойного выделения значений
+            searchBar.placeholder = searchBarText // сохраняем поисковый текст для отображения, если окно поиска будет неактивным
         }
     }
     
@@ -161,8 +169,9 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
     
     // при отмене поиска показываем все записи
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        searchBar.placeholder = "Начните вводить название"
-        DAO.getAll()
+        searchBarText = ""
+        getAll() // этот метод должен быть реализован в дочернем классе
         dictTableView.reloadData()
+        searchBar.placeholder = "Начните набирать название"
     }
 }

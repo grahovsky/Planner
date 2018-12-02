@@ -19,8 +19,9 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         
         // Do any additional setup after loading the view.
         dictTableView = tableView
+        
         DAO = PriorityDaoDbImpl.current
-        DAO.getAll()
+        DAO.getAll(sortType:PrioritySortType.index)
         
         // используем sortDescriptors в DAO
         //DAO.items.sort(by: { $0.index < $1.index })
@@ -72,5 +73,13 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         
     }
     
+    // MARK: override
+    override func getAll() -> [Priority] {
+        return DAO.getAll(sortType: PrioritySortType.index)
+    }
+    
+    override func search(_ text: String) -> [Priority] {
+        return DAO.search(text: text, sortType: PrioritySortType.index)
+    }
     
 }

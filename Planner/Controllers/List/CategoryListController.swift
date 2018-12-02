@@ -18,7 +18,7 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         // Do any additional setup after loading the view.
         dictTableView = tableView
         DAO = CategoryDaoDbImpl.current
-        DAO.getAll()
+        DAO.getAll(sortType:CategorySortType.name)
     }
     
     
@@ -66,6 +66,15 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         
         return cell
         
+    }
+    
+    // MARK: override
+    override func getAll() -> [Category] {
+        return DAO.getAll(sortType: CategorySortType.name)
+    }
+    
+    override func search(_ text: String) -> [Category] {
+        return DAO.search(text: text, sortType: CategorySortType.name)
     }
     
 }

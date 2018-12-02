@@ -9,6 +9,8 @@ class PriorityDaoDbImpl: CommonSearchDAO{
     //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
     typealias Item = Priority
     
+    typealias SortType = PrioritySortType
+    
     // паттерн синглтон
     static let current = PriorityDaoDbImpl()
     
@@ -20,12 +22,14 @@ class PriorityDaoDbImpl: CommonSearchDAO{
 
     // MARK: dao
 
-    func getAll() -> [Item] {
+    func getAll(sortType: SortType?) -> [Item] {
+        
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
 
-        // добавляем сортировку
-        let sort = NSSortDescriptor(key: #keyPath(Priority.index), ascending: true)
-        fetchRequest.sortDescriptors = [sort]
+        // добавляем поле для сортировки
+        if let sortType = sortType {
+            fetchRequest.sortDescriptors = [sortType.getDescriptor(sortType)] // в зависимости от значения sortType - получаем нужное поле для сортировки
+        }
         
         do {
             items = try context.fetch(fetchRequest)
@@ -54,7 +58,7 @@ class PriorityDaoDbImpl: CommonSearchDAO{
     }
 
     // поиск по имени задачи
-    func search(text: String) -> [Priority] {
+    func search(text: String, sortType:SortType?) -> [Item] {
         
         // объект-контейнер для выборки данных
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -75,9 +79,10 @@ class PriorityDaoDbImpl: CommonSearchDAO{
         // добавляем предикат в контейнер запоса
         fetchRequest.predicate = predicate
         
-        // добавляем сортировку
-        let sort = NSSortDescriptor(key: #keyPath(Priority.index), ascending: true)
-        fetchRequest.sortDescriptors = [sort]
+        // добавляем поле для сортировки
+        if let sortType = sortType{
+            fetchRequest.sortDescriptors = [sortType.getDescriptor(sortType)] // в зависимости от значения sortType - получаем нужное поле для сортировки
+        }
         
         do {
             items = try context.fetch(fetchRequest) // выполняем запрос с предикатом (предикатов может быть много)
@@ -89,4 +94,17 @@ class PriorityDaoDbImpl: CommonSearchDAO{
         
     }
  
+}
+
+// возможные поля для сортировки списка приоритетов
+enum PrioritySortType: Int{
+    case index = 0
+    
+    // получить объект сортировки для добавления в fetchRequest
+    func getDescriptor(_ sortType:PrioritySortType) -> NSSortDescriptor{
+        switch sortType {
+        case .index:
+            return NSSortDescriptor(key: #keyPath(Priority.index), ascending: true, selector: #selector(NSString.caseInsensitiveCompare))
+        }
+    }
 }

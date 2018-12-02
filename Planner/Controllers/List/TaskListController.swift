@@ -22,6 +22,9 @@ class TaskListController: UITableViewController {
        return taskDAO.items.count
     }
 
+    var currentScopeIndex = 0 // текущая выбранная кнопка сортировки в search bar
+    var searchBarActive = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,6 +49,8 @@ class TaskListController: UITableViewController {
 //
 //        task.deadline = someDateTime
 //        try! taskDao.context.save()
+        
+        taskDAO.getAll(sortType: TaskSortType(rawValue: currentScopeIndex)!)
         
         setupSearchController()
 
@@ -315,6 +320,23 @@ class TaskListController: UITableViewController {
         
     }
     
+    //MARK: update table
+    
+    func updateTable() {
+        
+        let sortType = TaskSortType(rawValue: currentScopeIndex)!
+        
+        if searchBarActive && searchController.searchBar.text != nil && !(searchController.searchBar.text?.isEmpty)! {
+            taskDAO.search(text: searchController.searchBar.text!, sortType: sortType)
+        } else {
+            taskDAO.getAll(sortType: sortType)
+        }
+        
+        tableView.reloadData()
+        
+    }
+    
+    
     //MARK: DAO
     
     func deleteTask(_ indexPath: IndexPath) {
@@ -359,6 +381,8 @@ class TaskListController: UITableViewController {
         task.name = sender.text
         sender.text = nil
         createTask(task)
+        
+        updateTable()
     
     }
     
@@ -404,6 +428,8 @@ extension TaskListController: ActionResultDelegate {
                 createTask(task)
                 
             }
+            
+            updateTable()
         }
         
     }
@@ -433,19 +459,29 @@ extension TaskListController: UISearchBarDelegate {
         return true
     }
     
+    // начали редактировать текст поиска
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        searchBarActive = true // есть также метод searchBar.isActive - но значение в него может быть записано позднее, чем это нужно нам, поэтому используем ручной способ - как только пользователь нажал на строку поиска - сохраняем true в переменную searchBarActive
+    }
+    
     // поиск после окончания ввода данных нажатия Найти
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
-        if !(searchController.searchBar.text?.isEmpty)! { // искать только если есть текст
-            taskDAO.search(text: searchController.searchBar.text!)
-            tableView.reloadData()
-        }
+        updateTable()
     }
     
     // при отмене поиска показываем все записи
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        
+        // при первом открытии и закрытии поиска на форме - активировать scope buttons (такой подход связан с глюком, когда компоненты налезают друг на друга при нажатии на Отмену)
+        if !searchController.searchBar.showsScopeBar{
+            searchController.searchBar.showsScopeBar = true
+        }
+        
+        searchBarActive = false
         searchController.searchBar.text = ""
-        taskDAO.getAll()
-        tableView.reloadData()
+        
+        updateTable() // обновить список задач согласно тексту поиска (если есть), сортировке и пр.
+        
     }
     
     func setupSearchController() {
@@ -458,6 +494,9 @@ extension TaskListController: UISearchBarDelegate {
         
         searchController.searchBar.placeholder = "Поиск по названию"
         searchController.searchBar.backgroundColor = .white
+        
+        // добавляем scope buttons
+        searchController.searchBar.scopeButtonTitles = ["А-Я", "Приоритет", "Дата"]
         
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
@@ -473,5 +512,18 @@ extension TaskListController: UISearchBarDelegate {
         }
         
     }
+    
+    func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
+        
+        if currentScopeIndex == selectedScope{ // если значение не изменилось (нажали уже активную кнопку) - ничего не делаем
+            return
+        }
+        
+        currentScopeIndex = selectedScope // сохраняем выбранный scope button (способ сортировки списка задач)
+        
+        updateTable() // обновить список задач согласно тексту поиска (если есть), сортировке и пр.
+        
+    }
+    
     
 }
