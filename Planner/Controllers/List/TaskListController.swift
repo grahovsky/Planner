@@ -1,6 +1,7 @@
 
 import UIKit
 import CoreData
+import SideMenu
 
 //контроллер для отображения списка задач
 class TaskListController: UITableViewController {
@@ -53,6 +54,8 @@ class TaskListController: UITableViewController {
         taskDAO.getAll(sortType: TaskSortType(rawValue: currentScopeIndex)!)
         
         setupSearchController()
+        
+        initSlideMenu()
 
     }
 
@@ -61,6 +64,18 @@ class TaskListController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    
+    // MARK: Side Menu
+    
+    func initSlideMenu() {
+        
+        SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "SideMenu") as? UISideMenuNavigationController
+        
+        // не затемнять верхний статус бар
+        SideMenuManager.default.menuFadeStatusBar = false
+        
+    }
+    
 
     // MARK: tableView
 

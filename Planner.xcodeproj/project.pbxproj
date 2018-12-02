@@ -40,6 +40,8 @@
 		B55C20F221B3252B006B1310 /* DatetimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F121B3252B006B1310 /* DatetimePickerController.swift */; };
 		B55C20F421B3263D006B1310 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */; };
 		B55C20F621B4607F006B1310 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55C20F521B4607F006B1310 /* SideMenu.framework */; };
+		B55C20F921B46610006B1310 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F821B46610006B1310 /* SideMenuController.swift */; };
+		B55C20FC21B46659006B1310 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20FB21B46659006B1310 /* SideMenuCell.swift */; };
 		B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A411FA21B0659D008C281F /* GCCalendar.framework */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
@@ -81,6 +83,8 @@
 		B55C20F121B3252B006B1310 /* DatetimePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatetimePickerController.swift; sourceTree = "<group>"; };
 		B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B55C20F521B4607F006B1310 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B55C20F821B46610006B1310 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
+		B55C20FB21B46659006B1310 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		B5A411FA21B0659D008C281F /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
@@ -133,6 +137,7 @@
 		22162C402011D5C0000AAED5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B55C20F721B465E2006B1310 /* Menu */,
 				B522E34121A9D53B00B8FAF8 /* TaskDetails */,
 				22162C412011D5D4000AAED5 /* List */,
 			);
@@ -218,6 +223,7 @@
 		22E01EC62014C2A5004B5989 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
+				B55C20FA21B4662D006B1310 /* Menu */,
 				B522E33C21A99A1F00B8FAF8 /* TaskDetails */,
 				B522E33D21A99A2D00B8FAF8 /* List */,
 			);
@@ -271,6 +277,22 @@
 				B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */,
 			);
 			path = UIViews;
+			sourceTree = "<group>";
+		};
+		B55C20F721B465E2006B1310 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B55C20F821B46610006B1310 /* SideMenuController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		B55C20FA21B4662D006B1310 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				B55C20FB21B46659006B1310 /* SideMenuCell.swift */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -399,6 +421,7 @@
 			files = (
 				B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */,
 				B522E35221AB2AE800B8FAF8 /* TaskInfoController.swift in Sources */,
+				B55C20FC21B46659006B1310 /* SideMenuCell.swift in Sources */,
 				220CD7DF201B5C97001B1D2D /* TaskExtension.swift in Sources */,
 				B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */,
 				B55C20F221B3252B006B1310 /* DatetimePickerController.swift in Sources */,
@@ -422,6 +445,7 @@
 				B522E33521A9783200B8FAF8 /* TaskCategoryCell.swift in Sources */,
 				22E01EC82014C2FB004B5989 /* TaskListCell.swift in Sources */,
 				22759C791FDEA6E500E9A1E0 /* Planner.xcdatamodeld in Sources */,
+				B55C20F921B46610006B1310 /* SideMenuController.swift in Sources */,
 				B522E33321A9761B00B8FAF8 /* TaskNameCell.swift in Sources */,
 				B522E33721A98DFB00B8FAF8 /* TaskPriorityCell.swift in Sources */,
 				B522E34D21AAEFEA00B8FAF8 /* DictonaryController.swift in Sources */,
