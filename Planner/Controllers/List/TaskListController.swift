@@ -23,7 +23,6 @@ class TaskListController: UITableViewController {
        return taskDAO.items.count
     }
 
-    var currentScopeIndex = 0 // текущая выбранная кнопка сортировки в search bar
     var searchBarActive = false
     
     override func viewDidLoad() {
@@ -51,7 +50,7 @@ class TaskListController: UITableViewController {
 //        task.deadline = someDateTime
 //        try! taskDao.context.save()
         
-        taskDAO.getAll(sortType: TaskSortType(rawValue: currentScopeIndex)!)
+        updateTable()
         
         setupSearchController()
         
@@ -64,6 +63,14 @@ class TaskListController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        
+//        if PrefsManager.current.filterUpdate {
+//            updateTable()
+//            PrefsManager.current.filterUpdate = false
+//        }
+            
+    }
     
     // MARK: Side Menu
     
@@ -341,18 +348,27 @@ class TaskListController: UITableViewController {
     
     func updateTable() {
         
-        let sortType = TaskSortType(rawValue: currentScopeIndex)!
+        let sortType = TaskSortType(rawValue: PrefsManager.current.selectedScope)! // определяем тип сортировки по текущему выбранному значению scope button из search bar
         
+        // усли активен режим поиска и текст не пустой
         if searchBarActive && searchController.searchBar.text != nil && !(searchController.searchBar.text?.isEmpty)! {
-            taskDAO.search(text: searchController.searchBar.text!, sortType: sortType)
-        } else {
-            taskDAO.getAll(sortType: sortType)
+            taskDAO.search(text: searchController.searchBar.text!, sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showEmptyDates, showTasksCompleted: PrefsManager.current.showCompleted)
+        } else { // без поиска
+            taskDAO.search(text: nil, sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showEmptyDates, showTasksCompleted: PrefsManager.current.showCompleted)
         }
         
         tableView.reloadData()
         
     }
     
+    
+    @IBAction func filterTask(segue: UIStoryboardSegue) {
+        
+        if let source = segue.source as? FiltersController, source.changed, segue.identifier == "FilterTasks" {
+            updateTable()
+        }
+        
+    }
     
     //MARK: DAO
     
@@ -375,7 +391,11 @@ class TaskListController: UITableViewController {
         taskDAO.addOrUpdate(task)
         
         // обновляем вид нажатой строки
-        tableView.reloadRows(at: [indexPath], with: .fade)
+        if PrefsManager.current.showCompleted {
+            tableView.reloadRows(at: [indexPath], with: .top)
+        } else {
+            updateTable()
+        }
         
     }
 
@@ -514,6 +534,7 @@ extension TaskListController: UISearchBarDelegate {
         
         // добавляем scope buttons
         searchController.searchBar.scopeButtonTitles = ["А-Я", "Приоритет", "Дата"]
+        searchController.searchBar.selectedScopeButtonIndex = PrefsManager.current.selectedScope
         
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
@@ -532,11 +553,11 @@ extension TaskListController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         
-        if currentScopeIndex == selectedScope{ // если значение не изменилось (нажали уже активную кнопку) - ничего не делаем
+        if PrefsManager.current.selectedScope == selectedScope{ // если значение не изменилось (нажали уже активную кнопку) - ничего не делаем
             return
         }
         
-        currentScopeIndex = selectedScope // сохраняем выбранный scope button (способ сортировки списка задач)
+        PrefsManager.current.selectedScope = selectedScope // сохраняем выбранный scope button (способ сортировки списка задач)
         
         updateTable() // обновить список задач согласно тексту поиска (если есть), сортировке и пр.
         

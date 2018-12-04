@@ -4,8 +4,8 @@ import UIKit
 import CoreData
 
 // реализация DAO для работы с задачами
-class TaskDaoDbImpl: CommonSearchDAO {
-
+class TaskDaoDbImpl: TaskSearchDAO {
+  
     //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
     typealias Item = Task
     
@@ -60,26 +60,45 @@ class TaskDaoDbImpl: CommonSearchDAO {
     }
 
     // поиск по имени задачи
-    func search(text: String, sortType:SortType?) -> [Item] {
+    func search(text: String?, sortType: TaskSortType?, showTasksEmptyCategories: Bool, showTasksEmptyPriorities: Bool, showTasksEmptyDates: Bool, showTasksCompleted: Bool) -> [Task] {
         
         // объект-контейнер для выборки данных
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         
         // объект-контейнер для добавления условий
-        var predicate: NSPredicate
+        var predicates = [NSPredicate]()
         // массив параметров любого типа
-        var params = [Any]()
+       
+        if let text = text {
+            predicates.append(NSPredicate(format: "name CONTAINS[c] %@", text)) // [c] - case insensitive, %@ параметр
+        }
+ 
+        // не показывать задачи без категории
+        if !showTasksEmptyCategories {
+            predicates.append(NSPredicate(format: "category != nil"))
+        }
         
-        // прописываем само условие
-        let sql = "name CONTAINS[c] %@" // [c] - case insensitive, %@ параметр
+        // не показывать задачи без приоритета
+        if !showTasksEmptyPriorities {
+            predicates.append(NSPredicate(format: "priority != nil"))
+        }
         
-        params.append(text) // указываем значение параметров
+        // не показывать задачи без приоритета
+        if !showTasksEmptyDates {
+            predicates.append(NSPredicate(format: "deadline != nil"))
+        }
         
-        // добавляем условие и параметры
-        predicate = NSPredicate(format: sql, argumentArray: params)
+        // не показывать задачи без приоритета
+        if !showTasksCompleted {
+            predicates.append(NSPredicate(format: "completed == false"))
+        }
         
-        // добавляем предикат в контейнер запоса
-        fetchRequest.predicate = predicate
+        // собираем предикаты
+        // where добавлять вручную нигде добавлять не нужно (Core Data сам построит правильный запрос
+        let allPredicates = NSCompoundPredicate(type: NSCompoundPredicate.LogicalType.and, subpredicates: predicates) // все предикаты будут с условием И (AND)
+        
+        // объект-контейнер для добавления условий
+        fetchRequest.predicate = allPredicates // добавляем предикат в контейнер запоса
         
         // добавляем поле для сортировки
         if let sortType = sortType{

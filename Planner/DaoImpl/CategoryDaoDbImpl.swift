@@ -64,18 +64,8 @@ class CategoryDaoDbImpl: CommonSearchDAO {
         // объект-контейнер для выборки данных
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
         
-        // объект-контейнер для добавления условий
-        var predicate: NSPredicate
-        // массив параметров любого типа
-        var params = [Any]()
-        
-        // прописываем само условие
-        let sql = "name CONTAINS[c] %@" // [c] - case insensitive, %@ параметр
-        
-        params.append(text) // указываем значение параметров
-        
         // добавляем условие и параметры
-        predicate = NSPredicate(format: sql, argumentArray: params)
+        let predicate = NSPredicate(format: "name CONTAINS[c] %@", text) // [c] - case insensitive, %@ параметр
         
         // добавляем предикат в контейнер запоса
         fetchRequest.predicate = predicate

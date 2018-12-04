@@ -43,6 +43,8 @@
 		B55C20F921B46610006B1310 /* SideMenuController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F821B46610006B1310 /* SideMenuController.swift */; };
 		B55C20FC21B46659006B1310 /* SideMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20FB21B46659006B1310 /* SideMenuCell.swift */; };
 		B55C20FE21B47425006B1310 /* FiltersController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20FD21B47425006B1310 /* FiltersController.swift */; };
+		B55C210021B59E63006B1310 /* TaskSearchDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20FF21B59E63006B1310 /* TaskSearchDAO.swift */; };
+		B55C210321B5A5EA006B1310 /* PrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C210221B5A5EA006B1310 /* PrefsManager.swift */; };
 		B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A411FA21B0659D008C281F /* GCCalendar.framework */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
@@ -87,6 +89,8 @@
 		B55C20F821B46610006B1310 /* SideMenuController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuController.swift; sourceTree = "<group>"; };
 		B55C20FB21B46659006B1310 /* SideMenuCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuCell.swift; sourceTree = "<group>"; };
 		B55C20FD21B47425006B1310 /* FiltersController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FiltersController.swift; sourceTree = "<group>"; };
+		B55C20FF21B59E63006B1310 /* TaskSearchDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSearchDAO.swift; sourceTree = "<group>"; };
+		B55C210221B5A5EA006B1310 /* PrefsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsManager.swift; sourceTree = "<group>"; };
 		B5A411FA21B0659D008C281F /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
@@ -188,6 +192,7 @@
 		22759C6F1FDEA6E500E9A1E0 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				B55C210121B5A5C9006B1310 /* Managers */,
 				B522E34E21AAFE2300B8FAF8 /* UIViews */,
 				B522E33E21A9A1F300B8FAF8 /* Delegates */,
 				22A98B7C202592090051183B /* DaoImpl */,
@@ -209,6 +214,7 @@
 			children = (
 				B50B860721A7336200AD0AB8 /* Crud.swift */,
 				B546231D21AE617000B81B1F /* CommonSearchDAO.swift */,
+				B55C20FF21B59E63006B1310 /* TaskSearchDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -296,6 +302,14 @@
 				B55C20FB21B46659006B1310 /* SideMenuCell.swift */,
 			);
 			path = Menu;
+			sourceTree = "<group>";
+		};
+		B55C210121B5A5C9006B1310 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				B55C210221B5A5EA006B1310 /* PrefsManager.swift */,
+			);
+			path = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -442,6 +456,7 @@
 				B55C20F421B3263D006B1310 /* UIViewControllerExtension.swift in Sources */,
 				22A98B822025922E0051183B /* TaskDaoDbImpl.swift in Sources */,
 				B522E33B21A98E3E00B8FAF8 /* TaskInfoCell.swift in Sources */,
+				B55C210021B59E63006B1310 /* TaskSearchDAO.swift in Sources */,
 				22A98B802025922E0051183B /* PriorityDaoDbImpl.swift in Sources */,
 				B522E34B21A9E07800B8FAF8 /* PriorityListController.swift in Sources */,
 				22162C442011D694000AAED5 /* TaskListController.swift in Sources */,
@@ -453,6 +468,7 @@
 				B522E33321A9761B00B8FAF8 /* TaskNameCell.swift in Sources */,
 				B522E33721A98DFB00B8FAF8 /* TaskPriorityCell.swift in Sources */,
 				B522E34D21AAEFEA00B8FAF8 /* DictonaryController.swift in Sources */,
+				B55C210321B5A5EA006B1310 /* PrefsManager.swift in Sources */,
 				B522E34521A9D5FF00B8FAF8 /* CategoryListCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

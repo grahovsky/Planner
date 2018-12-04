@@ -16,14 +16,23 @@ class FiltersController: UITableViewController {
     @IBOutlet weak var switchEmptyDates: UISwitch!
     @IBOutlet weak var switchCompleted: UISwitch!
     
+    let filterSection = 0
+    
+    var initState: (Bool, Bool, Bool, Bool)!
+    
+    var changed:Bool {
+        return initState != (PrefsManager.current.showEmptyCategories, PrefsManager.current.showEmptyPriorities, PrefsManager.current.showEmptyDates, PrefsManager.current.showCompleted)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        switchEmptyCategories.isOn = PrefsManager.current.showEmptyCategories
+        switchEmptyPriorities.isOn = PrefsManager.current.showEmptyPriorities
+        switchEmptyDates.isOn = PrefsManager.current.showEmptyDates
+        switchCompleted.isOn = PrefsManager.current.showCompleted
+        
+        initState = (PrefsManager.current.showEmptyCategories, PrefsManager.current.showEmptyPriorities, PrefsManager.current.showEmptyDates, PrefsManager.current.showCompleted)
     }
 
     // MARK: - Table view
@@ -42,20 +51,38 @@ class FiltersController: UITableViewController {
    // MARK: actions
     
     @IBAction func switchedEmptyPriorities(_ sender: UISwitch) {
+        PrefsManager.current.showEmptyPriorities = sender.isOn // считаем значение switch (true, false)
     }
     
     @IBAction func switchedEmptyCategories(_ sender: UISwitch) {
+        PrefsManager.current.showEmptyCategories = sender.isOn
     }
 
     @IBAction func switchedEmptyDates(_ sender: UISwitch) {
+        PrefsManager.current.showEmptyDates = sender.isOn
     }
     
     @IBAction func switchedCompleted(_ sender: UISwitch) {
+        PrefsManager.current.showCompleted = sender.isOn
+    }
+ 
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == filterSection {
+            return "Выберите значения"
+        }
+        
+        return ""
     }
     
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 50
+    }
     
+    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 60
+    }
     
-    
-    
-
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
