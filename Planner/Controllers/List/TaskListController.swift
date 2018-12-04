@@ -389,12 +389,25 @@ class TaskListController: UITableViewController {
         let task = taskDAO.items[indexPath.row]
         task.completed = !task.completed
         taskDAO.addOrUpdate(task)
+        tableView.reloadRows(at: [indexPath], with: .fade)
         
-        // обновляем вид нажатой строки
-        if PrefsManager.current.showCompleted {
-            tableView.reloadRows(at: [indexPath], with: .top)
-        } else {
-            updateTable()
+        // показать анимацию обновления строки с задержкой, и только затем скрыть строку (при необходимости)
+        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
+            
+            // если отключен показ завершенных задач
+            if !PrefsManager.current.showCompleted {
+                
+                
+                // удалить задачу из коллекции и таблицы
+                self.taskDAO.items.remove(at: indexPath.row)
+                
+                // если это последняя запись - удаляем всю секцию, иначе будет ошибка при попытке отображения таблицы
+                if self.taskDAO.items.isEmpty {
+                    self.tableView.deleteSections(IndexSet([self.taskListSection]), with: .top)
+                } else {
+                    self.tableView.deleteRows(at: [indexPath], with: .top)
+                }
+            }
         }
         
     }
