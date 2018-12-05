@@ -72,12 +72,6 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
         
     }
     
-    func cancel() {
-        
-        closeController()
-        
-    }
-    
     func save() {
         
         closeController()

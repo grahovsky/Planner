@@ -64,5 +64,75 @@ extension UIViewController {
         
     }
     
+    func confirmAction(text: String, actionClosure: @escaping () -> Void) {
+        
+        // объект диалогового окна
+        let dialogMessage = UIAlertController(title: "Подтверждение", message: text, preferredStyle: .actionSheet)
+        
+        // действие ок
+        let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
+            actionClosure()
+        }
+        
+        // действие отмена
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+       
+        // добавить действия в диалоговое окно
+        dialogMessage.addAction(okAction)
+        dialogMessage.addAction(cancelAction)
+        
+        // показать диалоговое окно
+        present(dialogMessage, animated: true, completion: nil)
+        
+    }
+    
+    // добавление кнопок Сохранить и Отмена (при выборе справочного значения)
+    // Selector - это ссылка на какой-либо метод
+    func createSaveCancelButtons(save: Selector, cancel: Selector = #selector(cancel)) { // по умолчанию - cancel
+        
+        // короткая запись создания кнопки
+        // реализацию cancel передаем в параметре
+        let buttonCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: cancel)
+        navigationItem.leftBarButtonItem = buttonCancel
+        
+        // короткая запись создания кнопки
+        // реализацию save передаем в параметре
+        let buttonSave = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: save)
+        navigationItem.rightBarButtonItem = buttonSave
+        
+    }
+    
+    // добавление кнопок Добавить и Закрыть (при выборе справочного значения)
+    func createAddCloseButtons(add: Selector, close: Selector = #selector(cancel)) { // по умолчанию - cancel
+        
+        
+        // полная запись создания кнопки
+        let buttonClose = UIBarButtonItem()
+        buttonClose.target = self
+        buttonClose.action = close
+        buttonClose.title = "Закрыть"
+        navigationItem.leftBarButtonItem = buttonClose
+        
+ 
+        // короткая запись создания кнопки
+        // реализацию save передаем в параметре
+        let buttonAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: add)
+        navigationItem.rightBarButtonItem = buttonAdd
+        
+    }
+    
+    // по-умолчанию на cancel будет закрываться контроллер (если другой контроллер у себя не переопределит метод)
+    @objc func cancel() {
+        closeController()
+    }
+    
+    // проверяет пустая строка или нет
+    func isEmptyTrim(_ str: String?) -> Bool {
+        if let value = str?.trimmingCharacters(in: .whitespacesAndNewlines), !value.isEmpty {
+            return false // не пусто
+        } else {
+            return true
+        }
+    }
     
 }
