@@ -314,6 +314,8 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             if let controller = segue.destination as? CategoryListController {
                 controller.selectedItem = taskCategory
                 controller.delegаte = self
+                controller.navigationTitle = "Выбор"
+                controller.showMode = .select
             }
         case "SelectPriority":
             if let controller = segue.destination as? PriorityListController {

@@ -10,7 +10,7 @@ import UIKit
 
 // общий класс для контроллеров по работе со справочными значениями (в данный момент: категории, приоритеты)
 // процесс заполнения таблиц будет реализовываться в дочерних классах, в данном классе - весь общий функционал
-class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating, UISearchControllerDelegate {
+class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
 
     var dictTableView: UITableView! // ссылка на компонент, нужно заполнять по факту уже из дочернего класса
     
@@ -26,11 +26,20 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
     
     var searchBarText:String! // текущий текст для поиска
     
+    var navigationTitle: String!
+    
     // для сокращения кода
     var searchBar: UISearchBar {
         return searchController.searchBar
     }
     
+    let sectionList = 0
+    
+    var showMode: ShowMode!
+    
+    var initState: (Bool, Bool, Bool, Bool)!
+    
+    var changed = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,12 +50,38 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
         
     }
     
-    
-    func checkItem(_ sender: UIView) {
+    // создать нужные кнопки в панели навигации (в зависимости от режима отображения showMode)
+    func initNavBar() {
         
-        // определяем индекс строки по нажатой кнопке в ячейке
-        let viewPosition = sender.convert(CGPoint.zero, to: dictTableView) // координата относительно tableView
-        let indexPath = dictTableView.indexPathForRow(at: viewPosition)!
+        navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        // в данном режиме разрешаем выбирать только одну строку
+        if showMode == .select {
+            // в параметрах передаем функции, которые будут вызываться по нажатию на кнопки
+            createSaveCancelButtons(save: #selector(tapSave), cancel: #selector(tapCancel))
+        } else if showMode == .edit {
+            
+            createAddCloseButtons(add: #selector(tapAdd), close: #selector(tapClose))
+            
+        }
+        
+        self.title = navigationTitle // название меняется в зависимости от типа действий (редактирование, выбор для задачи)
+        
+    }
+    
+    
+    // удаление строки
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+            deleteItem(indexPath)
+        } else if editingStyle == .insert {
+            //create new instance
+        }
+        
+    }
+    
+    func checkItem(_ indexPath: IndexPath) {
         
         let item = DAO.items[indexPath.row]
         
@@ -79,10 +114,90 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
         
     }
     
+    func add() {
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return DAO.items.count
         
+    }
+    
+    // обновляет значение в БД и списке
+    func updateItem(_ item: T.Item) {
+        
+        // обновляем последний нажатый компонент
+        if let selectedIndexPath = dictTableView.indexPathForSelectedRow {
+            DAO.addOrUpdate(item)
+            dictTableView.reloadRows(at: [selectedIndexPath], with: .none)
+        }
+        
+    }
+    
+    func deleteItem(_ indexPath: IndexPath) {
+        
+        DAO.delete(DAO.items[indexPath.row])
+        DAO.items.remove(at: indexPath.row) // удаляем из коллекции
+        
+        if DAO.items.count == 0 {
+            dictTableView.deleteSections([sectionList], with: .left)
+        } else {
+            dictTableView.deleteRows(at: [indexPath], with: .left)
+        }
+        
+        changed = true // оптимизация
+        
+    }
+    
+    /* последовательность действий (чтобы корректно работал компонент tableView):
+     
+     1) добавить запись в БД и в коллекцию
+     2) если это первая запись - добавляем секцию (которая автоматически обновит свой контент и отобразит добавленную запись)
+     если уже были записи - просто добавляем строку (секция уже существует, не нужно ее добавлять)
+     */
+    
+    func addItem(_ item:T.Item){
+        
+        DAO.addOrUpdate(item)
+        
+        if DAO.items.count == 1 { // если добавляется первая запись - добавить сначала секции (в секции автоматически отбразится добавленная строка, не нужно делать insertRows)
+            
+            dictTableView.insertSections([sectionList] , with: .top)
+            
+        } else {
+            
+            // добавить новую строку с анимацией
+            
+            let indexPath = IndexPath(row: DAO.items.count-1, section: sectionList)
+            
+            dictTableView.insertRows(at: [indexPath], with: .top)
+            
+        }
+        
+        
+    }
+    
+    
+    // MARK: #selectors
+    
+    // два действия при редактировании
+    @objc private func tapClose() {
+        performSegue(withIdentifier: "UpdateTasksCatigories", sender: self)
+    }
+    
+    @objc private func tapAdd() {
+        add()
+    }
+    
+    
+    // два действия при выборе справочного значения для задачи
+    @objc private func tapSave() {
+        save()
+    }
+    
+    @objc private func tapCancel() {
+        cancel()
     }
     
     
@@ -100,6 +215,11 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
     
     // этот метод должен реализовывать дочерний класс
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        fatalError("not implemented")
+    }
+    
+    // этот метод должен реализовывать дочерний класс
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         fatalError("not implemented")
     }
     
@@ -168,4 +288,9 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
         dictTableView.reloadData()
         searchBar.placeholder = "Начните набирать название"
     }
+}
+
+enum ShowMode {
+    case edit // добавление, редактирование
+    case select // выбор значения для задачи
 }

@@ -86,6 +86,38 @@ extension UIViewController {
         
     }
     
+    func showDialog(title: String, message: String, initValue: String = "", actionClousure: @escaping (String)->Void) {
+        
+        // запускаем асинхронно, чтобы не было задержки при показе диалогового окна, если открыть диалоговое окно в главном потоке - могут быть лаги - окно не сразу показывается
+        DispatchQueue.main.async {
+            
+            // показываем диалоговое окно с текстовым компонентом для редактирования названия
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            // добавляем текстовое поле в диалоговое окно
+            alert.addTextField(configurationHandler: nil)
+            
+            //кнопка очистки
+            alert.textFields?[0].clearButtonMode = .whileEditing //кнопка очистки
+            
+            alert.textFields?[0].text = initValue
+            
+            // добавляем действие для кнопки ОК
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                
+                actionClousure(alert.textFields?[0].text ?? "")
+                
+            }))
+            
+            // при нажатии на Cancel - ничего не делаем (окно закроется само)
+            alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+            self.present(alert, animated: true, completion: nil) // показать диалоговое окно с анимацией появления
+            
+        }
+        
+        
+    }
+    
     // добавление кнопок Сохранить и Отмена (при выборе справочного значения)
     // Selector - это ссылка на какой-либо метод
     func createSaveCancelButtons(save: Selector, cancel: Selector = #selector(cancel)) { // по умолчанию - cancel

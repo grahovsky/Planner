@@ -45,7 +45,11 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
     
     @IBAction func tapCheckPriority(_ sender: UIButton) {
         
-        checkItem(sender)
+        // определяем индекс строки по нажатой кнопке в ячейке
+        let viewPosition = sender.convert(CGPoint.zero, to: dictTableView) // координата относительно tableView
+        let indexPath = dictTableView.indexPathForRow(at: viewPosition)!
+        
+        checkItem(indexPath)
         
     }
     

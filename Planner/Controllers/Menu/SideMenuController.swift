@@ -83,6 +83,29 @@ class SideMenuController: UITableViewController {
         return 40
         
     }
+    
+    
+    // MARK: prepare
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == nil {
+            return
+        }
+        
+        switch segue.identifier! {
+        case "EditCategories":
+            guard let controller = segue.destination as? CategoryListController else { return }
+            
+            controller.showMode = .edit
+            controller.navigationTitle = "Редактирование"
+            
+        default:
+            return
+        }
+        
+        
+    }
 
 
 }

@@ -241,7 +241,7 @@ class TaskListController: UITableViewController {
         
     }
     
-    // удаление строки не используется, т.к. editActionsForRowAt
+    // удаление строки не используется, т.к. editActionsForRowAt // уже используется
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
 
         if indexPath.section == taskListSection {
@@ -362,9 +362,14 @@ class TaskListController: UITableViewController {
     }
     
     
-    @IBAction func filterTask(segue: UIStoryboardSegue) {
+    @IBAction func updateTask(segue: UIStoryboardSegue) {
         
         if let source = segue.source as? FiltersController, source.changed, segue.identifier == "FilterTasks" {
+            updateTable()
+        }
+        
+        // изменение при редактировании категорий
+        if let source = segue.source as? CategoryListController, source.changed, segue.identifier == "UpdateTasksCatigories" {
             updateTable()
         }
         
@@ -377,10 +382,14 @@ class TaskListController: UITableViewController {
         let task = taskDAO.items[indexPath.row]
         
         taskDAO.delete(task) // удалить задачу из БД
+        taskDAO.items.remove(at: indexPath.row)
         
         // удалить саму строку и объект из коллекции (массива)
-        taskDAO.items.remove(at: indexPath.row)
-        tableView.deleteRows(at: [indexPath], with: .top)
+        if taskDAO.items.isEmpty {
+            tableView.deleteSections(IndexSet([taskListSection]), with: .left)
+        } else {
+            tableView.deleteRows(at: [indexPath], with: .left)
+        }
         
     }
     
