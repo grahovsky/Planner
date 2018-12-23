@@ -4,7 +4,7 @@ import UIKit
 import CoreData
 
 // реализация DAO для работы с приоритетами
-class PriorityDaoDbImpl: CommonSearchDAO{
+class PriorityDaoDbImpl: DictDAO, CommonSearchDAO{
     
     //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
     typealias Item = Priority
@@ -15,7 +15,7 @@ class PriorityDaoDbImpl: CommonSearchDAO{
     static let current = PriorityDaoDbImpl()
     
     private init() {
-       
+        getAll(sortType: PrioritySortType.index)
     }
 
     var items:[Item]!

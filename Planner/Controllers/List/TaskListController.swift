@@ -10,6 +10,8 @@ class TaskListController: UITableViewController {
     let categoryDAO = CategoryDaoDbImpl.current
     let priorityDAO = PriorityDaoDbImpl.current
     
+    var currentScopeIndex = 0 // текущая выбранная кнопка сортировки в search bar
+    
     let quickTaskSection = 0
     let taskListSection = 1
     
@@ -28,29 +30,7 @@ class TaskListController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        let category = Category(context: categoryDAO.context)
-//        category.name = "Семья"
-//        try! categoryDAO.context.save()
-//
-//        let priority = Priority(context: priorityDAO.context)
-//        priority.name = "Средний"
-//        priority.index = 2
-//        try! priorityDAO.context.save()
-//
-//        let task = Task(context: taskDao.context)
-//        task.name = "Сходить в зал"
-//        task.category = category
-//        task.priority = priority
-//        task.completed = false
-//
-//        let formatter = DateFormatter()
-//        formatter.dateFormat = "yyyy/MM/dd HH:mm"
-//        let someDateTime = formatter.date(from: "2018/11/25 21:00")
-//
-//        task.deadline = someDateTime
-//        try! taskDao.context.save()
-        
-        updateTable()
+        taskDAO.getAll(sortType: TaskSortType(rawValue: currentScopeIndex)!)
         
         setupSearchController()
         
@@ -352,9 +332,9 @@ class TaskListController: UITableViewController {
         
         // усли активен режим поиска и текст не пустой
         if searchBarActive && searchController.searchBar.text != nil && !(searchController.searchBar.text?.isEmpty)! {
-            taskDAO.search(text: searchController.searchBar.text!, sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showEmptyDates, showTasksCompleted: PrefsManager.current.showCompleted)
+            taskDAO.search(text: searchController.searchBar.text!, categories: categoryDAO.checkedItems(), priorities: priorityDAO.checkedItems(), sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showEmptyDates, showTasksCompleted: PrefsManager.current.showCompleted)
         } else { // без поиска
-            taskDAO.search(text: nil, sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showEmptyDates, showTasksCompleted: PrefsManager.current.showCompleted)
+            taskDAO.search(text: nil, categories: categoryDAO.checkedItems(), priorities: priorityDAO.checkedItems(), sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showEmptyDates, showTasksCompleted: PrefsManager.current.showCompleted)
         }
         
         tableView.reloadData()
@@ -370,6 +350,11 @@ class TaskListController: UITableViewController {
         
         // изменение при редактировании категорий
         if let source = segue.source as? CategoryListController, source.changed, segue.identifier == "UpdateTasksCatigories" {
+            updateTable()
+        }
+        
+        // изменение при редактировании приоритетов
+        if let source = segue.source as? PriorityListController, source.changed, segue.identifier == "UpdateTasksPriorities" {
             updateTable()
         }
         

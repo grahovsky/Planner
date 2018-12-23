@@ -99,6 +99,11 @@ class SideMenuController: UITableViewController {
             
             controller.showMode = .edit
             controller.navigationTitle = "Редактирование"
+        case "EditPriorities":
+            guard let controller = segue.destination as? PriorityListController else { return }
+            
+            controller.showMode = .edit
+            controller.navigationTitle = "Редактирование"
             
         default:
             return

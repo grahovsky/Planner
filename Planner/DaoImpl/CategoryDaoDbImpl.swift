@@ -4,7 +4,7 @@ import UIKit
 import Foundation
 
 // реализация DAO для работы с категорями
-class CategoryDaoDbImpl: CommonSearchDAO {
+class CategoryDaoDbImpl: DictDAO, CommonSearchDAO {
 
     //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
     typealias Item = Category
@@ -15,7 +15,7 @@ class CategoryDaoDbImpl: CommonSearchDAO {
     static let current = CategoryDaoDbImpl()
     
     private init() {
-        
+        getAll(sortType: CategorySortType.name)
     }
     
     var items:[Item]!

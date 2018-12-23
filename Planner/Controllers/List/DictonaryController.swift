@@ -10,8 +10,10 @@ import UIKit
 
 // общий класс для контроллеров по работе со справочными значениями (в данный момент: категории, приоритеты)
 // процесс заполнения таблиц будет реализовываться в дочерних классах, в данном классе - весь общий функционал
-class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
+class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
 
+    var buttonSelectDeselect: UIButton! // ссылка на фактическую кнопку для снятия/выделения
+    
     var dictTableView: UITableView! // ссылка на компонент, нужно заполнять по факту уже из дочернего класса
     
     var DAO:T! // DAO для работы с БД (для каждого справочника будет использоваться своя реализация DAO)
@@ -85,32 +87,100 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
         
         let item = DAO.items[indexPath.row]
         
-        if indexPath != currentCheckedIndexPath {
-            selectedItem = item
-            
-            if let currentCheckedIndexPath = currentCheckedIndexPath {
-                dictTableView.reloadRows(at: [currentCheckedIndexPath], with: .none)
+        switch showMode! {
+        case .select:
+            if indexPath != currentCheckedIndexPath {
+                selectedItem = item
+                
+                if let currentCheckedIndexPath = currentCheckedIndexPath {
+                    dictTableView.reloadRows(at: [currentCheckedIndexPath], with: .none)
+                }
+                
+                currentCheckedIndexPath = indexPath
+                
+            } else {
+                selectedItem = nil
+                currentCheckedIndexPath = nil
             }
             
-            currentCheckedIndexPath = indexPath
+            // если пользователь выбрал значение - закрывать поисковое окно
+            searchController.isActive = false
             
-        } else {
-            selectedItem = nil
-            currentCheckedIndexPath = nil
+        case .edit:
+            
+            item.checked = !item.checked
+            updateItem(item)
+            changed = true
+            
+        default:
+            fatalError("enum type")
         }
         
-        // обновляем вид нажатой строки
+        updateSelectDeselectButton()
+        
+        // обновляем вид нажатой строки (ставим галочку)
         dictTableView.reloadRows(at: [indexPath], with: .none)
         
-        // если пользователь выбрал значение - закрывать поисковое окно
-        searchController.isActive = false
         
     }
+    
+   func selectDeselectItems() {
+    
+        if DAO.checkedItems().count > 0 {
+            DAO.items.map(){$0.checked = false}
+        } else {
+            DAO.items.map(){$0.checked = true}
+        }
+        
+        dictTableView.reloadSections([sectionList], with: .none)
+        
+        updateSelectDeselectButton()
+        
+        changed = true
+    
+    }
+    
+    
+    
+    func updateSelectDeselectButton() {
+        
+        if showMode == .select {
+            return
+        }
+        
+        let newTitle: String
+        
+        if DAO.checkedItems().count > 0 {
+            newTitle = "Снять"
+        } else {
+            newTitle = "Все"
+        }
+        
+        if self.buttonSelectDeselect.title(for: .normal) != newTitle {
+            buttonSelectDeselect.setTitle(newTitle, for: .normal)
+        }
+        
+        var enabled: Bool
+        
+        if DAO.items.count > 1 {
+            enabled = true
+        } else {
+            enabled = false
+        }
+        
+        buttonSelectDeselect.isEnabled = enabled
+        
+        if !enabled {
+            return
+        }
+        
+    }
+        
     
     func save() {
         
         closeController()
-        delegаte.done(source: self, data: selectedItem)
+        delegаte?.done(source: self, data: selectedItem)
         
     }
     
@@ -183,7 +253,18 @@ class DictonaryController<T:CommonSearchDAO>: UIViewController, UITableViewDataS
     
     // два действия при редактировании
     @objc private func tapClose() {
-        performSegue(withIdentifier: "UpdateTasksCatigories", sender: self)
+        
+        switch self {
+        case is CategoryListController:
+            performSegue(withIdentifier: "UpdateTasksCategories", sender: self)
+            
+        case is PriorityListController:
+            performSegue(withIdentifier: "UpdateTasksPriorities", sender: self)
+            
+        default:
+            return
+        }
+        
     }
     
     @objc private func tapAdd() {

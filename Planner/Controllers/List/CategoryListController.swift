@@ -11,16 +11,21 @@ import UIKit
 class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var labelHeaderTitle: UILabel!
+    @IBOutlet weak var buttonSelectDeselectAll: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        super.buttonSelectDeselect = buttonSelectDeselectAll
+        super.dictTableView = tableView
+        
         // Do any additional setup after loading the view.
         dictTableView = tableView
         DAO = CategoryDaoDbImpl.current
-        DAO.getAll(sortType:CategorySortType.name)
         
         initNavBar()
+
     }
     
     
@@ -51,25 +56,66 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         
     }
     
+    @IBAction func tapSelectDeselect(_ sender: UIButton) {
+        super.selectDeselectItems()
+    }
     // MARK: tableView
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellCategory", for: indexPath) as? CategoryListCell else { fatalError("fatal erroe with cell") }
         
-        cell.selectionStyle = .none // чтобы не выделялась строка
-        
         let category = DAO.items[indexPath.row]
-        
-        if selectedItem != nil && selectedItem == category {
-            currentCheckedIndexPath = indexPath
-            cell.buttonCheckCategory.setImage(UIImage(named: "check_green"), for: .normal)
-        } else {
-            cell.buttonCheckCategory.setImage(UIImage(named: "check_gray"), for: .normal)
-        }
         
         cell.labelCategoryName.text = category.name
         
+        cell.selectionStyle = .none // чтобы не выделялась строка
+        
+        cell.labelCategoryName.textColor = .darkGray
+        labelHeaderTitle.textColor = .lightGray
+        
+        if showMode == .edit {
+        
+            buttonSelectDeselectAll.isHidden = false
+           
+            // для переноса текста на новую строку
+            labelHeaderTitle.lineBreakMode = .byWordWrapping
+            labelHeaderTitle.numberOfLines = 0
+            
+            labelHeaderTitle.text = "Вы можете фильтровать задачи с помощью выбора категорий"
+            
+            if category.checked {
+                cell.buttonCheckCategory.setImage(UIImage(named: "check_green"), for: .normal)
+            } else {
+                cell.buttonCheckCategory.setImage(UIImage(named: "check_gray"), for: .normal)
+            }
+            
+            tableView.allowsMultipleSelection = true // при фильтрации задач - выбирать любое количество категорий
+            
+            // если последняя запись (таблица полностью загрузилась)
+            if indexPath.row == DAO.items.count-1 {
+                updateSelectDeselectButton()
+            }
+            
+            
+        } else if showMode == .select {
+            
+            tableView.allowsMultipleSelection = false
+            
+            buttonSelectDeselectAll.isHidden = true
+            
+            labelHeaderTitle.text = "Выберите одну категорию для задачи"
+
+            
+            if selectedItem != nil && selectedItem == category {
+                currentCheckedIndexPath = indexPath
+                cell.buttonCheckCategory.setImage(UIImage(named: "check_green"), for: .normal)
+            } else {
+                cell.buttonCheckCategory.setImage(UIImage(named: "check_gray"), for: .normal)
+            }
+            
+        }
+            
         return cell
         
     }

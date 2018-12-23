@@ -5,6 +5,9 @@ import CoreData
 
 // реализация DAO для работы с задачами
 class TaskDaoDbImpl: TaskSearchDAO {
+    
+    typealias CategoryItem = Category
+    
   
     //для наглядности - типы для generics (можно не указывать явно, т.к. компилятор получит их из методов)
     typealias Item = Task
@@ -60,7 +63,7 @@ class TaskDaoDbImpl: TaskSearchDAO {
     }
 
     // поиск по имени задачи
-    func search(text: String?, sortType: TaskSortType?, showTasksEmptyCategories: Bool, showTasksEmptyPriorities: Bool, showTasksEmptyDates: Bool, showTasksCompleted: Bool) -> [Task] {
+    func search(text: String?, categories: [Category], priorities: [Priority], sortType: TaskSortType?, showTasksEmptyCategories: Bool, showTasksEmptyPriorities: Bool, showTasksEmptyDates: Bool, showTasksCompleted: Bool) -> [Task] {
         
         // объект-контейнер для выборки данных
         let fetchRequest: NSFetchRequest<Item> = Item.fetchRequest()
@@ -73,14 +76,18 @@ class TaskDaoDbImpl: TaskSearchDAO {
             predicates.append(NSPredicate(format: "name CONTAINS[c] %@", text)) // [c] - case insensitive, %@ параметр
         }
  
-        // не показывать задачи без категории
+        //фильтрация по категориям
         if !showTasksEmptyCategories {
-            predicates.append(NSPredicate(format: "category != nil"))
+            predicates.append(NSPredicate(format: "category IN %@", categories))
+        } else {
+            predicates.append(NSPredicate(format: "category = nil or category IN %@", categories))
         }
         
-        // не показывать задачи без приоритета
+        // фильтрация по приоритетам
         if !showTasksEmptyPriorities {
-            predicates.append(NSPredicate(format: "priority != nil"))
+            predicates.append(NSPredicate(format: "priority IN %@", priorities))
+        } else {
+            predicates.append(NSPredicate(format: "priority = nil or priority IN %@", priorities))
         }
         
         // не показывать задачи без приоритета

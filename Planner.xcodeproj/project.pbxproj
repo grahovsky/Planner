@@ -23,6 +23,8 @@
 		6849E896E9C1BD1F3E80674B /* Pods_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */; };
 		B50B860821A7336200AD0AB8 /* Crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B860721A7336200AD0AB8 /* Crud.swift */; };
 		B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B860921A7397700AD0AB8 /* CrudExtension.swift */; };
+		B50EA64221C8293300AC0D8A /* DictDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EA64121C8293300AC0D8A /* DictDAO.swift */; };
+		B50EA64421C829A600AC0D8A /* Checkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EA64321C829A600AC0D8A /* Checkable.swift */; };
 		B522E33321A9761B00B8FAF8 /* TaskNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */; };
 		B522E33521A9783200B8FAF8 /* TaskCategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33421A9783200B8FAF8 /* TaskCategoryCell.swift */; };
 		B522E33721A98DFB00B8FAF8 /* TaskPriorityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33621A98DFB00B8FAF8 /* TaskPriorityCell.swift */; };
@@ -69,6 +71,8 @@
 		9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B860721A7336200AD0AB8 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
 		B50B860921A7397700AD0AB8 /* CrudExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrudExtension.swift; sourceTree = "<group>"; };
+		B50EA64121C8293300AC0D8A /* DictDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictDAO.swift; sourceTree = "<group>"; };
+		B50EA64321C829A600AC0D8A /* Checkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkable.swift; sourceTree = "<group>"; };
 		B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNameCell.swift; sourceTree = "<group>"; };
 		B522E33421A9783200B8FAF8 /* TaskCategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskCategoryCell.swift; sourceTree = "<group>"; };
 		B522E33621A98DFB00B8FAF8 /* TaskPriorityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskPriorityCell.swift; sourceTree = "<group>"; };
@@ -215,6 +219,8 @@
 				B50B860721A7336200AD0AB8 /* Crud.swift */,
 				B546231D21AE617000B81B1F /* CommonSearchDAO.swift */,
 				B55C20FF21B59E63006B1310 /* TaskSearchDAO.swift */,
+				B50EA64321C829A600AC0D8A /* Checkable.swift */,
+				B50EA64121C8293300AC0D8A /* DictDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -443,10 +449,12 @@
 				B50B860A21A7397700AD0AB8 /* CrudExtension.swift in Sources */,
 				B55C20F221B3252B006B1310 /* DatetimePickerController.swift in Sources */,
 				220CD7E1201B5CDC001B1D2D /* DateExtension.swift in Sources */,
+				B50EA64221C8293300AC0D8A /* DictDAO.swift in Sources */,
 				22759C731FDEA6E500E9A1E0 /* TaskDetailsController.swift in Sources */,
 				B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */,
 				22A98B812025922E0051183B /* CategoryDaoDbImpl.swift in Sources */,
 				B522E34021A9A20B00B8FAF8 /* ActionResultsDelegate.swift in Sources */,
+				B50EA64421C829A600AC0D8A /* Checkable.swift in Sources */,
 				B50B860821A7336200AD0AB8 /* Crud.swift in Sources */,
 				B522E34321A9D58200B8FAF8 /* CategoryListController.swift in Sources */,
 				22759C711FDEA6E500E9A1E0 /* AppDelegate.swift in Sources */,
