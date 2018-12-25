@@ -33,7 +33,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             <connections>
-                                                <action selector="quickTaskAdd:" destination="ABY-Q6-nzl" eventType="editingDidEnd" id="3ZG-Yp-9cl"/>
+                                                <action selector="quickTaskAdd:" destination="ABY-Q6-nzl" eventType="touchDragEnter" id="pKZ-wr-EPc"/>
                                             </connections>
                                         </textField>
                                     </subviews>

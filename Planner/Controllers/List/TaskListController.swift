@@ -29,6 +29,7 @@ class TaskListController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.hideKeyboardWhenTappedAround()
         
         taskDAO.getAll(sortType: TaskSortType(rawValue: currentScopeIndex)!)
         
