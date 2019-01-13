@@ -40,23 +40,6 @@ class PriorityDaoDbImpl: DictDAO, CommonSearchDAO{
         return items
     }
 
-
-
-    func delete(_ item: Item) {
-        context.delete(item)
-        save()
-    }
-
-
-
-    func addOrUpdate(_ item: Item){
-        if !items.contains(item){
-            items.append(item)
-        }
-
-        save()
-    }
-
     // поиск по имени задачи
     func search(text: String, sortType:SortType?) -> [Item] {
         
