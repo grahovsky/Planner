@@ -177,4 +177,29 @@ extension UIViewController {
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
+    
+    // сообщение, если нет данных
+    func createNoDateView(_ text:String) -> UILabel {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: view.bounds.size.width, height: view.bounds.size.height))
+        messageLabel.text = text
+        messageLabel.numberOfLines = 0
+        messageLabel.lineBreakMode = .byWordWrapping
+        messageLabel.textColor = .darkGray
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont(name: "TrebuchetMS", size: 15)
+        
+        return messageLabel
+    }
+    
+    //обновляет фон для таблицы, если нет данных
+    func updateTableBackground(_ tableView: UITableView, count: Int) {
+        if count > 0 {
+            tableView.separatorColor = UIColor(named: "separator") // цвет будет браться из assets
+            tableView.backgroundView = nil
+            tableView.separatorStyle = .singleLine
+        } else {
+            tableView.separatorStyle = .none //чтобы не было пустых линий
+            tableView.backgroundView = createNoDateView("Нет данных") // показать сообщение, что нет данных в таблице
+        }
+    }
 }

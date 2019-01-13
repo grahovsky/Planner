@@ -77,17 +77,49 @@ class TaskDaoDbImpl: TaskSearchDAO {
         }
  
         //фильтрация по категориям
-        if !showTasksEmptyCategories {
-            predicates.append(NSPredicate(format: "category IN %@", categories))
-        } else {
-            predicates.append(NSPredicate(format: "category = nil or category IN %@", categories))
+        if !categoryDAO.items.isEmpty { // если есть записи (может быть так, что все удалены) - иначе категории не будут участвовать в фильтрации
+            
+            if categories.isEmpty { // все значения "отжаты" (на сами категории существуют)
+                
+                if showTasksEmptyCategories { // если нужно показывать задачи с пустой категорией
+                    predicates.append(NSPredicate(format: "(NOT (category IN %@) or category==nil)", categoryDAO.items)) // показывать задачи, которые не включают ни одну из категорий (т.к. все значения "отжаты")
+                } else {
+                    predicates.append(NSPredicate(format: "(NOT (category IN %@) and category!=nil)", categoryDAO.items))
+                }
+                
+            } else { // выбраны какие-либо значения для фильтрации (не все "отжато")
+                
+                if showTasksEmptyCategories {
+                    predicates.append(NSPredicate(format: "(category IN %@ or category==nil)", categories))
+                } else {
+                    predicates.append(NSPredicate(format: "(category IN %@ and category!=nil)", categories))
+                }
+                
+            }
+            
         }
         
         // фильтрация по приоритетам
-        if !showTasksEmptyPriorities {
-            predicates.append(NSPredicate(format: "priority IN %@", priorities))
-        } else {
-            predicates.append(NSPredicate(format: "priority = nil or priority IN %@", priorities))
+        if !priorityDAO.items.isEmpty {
+            
+            if priorities.isEmpty {
+                
+                if showTasksEmptyPriorities {
+                    predicates.append(NSPredicate(format: "(NOT (priority IN %@) or priority==nil)", priorityDAO.items))
+                } else {
+                    predicates.append(NSPredicate(format: "(NOT (priority IN %@) and priority!=nil)", priorityDAO.items))
+                }
+                
+            } else {
+                
+                if showTasksEmptyPriorities {
+                    predicates.append(NSPredicate(format: "(priority IN %@ or priority==nil)", priorities))
+                } else {
+                    predicates.append(NSPredicate(format: "(priority IN %@ and priority!=nil)", priorities))
+                }
+                
+            }
+            
         }
         
         // не показывать задачи без приоритета

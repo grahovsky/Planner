@@ -12,9 +12,11 @@ import UIKit
 // процесс заполнения таблиц будет реализовываться в дочерних классах, в данном классе - весь общий функционал
 class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UISearchResultsUpdating {
 
-    var buttonSelectDeselect: UIButton! // ссылка на фактическую кнопку для снятия/выделения
+    var labelHeaderTitleDict:UILabel! // ссылка на фактическую кнопку для выделения/снятия
     
-    var dictTableView: UITableView! // ссылка на компонент, нужно заполнять по факту уже из дочернего класса
+    var buttonSelectDeselectDict:UIButton! // ссылка на фактическую кнопку для выделения/снятия
+    
+    var tableViewDict: UITableView! // ссылка на компонент, нужно заполнять по факту уже из дочернего класса
     
     var DAO:T! // DAO для работы с БД (для каждого справочника будет использоваться своя реализация DAO)
     
@@ -38,6 +40,11 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
     let sectionList = 0
     
     var showMode: ShowMode!
+    
+    // для сокращения кода (необязательно)
+    var count:Int {
+        return DAO.items.count
+    }
     
     var initState: (Bool, Bool, Bool, Bool)!
     
@@ -93,7 +100,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
                 selectedItem = item
                 
                 if let currentCheckedIndexPath = currentCheckedIndexPath {
-                    dictTableView.reloadRows(at: [currentCheckedIndexPath], with: .none)
+                    tableViewDict.reloadRows(at: [currentCheckedIndexPath], with: .none)
                 }
                 
                 currentCheckedIndexPath = indexPath
@@ -109,7 +116,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         case .edit:
             
             item.checked = !item.checked
-            updateItem(item)
+            updateItem(item, indexPath: indexPath)
             changed = true
             
         default:
@@ -119,7 +126,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         updateSelectDeselectButton()
         
         // обновляем вид нажатой строки (ставим галочку)
-        dictTableView.reloadRows(at: [indexPath], with: .none)
+        tableViewDict.reloadRows(at: [indexPath], with: .none)
         
         
     }
@@ -132,7 +139,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
             DAO.items.map(){$0.checked = true}
         }
         
-        dictTableView.reloadSections([sectionList], with: .none)
+        tableViewDict.reloadSections([sectionList], with: .none)
         
         updateSelectDeselectButton()
         
@@ -156,8 +163,8 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
             newTitle = "Все"
         }
         
-        if self.buttonSelectDeselect.title(for: .normal) != newTitle {
-            buttonSelectDeselect.setTitle(newTitle, for: .normal)
+        if self.buttonSelectDeselectDict.title(for: .normal) != newTitle {
+            buttonSelectDeselectDict.setTitle(newTitle, for: .normal)
         }
         
         var enabled: Bool
@@ -168,7 +175,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
             enabled = false
         }
         
-        buttonSelectDeselect.isEnabled = enabled
+        buttonSelectDeselectDict.isEnabled = enabled
         
         if !enabled {
             return
@@ -194,14 +201,32 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         
     }
     
-    // обновляет значение в БД и списке
-    func updateItem(_ item: T.Item) {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
-        // обновляем последний нажатый компонент
-        if let selectedIndexPath = dictTableView.indexPathForSelectedRow {
-            DAO.addOrUpdate(item)
-            dictTableView.reloadRows(at: [selectedIndexPath], with: .none)
+        updateTableBackground(tableViewDict, count:count)
+        
+        if count == 0 {
+            
+            // скрыть компоненты для выделения
+            labelHeaderTitleDict.isHidden = true
+            buttonSelectDeselectDict.isHidden = true
+            return 0 // пустая таблица, без записей
         }
+        
+        // если есть данные - показывать контролы
+        labelHeaderTitleDict.isHidden = false
+        buttonSelectDeselectDict.isHidden = false
+        
+        
+        return 1 // секция со списком значений
+        
+    }
+    
+    // обновляет значение в БД и списке
+    func updateItem(_ item: T.Item, indexPath: IndexPath) {
+        
+        DAO.addOrUpdate(item)
+        tableViewDict.reloadRows(at: [indexPath], with: .none)
         
     }
     
@@ -211,12 +236,14 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         DAO.items.remove(at: indexPath.row) // удаляем из коллекции
         
         if DAO.items.count == 0 {
-            dictTableView.deleteSections([sectionList], with: .left)
+            tableViewDict.deleteSections([sectionList], with: .left)
         } else {
-            dictTableView.deleteRows(at: [indexPath], with: .left)
+            tableViewDict.deleteRows(at: [indexPath], with: .left)
         }
         
         changed = true // оптимизация
+        
+        updateTableBackground(tableViewDict, count: DAO.items.count)
         
     }
     
@@ -233,7 +260,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         
         if DAO.items.count == 1 { // если добавляется первая запись - добавить сначала секции (в секции автоматически отбразится добавленная строка, не нужно делать insertRows)
             
-            dictTableView.insertSections([sectionList] , with: .top)
+            tableViewDict.insertSections([sectionList] , with: .top)
             
         } else {
             
@@ -241,10 +268,11 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
             
             let indexPath = IndexPath(row: DAO.items.count-1, section: sectionList)
             
-            dictTableView.insertRows(at: [indexPath], with: .top)
+            tableViewDict.insertRows(at: [indexPath], with: .top)
             
         }
         
+        updateTableBackground(tableViewDict, count: DAO.items.count)
         
     }
     
@@ -334,7 +362,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
             navigationItem.searchController = searchController
             navigationItem.hidesSearchBarWhenScrolling = false
         } else {
-            dictTableView.tableHeaderView = searchBar
+            tableViewDict.tableHeaderView = searchBar
         }
         
     }
@@ -343,7 +371,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         if !(searchBar.text?.isEmpty)!{ // искать, только если есть текст
             searchBarText = searchBar.text!
             search(searchBarText) // этот метод должен быть реализован в дочернем классе
-            dictTableView.reloadData()  //  обновляем всю таблицу
+            tableViewDict.reloadData()  //  обновляем всю таблицу
             currentCheckedIndexPath = nil // чтобы не было двойного выделения значений
             searchBar.placeholder = searchBarText // сохраняем поисковый текст для отображения, если окно поиска будет неактивным
         }
@@ -366,7 +394,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBarText = ""
         getAll() // этот метод должен быть реализован в дочернем классе
-        dictTableView.reloadData()
+        tableViewDict.reloadData()
         searchBar.placeholder = "Начните набирать название"
     }
 }

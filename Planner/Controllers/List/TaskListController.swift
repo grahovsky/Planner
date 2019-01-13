@@ -340,6 +340,8 @@ class TaskListController: UITableViewController {
         
         tableView.reloadData()
         
+        updateTableBackground(tableView, count: taskCount)
+        
     }
     
     
@@ -350,7 +352,7 @@ class TaskListController: UITableViewController {
         }
         
         // изменение при редактировании категорий
-        if let source = segue.source as? CategoryListController, source.changed, segue.identifier == "UpdateTasksCatigories" {
+        if let source = segue.source as? CategoryListController, source.changed, segue.identifier == "UpdateTasksCategories" {
             updateTable()
         }
         

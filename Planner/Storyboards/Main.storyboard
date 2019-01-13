@@ -1013,7 +1013,7 @@
                         <outlet property="buttonSelectDeselectAll" destination="l28-b6-TCe" id="hVb-Ac-4m4"/>
                         <outlet property="labelHeaderTitle" destination="UKB-ya-ax6" id="miv-jU-9Ah"/>
                         <outlet property="tableView" destination="Hiu-f1-I7u" id="lSh-7e-3fW"/>
-                        <segue destination="EO9-n7-QGd" kind="unwind" identifier="UpdateTasksCatigories" unwindAction="updateTaskWithSegue:" id="zzF-HI-EM4"/>
+                        <segue destination="EO9-n7-QGd" kind="unwind" identifier="UpdateTasksCategories" unwindAction="updateTaskWithSegue:" id="zzF-HI-EM4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UMN-1C-pkP" userLabel="First Responder" sceneMemberID="firstResponder"/>

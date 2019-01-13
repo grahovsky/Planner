@@ -17,11 +17,12 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        super.buttonSelectDeselect = buttonSelectDeselectAll
-        super.dictTableView = tableView
+        super.buttonSelectDeselectDict = buttonSelectDeselectAll
+        super.tableViewDict = tableView
+        super.labelHeaderTitleDict = labelHeaderTitle
         
         // Do any additional setup after loading the view.
-        dictTableView = tableView
+        tableViewDict = tableView
         DAO = CategoryDaoDbImpl.current
         
         initNavBar()
@@ -49,8 +50,8 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
     @IBAction func tapCheckCategory(_ sender: UIButton) {
         
         // определяем индекс строки по нажатой кнопке в ячейке
-        let viewPosition = sender.convert(CGPoint.zero, to: dictTableView) // координата относительно tableView
-        let indexPath = dictTableView.indexPathForRow(at: viewPosition)!
+        let viewPosition = sender.convert(CGPoint.zero, to: tableViewDict) // координата относительно tableView
+        let indexPath = tableViewDict.indexPathForRow(at: viewPosition)!
         
         checkItem(indexPath)
         
@@ -153,7 +154,7 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
             
             if currentItem.name != oldValue{
                 //  обновляем в БД и в таблице
-                self.updateItem(currentItem)
+                self.updateItem(currentItem, indexPath: indexPath)
                 
                 self.changed = true // произошли изменения
             } else {
