@@ -14,15 +14,21 @@ import UIKit
 // CRUD API для работы с сущностями (общие операции для всех объектов)
 protocol Crud: class { // class указываем для того, чтобы только классы (не struct) могли использовать этот протокол (reference type), иначе extension Crud (ниже) будет выдавать ошибку компиляции при попытке изменить переменную
     
-    associatedtype Item: NSManagedObject //NSManagedObject - чтобы объект можно было записывать в БД
+    associatedtype Item : NSManagedObject // NSManagedObject - чтобы объект можно было записывать в БД
     
     associatedtype SortType // тип сортировки (для каждого объекта свои поля сортировки)
     
-    var items:[Item]! {get set} // хранит текущие данные, выбранные из БД
+    var items:[Item]! {get set} // текущая коллекция объектов для отображения
     
     func addOrUpdate(_ item:Item) // добавляет новый объект или обновляет существующий
     
+    func add(_ item:Item) // добавляет новый объект (отдельный метод)
+    
+    func update(_ item:Item) // обновляет существующий (отдельный метод)
+    
     func getAll(sortType:SortType?) -> [Item] // получение списка с сортировкой (если значение sortType = nil, выборка без сортировки)
+    
+    func getAll() -> [Item] // получение всех значений без сортировки
     
     func delete(_ item: Item) // удаление объекта
     
