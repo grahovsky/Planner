@@ -114,18 +114,7 @@ class TaskListController: UITableViewController {
             
             // задаем цвет по приоритету
             if let priority = task.priority {
-                
-                switch priority.index{
-                case 1:
-                    cell.labelPriority.backgroundColor = UIColor(named: "low")
-                case 2:
-                    cell.labelPriority.backgroundColor = UIColor(named: "normal")
-                case 3:
-                    cell.labelPriority.backgroundColor = UIColor(named: "high")
-                default:
-                    cell.labelPriority.backgroundColor = UIColor.white
-                }
-                
+               cell.labelPriority.backgroundColor = priority.color as? UIColor
             } else {
                 cell.labelPriority.backgroundColor = UIColor.white
             }
@@ -461,18 +450,22 @@ extension TaskListController: ActionResultDelegate {
     // может обрабатывать ответы (слушать действия) от любых контроллеров
     func done(source: UIViewController, data: Any?) {
         
-        //если пришел ответ от TaskDetailsController
+        // если пришел ответ от TaskDetailsController
+        // сохраняет новую задачу или обновляет измененную задачу
         if source is TaskDetailsController {
+           
+            // редактирование, т.е. обновление (selectedIndexPath != nil)
             if let selectedIndexPath = tableView.indexPathForSelectedRow { // определяем выбранную строку
                 
-                taskDAO.save() // сохраняем измененную задачу (все изменения контекста)
-                tableView.reloadRows(at: [selectedIndexPath], with: .fade) // обновляем строку (не всю таблицу)
+                let task = data as! Task
+                
+                taskDAO.update(task) // обновляем задачу
                 
             } else {
                 
                 let task = data as! Task
                 
-                createTask(task)
+                createTask(task) // создаем новую задачу
                 
             }
             

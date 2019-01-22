@@ -86,7 +86,7 @@ extension UIViewController {
         
     }
     
-    func showDialog(title: String, message: String, initValue: String = "", actionClousure: @escaping (String)->Void) {
+    func showDialog(title: String, message: String, initValue: String = "", actionClosure: @escaping (String)->Void) {
         
         // запускаем асинхронно, чтобы не было задержки при показе диалогового окна, если открыть диалоговое окно в главном потоке - могут быть лаги - окно не сразу показывается
         DispatchQueue.main.async {
@@ -105,7 +105,7 @@ extension UIViewController {
             // добавляем действие для кнопки ОК
             alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) in
                 
-                actionClousure(alert.textFields?[0].text ?? "")
+                actionClosure(alert.textFields?[0].text ?? "")
                 
             }))
             
@@ -202,4 +202,5 @@ extension UIViewController {
             tableView.backgroundView = createNoDateView("Нет данных") // показать сообщение, что нет данных в таблице
         }
     }
+
 }

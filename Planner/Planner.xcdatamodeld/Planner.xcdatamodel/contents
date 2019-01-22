@@ -7,6 +7,7 @@
     </entity>
     <entity name="Priority" representedClassName="Priority" syncable="YES" codeGenerationType="class">
         <attribute name="checked" attributeType="Boolean" defaultValueString="YES" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="color" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="index" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <relationship name="tasks" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Task" inverseName="priority" inverseEntity="Task" syncable="YES"/>
@@ -21,7 +22,7 @@
     </entity>
     <elements>
         <element name="Category" positionX="9" positionY="81" width="128" height="90"/>
-        <element name="Priority" positionX="-189" positionY="0" width="128" height="105"/>
+        <element name="Priority" positionX="-189" positionY="0" width="128" height="120"/>
         <element name="Task" positionX="-380" positionY="-135" width="128" height="135"/>
     </elements>
 </model>

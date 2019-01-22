@@ -76,6 +76,11 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         
         self.title = navigationTitle // название меняется в зависимости от типа действий (редактирование, выбор для задачи)
         
+        // для переноса текста на новую строку (если не будет помещаться)
+        labelHeaderTitleDict.lineBreakMode = .byWordWrapping
+        labelHeaderTitleDict.numberOfLines = 0
+        labelHeaderTitleDict.textColor = UIColor.lightGray
+        
     }
     
     
@@ -192,7 +197,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
     }
     
     func add() {
-        
+        addItemAction()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -256,9 +261,9 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
     
     func addItem(_ item:T.Item){
         
-        DAO.addOrUpdate(item)
+        DAO.add(item)
         
-        if DAO.items.count == 1 { // если добавляется первая запись - добавить сначала секции (в секции автоматически отбразится добавленная строка, не нужно делать insertRows)
+        if count == 1 { // если добавляется первая запись - добавить сначала секции (в секции автоматически отбразится добавленная строка, не нужно делать insertRows)
             
             tableViewDict.insertSections([sectionList] , with: .top)
             
@@ -266,13 +271,15 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
             
             // добавить новую строку с анимацией
             
-            let indexPath = IndexPath(row: DAO.items.count-1, section: sectionList)
+            let indexPath = IndexPath(row: count-1, section: sectionList)
             
             tableViewDict.insertRows(at: [indexPath], with: .top)
             
         }
         
-        updateTableBackground(tableViewDict, count: DAO.items.count)
+        updateSelectDeselectButton()
+        
+        updateTableBackground(tableViewDict, count:count)
         
     }
     
@@ -327,8 +334,28 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         fatalError("not implemented")
     }
     
-    // этот метод должен реализовывать дочерний класс
+    // нажатие на строку
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if showMode == .edit {
+            editItemAction(indexPath: indexPath) // в режиме edit - переходим к редактированию
+            return
+        }
+        
+        if showMode == .select {
+            checkItem(indexPath) // в режиме select - выбираем элемент (для задачи)
+            return
+        }
+        
+    }
+    
+    // добавление нового элемента
+    func addItemAction(){
+        fatalError("not implemented")
+    }
+    
+    // редактирование
+    func editItemAction(indexPath:IndexPath){
         fatalError("not implemented")
     }
     

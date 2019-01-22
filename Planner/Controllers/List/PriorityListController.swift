@@ -8,7 +8,12 @@
 
 import UIKit
 
-class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
+class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResultDelegate {
+    
+    func cancel(source: UIViewController, data: Any?) {
+        cancel()
+    }
+    
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var labelHeaderTitle: UILabel!    
@@ -67,8 +72,6 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellPriority", for: indexPath) as? PriorityListCell else { fatalError("fatal erroe with cell") }
         
-        cell.selectionStyle = .none // чтобы не выделялась строка
-        
         let priority = DAO.items[indexPath.row]
         
         cell.labelPriorityName.text = priority.name
@@ -76,7 +79,10 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         cell.selectionStyle = .none // чтобы не выделялась строка
         
         cell.labelPriorityName.textColor = .darkGray
-        labelHeaderTitle.textColor = .lightGray
+        
+        if let color = priority.color {
+            cell.labelPriorityColor.backgroundColor = color as? UIColor
+        }
         
         if showMode == .edit {
             
@@ -124,19 +130,6 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         
     }
     
-    // нажатие на строку
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if showMode == .edit {
-            editPriority(indexPath: indexPath) // в режиме edit - переходим к редактированию
-            return
-        } else if showMode == .select {
-            checkItem(indexPath) // в режиме select - выбираем элемент (для задачи)
-            return
-        }
-        
-    }
-    
     // редактирование категории
     func editPriority(indexPath: IndexPath) {
         
@@ -147,7 +140,7 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         let oldValue = currentItem.name
         
         // показываем диалоговое окно и реализуем замыкание, которое будет выполняться при нажатии на кнопку ОК
-        showDialog(title: "Редактирование", message: "Введите название", initValue: currentItem.name!, actionClousure: { name in
+        showDialog(title: "Редактирование", message: "Введите название", initValue: currentItem.name!, actionClosure: { name in
             
             if !self.isEmptyTrim(name){ //значение name из текстового поля передается в замыкание
                 currentItem.name = name
@@ -169,19 +162,6 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
         
     }
     
-    // редактирование приоритетов
-    override func add() {
-        
-        showDialog(title: "Новый приоритет", message: "Введите название") { (name) in
-            
-            let newPriority = Priority(context: self.DAO.context)
-            newPriority.name = name // имя получаем как параметр замыкания
-            self.addItem(newPriority)
-            
-        }
-        
-    }
-    
     // MARK: override
     override func getAll() -> [Priority] {
         return DAO.getAll(sortType: PrioritySortType.index)
@@ -189,6 +169,75 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl> {
     
     override func search(_ text: String) -> [Priority] {
         return DAO.search(text: text, sortType: PrioritySortType.index)
+    }
+    
+    // MARK: prepare
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "EditPriority" {
+            
+            guard let controller = segue.destination as? EditPriorityController else {
+                fatalError("error")
+            }
+            
+            controller.priority = DAO.items[tableView.indexPathForSelectedRow!.row] // какой элемент в данный момент редактируем
+            controller.navigationTitle = "Редактирование"
+            controller.delegate = self
+            
+            return
+            
+        }
+        
+        
+        if segue.identifier == "AddPriority" {
+            
+            guard let controller = segue.destination as? EditPriorityController else {
+                fatalError("error")
+            }
+            
+            controller.navigationTitle = "Новый приоритет"
+            
+            controller.delegate = self
+            
+            return
+            
+        }
+    }
+    
+    // MARK: ActionResultDelegate
+    
+    func done(source: UIViewController, data: Any?) {
+        
+        if source is EditPriorityController{
+            
+            let priority = data as! Priority
+            
+            // обновление
+            if let selectedIndexPath = tableView.indexPathForSelectedRow { // определяем выбранную до этого строку (если была нажата какая-либо строка)
+                
+                updateItem(priority, indexPath: selectedIndexPath)
+                
+            } else { // новая задача
+                
+                addItem(priority)
+                
+            }
+            
+            changed = true // произошли изменения
+            
+        }
+    }
+    
+    
+    // MARK: override
+    
+    override func addItemAction(){
+        performSegue(withIdentifier: "AddPriority", sender: self)
+    }
+    
+    override func editItemAction(indexPath:IndexPath){
+        performSegue(withIdentifier: "EditPriority", sender: self)
     }
     
 }

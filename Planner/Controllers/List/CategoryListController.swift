@@ -121,19 +121,6 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         
     }
     
-    // нажатие на строку
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        if showMode == .edit {
-            editCategory(indexPath: indexPath) // в режиме edit - переходим к редактированию
-            return
-        } else if showMode == .select {
-            checkItem(indexPath) // в режиме select - выбираем элемент (для задачи)
-            return
-        }
-        
-    }
-    
     // редактирование категории
     func editCategory(indexPath: IndexPath) {
         
@@ -144,7 +131,7 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         let oldValue = currentItem.name
         
         // показываем диалоговое окно и реализуем замыкание, которое будет выполняться при нажатии на кнопку ОК
-        showDialog(title: "Редактирование", message: "Введите название", initValue: currentItem.name!, actionClousure: { name in
+        showDialog(title: "Редактирование", message: "Введите название", initValue: currentItem.name!, actionClosure: { name in
             
             if !self.isEmptyTrim(name){ //значение name из текстового поля передается в замыкание
                 currentItem.name = name
@@ -187,6 +174,58 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
     
     override func search(_ text: String) -> [Category] {
         return DAO.search(text: text, sortType: CategorySortType.name)
+    }
+    
+    // действие для добавления нового элемента (метод вызывается из родительского класса, когда нажимаем на +)
+    override func addItemAction() {
+        
+        // показываем диалоговое окно и реализуем замыкание, которое будет выполняться при нажатии на кнопку ОК
+        showDialog(title: "Новая категория", message: "Введите название", actionClosure: {name in
+            
+            let cat = Category(context: self.DAO.context)
+            
+            if self.isEmptyTrim(name){
+                cat.name = "Новая категория"
+            }else{
+                cat.name = name // имя получаем как параметр замыкания
+            }
+            
+            self.addItem(cat)
+            
+        })
+        
+        
+    }
+    
+    // действие для редактрование элемента
+    override func editItemAction(indexPath:IndexPath) {
+        
+        // определяем какой именно объект редактируем (чтобы потом сохранять именно его)
+        let currentItem = self.DAO.items[indexPath.row]
+        
+        // запоминаем старое значение (чтобы потом понимать, было ли изменение и не выполнять лишних действий)
+        let oldValue = currentItem.name
+        
+        // показываем диалоговое окно и реализуем замыкание, которое будет выполняться при нажатии на кнопку ОК
+        showDialog(title: "Редактирование", message: "Введите название", initValue: currentItem.name!, actionClosure: {name in
+            
+            if !self.isEmptyTrim(name){ //значение name из текстового поля передается в замыкание
+                currentItem.name = name
+            }else{
+                currentItem.name = "Новая категория"
+            }
+            
+            if currentItem.name != oldValue{
+                //  обновляем в БД и в таблице
+                self.updateItem(currentItem, indexPath: indexPath)
+                
+                self.changed = true // произошли изменения
+            }else{
+                self.changed = false
+            }
+            
+        })
+        
     }
     
 }

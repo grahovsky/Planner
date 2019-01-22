@@ -12,6 +12,7 @@ class PriorityListCell: UITableViewCell {
 
     @IBOutlet weak var labelPriorityName: UILabel!
     @IBOutlet weak var buttonCheckPriority: UIButton!
+    @IBOutlet weak var labelPriorityColor: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()

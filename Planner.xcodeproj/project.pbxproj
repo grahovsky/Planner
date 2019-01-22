@@ -47,6 +47,7 @@
 		B55C210021B59E63006B1310 /* TaskSearchDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20FF21B59E63006B1310 /* TaskSearchDAO.swift */; };
 		B55C210321B5A5EA006B1310 /* PrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C210221B5A5EA006B1310 /* PrefsManager.swift */; };
 		B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A411FA21B0659D008C281F /* GCCalendar.framework */; };
+		B5BDC16121F1393100389486 /* EditPriorityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC16021F1393000389486 /* EditPriorityController.swift */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,6 +95,7 @@
 		B55C20FF21B59E63006B1310 /* TaskSearchDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSearchDAO.swift; sourceTree = "<group>"; };
 		B55C210221B5A5EA006B1310 /* PrefsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsManager.swift; sourceTree = "<group>"; };
 		B5A411FA21B0659D008C281F /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BDC16021F1393000389486 /* EditPriorityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPriorityController.swift; sourceTree = "<group>"; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -144,6 +146,7 @@
 		22162C402011D5C0000AAED5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B5BDC15F21F1384300389486 /* PrioriytDetails */,
 				B55C20F721B465E2006B1310 /* Menu */,
 				B522E34121A9D53B00B8FAF8 /* TaskDetails */,
 				22162C412011D5D4000AAED5 /* List */,
@@ -315,6 +318,14 @@
 			path = Managers;
 			sourceTree = "<group>";
 		};
+		B5BDC15F21F1384300389486 /* PrioriytDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B5BDC16021F1393000389486 /* EditPriorityController.swift */,
+			);
+			path = PrioriytDetails;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -395,6 +406,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Planner/Pods-Planner-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/GCCalendar/GCCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 			);
@@ -402,6 +414,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 			);
@@ -450,6 +463,7 @@
 				B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */,
 				22A98B812025922E0051183B /* CategoryDaoDbImpl.swift in Sources */,
 				B522E34021A9A20B00B8FAF8 /* ActionResultsDelegate.swift in Sources */,
+				B5BDC16121F1393100389486 /* EditPriorityController.swift in Sources */,
 				B50EA64421C829A600AC0D8A /* Checkable.swift in Sources */,
 				B50B860821A7336200AD0AB8 /* Crud.swift in Sources */,
 				B522E34321A9D58200B8FAF8 /* CategoryListController.swift in Sources */,

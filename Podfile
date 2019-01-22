@@ -8,5 +8,6 @@ target 'Planner' do
   # Pods for Planner
 pod 'GCCalendar'
 pod 'SideMenu'
+pod 'ChromaColorPicker'
 
 end
