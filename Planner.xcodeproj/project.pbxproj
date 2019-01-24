@@ -22,6 +22,8 @@
 		22E92C751FE16FC3001F8493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E92C741FE16FC3001F8493 /* Main.storyboard */; };
 		6849E896E9C1BD1F3E80674B /* Pods_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */; };
 		B50B860821A7336200AD0AB8 /* Crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B860721A7336200AD0AB8 /* Crud.swift */; };
+		B50E0C1321FA4CF300FFEB50 /* ChromaColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50E0C1221FA4CF300FFEB50 /* ChromaColorPicker.framework */; };
+		B50E0C1521FA4CF900FFEB50 /* SwiftReorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50E0C1421FA4CF900FFEB50 /* SwiftReorder.framework */; };
 		B50EA64221C8293300AC0D8A /* DictDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EA64121C8293300AC0D8A /* DictDAO.swift */; };
 		B50EA64421C829A600AC0D8A /* Checkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EA64321C829A600AC0D8A /* Checkable.swift */; };
 		B522E33321A9761B00B8FAF8 /* TaskNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */; };
@@ -70,6 +72,8 @@
 		9979425144FBD7CD114CA42F /* Pods-Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.debug.xcconfig"; sourceTree = "<group>"; };
 		9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B860721A7336200AD0AB8 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
+		B50E0C1221FA4CF300FFEB50 /* ChromaColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChromaColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B50E0C1421FA4CF900FFEB50 /* SwiftReorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftReorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50EA64121C8293300AC0D8A /* DictDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictDAO.swift; sourceTree = "<group>"; };
 		B50EA64321C829A600AC0D8A /* Checkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkable.swift; sourceTree = "<group>"; };
 		B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNameCell.swift; sourceTree = "<group>"; };
@@ -105,6 +109,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50E0C1521FA4CF900FFEB50 /* SwiftReorder.framework in Frameworks */,
+				B50E0C1321FA4CF300FFEB50 /* ChromaColorPicker.framework in Frameworks */,
 				B55C20F621B4607F006B1310 /* SideMenu.framework in Frameworks */,
 				B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */,
 				6849E896E9C1BD1F3E80674B /* Pods_Planner.framework in Frameworks */,
@@ -117,6 +123,8 @@
 		0B5A073FA9189EF526DBB3F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B50E0C1421FA4CF900FFEB50 /* SwiftReorder.framework */,
+				B50E0C1221FA4CF300FFEB50 /* ChromaColorPicker.framework */,
 				B55C20F521B4607F006B1310 /* SideMenu.framework */,
 				B5A411FA21B0659D008C281F /* GCCalendar.framework */,
 				9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */,
@@ -405,10 +413,11 @@
 			inputFileListPaths = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-Planner/Pods-Planner-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-Planner/Pods-Planner-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/GCCalendar/GCCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftReorder/SwiftReorder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -417,10 +426,11 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftReorder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Planner/Pods-Planner-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Planner/Pods-Planner-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FC25659B59351F82AADC89BD /* [CP] Check Pods Manifest.lock */ = {

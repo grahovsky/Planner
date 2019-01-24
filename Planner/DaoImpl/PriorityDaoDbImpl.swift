@@ -76,6 +76,20 @@ class PriorityDaoDbImpl: DictDAO, CommonSearchDAO{
         return items
         
     }
+    
+    // MARK: util
+    
+    // обновляет индексы у объектов в зависимости от расположения в массиве
+    func updateIndexes(){
+        
+        for (index, item) in items.enumerated(){
+            item.index = Int32(index) // присваиваем порядковый номер следования в массиве
+        }
+        
+        save()
+        
+        items = getAll(sortType: .index)
+    }
  
 }
 

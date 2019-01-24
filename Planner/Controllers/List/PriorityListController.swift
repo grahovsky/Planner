@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SwiftReorder
 
-class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResultDelegate {
+class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResultDelegate, TableViewReorderDelegate {
     
     func cancel(source: UIViewController, data: Any?) {
         cancel()
@@ -27,6 +28,7 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResu
         super.tableViewDict = tableView
         super.labelHeaderTitleDict = labelHeaderTitle
         
+        tableView.reorder.delegate = self // обработка действий по перетаскиванию элементов списка
         
         DAO = PriorityDaoDbImpl.current
         
@@ -169,6 +171,34 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResu
     
     override func search(_ text: String) -> [Priority] {
         return DAO.search(text: text, sortType: PrioritySortType.index)
+    }
+    
+    // MARK: drag
+    
+    // перетащили строку
+    func tableViewDidFinishReordering(_ tableView: UITableView, from initialSourceIndexPath: IndexPath, to finalDestinationIndexPath: IndexPath) {
+        
+        let item = DAO.items.remove(at: initialSourceIndexPath.row) // удаляем со старого места
+        DAO.items.insert(item, at: finalDestinationIndexPath.row) // добавляем в новое место внутри коллекции
+        
+        DAO.updateIndexes() // актуализиируем индексы (т.к. после перестановки они сбились)
+        tableView.reloadData() // показываем обновленные данные
+        
+    }
+    
+    
+    // можно ли передвигать строку
+    func tableView(_ tableView: UITableView, canReorderRowAt indexPath: IndexPath) -> Bool {
+        if showMode == .select || count<=1{
+            return false // нельзя переставлять строки
+        }
+        
+        return true
+    }
+    
+    
+    // чтобы класс соответствовал протоколу (иначе - ошибка компиляции)
+    func tableView(_ tableView: UITableView, reorderRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
     }
     
     // MARK: prepare
