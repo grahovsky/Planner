@@ -75,6 +75,8 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         cell.labelCategoryName.textColor = .darkGray
         labelHeaderTitle.textColor = .lightGray
         
+        cell.labelTaskCount.text = "\(category.tasks?.count ?? 0)" // т.к. связь двусторонняя
+        
         if showMode == .edit {
         
             buttonSelectDeselectAll.isHidden = false

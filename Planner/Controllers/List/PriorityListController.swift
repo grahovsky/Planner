@@ -86,6 +86,8 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResu
             cell.labelPriorityColor.backgroundColor = color as? UIColor
         }
         
+        cell.labelTaskCount.text = "\(priority.tasks?.count ?? 0)" // т.к. связь двусторонняя
+        
         if showMode == .edit {
             
             buttonSelectDeselectAll.isHidden = false
