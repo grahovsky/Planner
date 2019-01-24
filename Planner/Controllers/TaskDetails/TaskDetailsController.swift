@@ -1,5 +1,6 @@
 
 import UIKit
+import SwiftIconFont
 
 // в какой секции какие данные будут храниться (во избежание антипаттерна magic number)
 enum Section: Int {
@@ -13,6 +14,9 @@ enum Section: Int {
 class TaskDetailsController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    
+    @IBOutlet weak var buttonDelete: UIButton!
+    @IBOutlet weak var buttonComplete: UIButton!
     
     // текущая задача для редактирования (либо для создания новой задачи)
     var task: Task!
@@ -43,6 +47,10 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             taskCategory = task.category
             taskDeadline = task.deadline
         }
+        
+        hideKeyboardWhenTappedAround()
+        
+        initButtons()
 
     }
 
@@ -50,6 +58,20 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: init
+    
+    func initButtons() {
+        
+        // указываем иконки для кнопок (вместо текста)
+        buttonDelete.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 18.0)
+        buttonDelete.titleLabel?.tintColor = UIColor.white
+        buttonDelete.setTitle(String.fontAwesomeIcon("trash"), for: .normal)
+        
+        buttonComplete.titleLabel?.font = UIFont.icon(from: .fontAwesome, ofSize: 18.0)
+        buttonComplete.titleLabel?.tintColor = UIColor.white
+        buttonComplete.setTitle(String.fontAwesomeIcon("check"), for: .normal)
     }
     
     // MARK: TableView

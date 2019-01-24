@@ -396,6 +396,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="buttonComplete" destination="nRk-zq-2RO" id="vKZ-i7-gT5"/>
+                        <outlet property="buttonDelete" destination="v1a-f2-tlW" id="rAl-L8-rSk"/>
                         <outlet property="tableView" destination="9AY-Xq-KrN" id="nsU-bL-XIb"/>
                         <segue destination="02H-IF-2ag" kind="unwind" identifier="DeleteTaskFromDetails" unwindAction="deleteFromTaskDetailsWithSegue:" id="p5F-7Z-2rV"/>
                         <segue destination="02H-IF-2ag" kind="unwind" identifier="CompleteTaskFromDetails" unwindAction="completeFromTaskDetailsWithSegue:" id="SDO-Ov-LsK"/>

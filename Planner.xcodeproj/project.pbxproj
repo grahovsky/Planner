@@ -25,6 +25,7 @@
 		B50E0C1321FA4CF300FFEB50 /* ChromaColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50E0C1221FA4CF300FFEB50 /* ChromaColorPicker.framework */; };
 		B50E0C1521FA4CF900FFEB50 /* SwiftReorder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50E0C1421FA4CF900FFEB50 /* SwiftReorder.framework */; };
 		B50E0C1721FA5F2D00FFEB50 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50E0C1621FA5F2D00FFEB50 /* ViewExtension.swift */; };
+		B50E0C1921FA61DF00FFEB50 /* SwiftIconFont.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50E0C1821FA61DF00FFEB50 /* SwiftIconFont.framework */; };
 		B50EA64221C8293300AC0D8A /* DictDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EA64121C8293300AC0D8A /* DictDAO.swift */; };
 		B50EA64421C829A600AC0D8A /* Checkable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50EA64321C829A600AC0D8A /* Checkable.swift */; };
 		B522E33321A9761B00B8FAF8 /* TaskNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */; };
@@ -76,6 +77,7 @@
 		B50E0C1221FA4CF300FFEB50 /* ChromaColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ChromaColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50E0C1421FA4CF900FFEB50 /* SwiftReorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftReorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50E0C1621FA5F2D00FFEB50 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		B50E0C1821FA61DF00FFEB50 /* SwiftIconFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftIconFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50EA64121C8293300AC0D8A /* DictDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictDAO.swift; sourceTree = "<group>"; };
 		B50EA64321C829A600AC0D8A /* Checkable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkable.swift; sourceTree = "<group>"; };
 		B522E33221A9761B00B8FAF8 /* TaskNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskNameCell.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B50E0C1921FA61DF00FFEB50 /* SwiftIconFont.framework in Frameworks */,
 				B50E0C1521FA4CF900FFEB50 /* SwiftReorder.framework in Frameworks */,
 				B50E0C1321FA4CF300FFEB50 /* ChromaColorPicker.framework in Frameworks */,
 				B55C20F621B4607F006B1310 /* SideMenu.framework in Frameworks */,
@@ -125,6 +128,7 @@
 		0B5A073FA9189EF526DBB3F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B50E0C1821FA61DF00FFEB50 /* SwiftIconFont.framework */,
 				B50E0C1421FA4CF900FFEB50 /* SwiftReorder.framework */,
 				B50E0C1221FA4CF300FFEB50 /* ChromaColorPicker.framework */,
 				B55C20F521B4607F006B1310 /* SideMenu.framework */,
@@ -420,6 +424,7 @@
 				"${BUILT_PRODUCTS_DIR}/ChromaColorPicker/ChromaColorPicker.framework",
 				"${BUILT_PRODUCTS_DIR}/GCCalendar/GCCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftIconFont/SwiftIconFont.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftReorder/SwiftReorder.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -429,6 +434,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChromaColorPicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIconFont.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftReorder.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;

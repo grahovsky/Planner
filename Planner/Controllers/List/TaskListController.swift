@@ -2,6 +2,7 @@
 import UIKit
 import CoreData
 import SideMenu
+import SwiftIconFont
 
 //контроллер для отображения списка задач
 class TaskListController: UITableViewController {
@@ -28,6 +29,7 @@ class TaskListController: UITableViewController {
     var searchBarActive = false
     
     override func viewDidLoad() {
+       
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
@@ -36,6 +38,8 @@ class TaskListController: UITableViewController {
         setupSearchController()
         
         initSlideMenu()
+        
+        initIcons()
 
     }
 
@@ -53,17 +57,27 @@ class TaskListController: UITableViewController {
             
     }
     
-    // MARK: Side Menu
     
-    func initSlideMenu() {
-        
+    // MARK: init
+    
+    func initSlideMenu(){
         SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "SideMenu") as? UISideMenuNavigationController
         
-        // не затемнять верхний статус бар
+        //        SideMenuManager.default.menuAddPanGestureToPresent(toView: self.view)
+        //        SideMenuManager.default.menuAddScreenEdgePanGesturesToPresent(toView: self.view)
+        
+        //        SideMenuManager.default.menuEnableSwipeGestures = false
+        
+        // чтобы не затемнялся верхний статус бар
         SideMenuManager.default.menuFadeStatusBar = false
+        
         
     }
     
+    func initIcons(){
+        navigationItem.rightBarButtonItem?.icon(from: .themify, code: "plus", ofSize: 20)
+        navigationItem.leftBarButtonItem?.icon(from: .themify, code: "menu", ofSize: 20)
+    }
 
     // MARK: tableView
 

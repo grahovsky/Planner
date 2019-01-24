@@ -3,163 +3,254 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		026C52E94076F814AD2A18F911588CC5 /* ChromaColorPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FC4F587A354FF3BE60A431D39C8711F0 /* ChromaColorPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		094E01D5745D999AE1CBC155EC1B043B /* SwiftReorder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF748E67F2109DC92D3909016BCD03 /* SwiftReorder-dummy.m */; };
-		0D206B88E406422F3E9A1FB13FEBAF41 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 861A098983223D359F2AC15A624045B5 /* UIColor+Utilities.swift */; };
-		15516BFC4A975629870D6C082739BB9C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		16CAC83D2F33F44D4AF8D59AF3A58C35 /* ReorderController+AutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215F9205E5BC106EA09F43C3F5C2118 /* ReorderController+AutoScroll.swift */; };
-		2066B9E78D112449516A3E8D2764221C /* ReorderController+DestinationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E978ECF6E78134A0E16019F0ED04BA28 /* ReorderController+DestinationRow.swift */; };
-		22D79BC5A2CC718FC18D93E4A7D02C1D /* SwiftReorder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E5B2AAB27DC0A55E251FB62397DCC5E6 /* SwiftReorder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		249689B2FAFC577B33188B1F4DC2286F /* GCCalendarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 613C625E60F595969F600F2EC8860EC6 /* GCCalendarViewDelegate.swift */; };
-		340CBE4A416D39CAC507DBBD5928BAF0 /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F97601E0FB488105C1FE038E5215FE5 /* ChromaHandle.swift */; };
-		363E5BECAA20AF25F8DE72EDC56FB767 /* ChromaColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = 0F5CF444A43852238E7C314AEE9338BA /* ChromaColorPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3B8A1B58177ECC01068879E77AADE632 /* ReorderController+GestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC43B01E556B5F58E895E9E183C1397 /* ReorderController+GestureRecognizer.swift */; };
-		3F1FE9C839EA9B39748003BAE667DC27 /* UITableView+Reorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52BED9D10A2A2A49505BB590F380A323 /* UITableView+Reorder.swift */; };
-		4FBA139F2C3B722D5BA65F1FC7632229 /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E60697126691F75AC90BD2253DDA9460 /* ChromaColorPicker.swift */; };
-		533328C4F9CF7C812CE2E27198EB90F7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		5388B3A897EB4D98607215D607977FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		5B48962A261C821FC756501F84C4944F /* GCCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = E09369A38242F1F542F52BA4BDB9A530 /* GCCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62A999E1F49F89D83A3A43E2A3E3C747 /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E62930F0F85D5E5744533DC2DD74096 /* UISideMenuNavigationController.swift */; };
-		669EE93F9664A94CD42A0A4B46307681 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		716B468E1F14221D9A7A002F1E5185A4 /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28CF59DFFE27EBBED9D82344D0E2A3EE /* UITableViewVibrantCell.swift */; };
-		77C392F56186703282938AF70FA91C03 /* ReorderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C79200EA9C625F28AA9DB43E573BFF9 /* ReorderController.swift */; };
-		7E82C01E224F8C300FD7F8F51F943DD8 /* Pods-Planner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5AAA60B80CBD893486EDD01EC6649F9 /* Pods-Planner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		807E17F8A159D69FB1051246715696CF /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1451D588D5CC8834E72BD186D4D436AE /* SideMenuManager.swift */; };
-		869C2B72BFC8680E71CA7C050737C1C0 /* GCCalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D3B452BFCA1D7F96D34F8309BE318BF /* GCCalendarWeekView.swift */; };
-		94735EB1BFBE473841978C26C1B45529 /* ColorModeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109401AD7500CC869CEBB04AA071FB08 /* ColorModeToggleButton.swift */; };
-		A04545A74ADF966AF179551AFA489D9B /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32099C154A219AE429BD362CF0F26044 /* ChromaAddButton.swift */; };
-		A87A3C8B72B5FBC960825781ED324B2F /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 790D3C4468726757F317A1F2107362DE /* SideMenu-dummy.m */; };
-		B0C928B008E005FF04DE13D574D84006 /* ReorderController+SnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D0DBAC83D976A2B3D2E42C79303803A /* ReorderController+SnapshotView.swift */; };
-		B1B8FB6C7C917BF802F494CB577F4687 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31F0DA59A3E1D144B540EEFC7155E14B /* ChromaShadeSlider.swift */; };
-		B2A58D5F6D9A1B7895E7D01C408C7067 /* GCCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41453C3953315B26290628A2F8AADD41 /* GCCalendarDayView.swift */; };
-		B4F7769657403DBFF38EAAD7F6837D21 /* ChromaColorPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = DC9D9B0D82A8FCB579D05F51694F1A91 /* ChromaColorPicker-dummy.m */; };
-		BEB717B92382015777597A7127BC67E7 /* GCCalendarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6791EE5FC31C5B14E69F8C4A0081BC24 /* GCCalendarConfiguration.swift */; };
-		C144FFB4E6130AC8F66CDCCE5BD211AF /* Pods-Planner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D31D1029AB3A14CEF59CA8A840CBB5 /* Pods-Planner-dummy.m */; };
-		C3CAA01E46D1874E3C42CA8B16AE8900 /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E0F4C9656BD7827DFE0FBF44BD51F16 /* SideMenuTransition.swift */; };
-		C877BB3EE80EB714820219123322C7BA /* GCCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9256EBD7F5BAE751B06DC6FDF82C9CC /* GCCalendarMonthView.swift */; };
-		D6677927359F4B265CAB6883D5462791 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */; };
-		D8E555AD7B1B44D91FDFA0B95E0648C9 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 5E7E73AB54904F156DDE9E0321C6EFA4 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F6FF3C4C7DC6D4B55A1A42F8CB1F02A8 /* GCCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = BAB8681CC5D7619AA200452151AF9B81 /* GCCalendar-dummy.m */; };
-		F95AA60B927DD4AB6835E76C330FE3F0 /* GCCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FE5B455352E70C9D25E755C8E73D934F /* GCCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		FAB9BCF7273E180515FF6798FF21DF7B /* GCCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 247C49C900E84D02EF282A204D4E1C74 /* GCCalendarView.swift */; };
+		01C452092336B827F8CC1D4ECB97AC13 /* SwiftIconFont-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0313F3F5651688D6F66A258087BDB911 /* SwiftIconFont-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		026C52E94076F814AD2A18F911588CC5 /* ChromaColorPicker-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8215D7B8811A819A7234F3F758662EF7 /* ChromaColorPicker-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0CC5FD0AABE31BEC2C88AFC4A83E9F8D /* Pods-Planner-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C5AAA60B80CBD893486EDD01EC6649F9 /* Pods-Planner-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0D206B88E406422F3E9A1FB13FEBAF41 /* UIColor+Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3BC98FCA362A7D7ACB16B392CB494003 /* UIColor+Utilities.swift */; };
+		11509379FD0E1258DB593897B3E0E633 /* SwiftIconFont+UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55311BB2DB9D36CB07B8452E467137A8 /* SwiftIconFont+UIBarButtonItem.swift */; };
+		14704764CB561E7E1F42A58A7C800298 /* SwiftIconTabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CCA609A97ACCF806AA2544EA0BE6DC /* SwiftIconTabBarItem.swift */; };
+		1DC576849AD27C4ECB63CFD33D4D2DC0 /* Iconic.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFDAB39BDD45185CC10AAA7208DFEEB5 /* Iconic.swift */; };
+		21743701DD367519661FF2D467C6BA2E /* SwiftIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 304CB3C0F5D51BAA8D362204EC21166F /* SwiftIconLabel.swift */; };
+		249689B2FAFC577B33188B1F4DC2286F /* GCCalendarViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A4F096329C85D9501CC6E246083231B /* GCCalendarViewDelegate.swift */; };
+		2783B5784AF179E9F550FD15DAB10524 /* Octicon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220DAF741933CA778F147DD186967E64 /* Octicon.swift */; };
+		2C281E8FC06671867A8DA90DA682C0DC /* FontLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC1FFC65FC65C3F16CDE755521F62C4 /* FontLoader.swift */; };
+		2D502F3E7A499EA709861C48332F5137 /* map-icons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 33E4FDC57A059FDF286D9C907CE7A8B2 /* map-icons.ttf */; };
+		2DF005B64D06744CE83C40DDD39002F6 /* SwiftIconFont+UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = E18C89F2E76C64BB52FC4237ECDDA5AB /* SwiftIconFont+UITextField.swift */; };
+		2E1D81A22835ED3D66ADE1F3E1074646 /* Segoe mdl2 assets.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 806A5A4F606F8FF660112E58DFD67EB8 /* Segoe mdl2 assets.ttf */; };
+		2E3C0275B6EE920359FE97D63C2F60CE /* FontAwesome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0948BF7E4144772CEBDBA836F4909AE0 /* FontAwesome.swift */; };
+		2F518EF226730365D343C820F42921D8 /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A12F1A08800359F30064637AD8A66B18 /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		30CA2D5510CCBDA42EA1828F0AA4C8A9 /* SwiftIconFont+UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B5683FD34DEA58AAE9A3DE0C145B98 /* SwiftIconFont+UIImageView.swift */; };
+		3164DD12AAF4FE6D67FD40BCD4EE2260 /* SwiftIconBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A032A9A2B1C063C71FC345061329D43 /* SwiftIconBarButtonItem.swift */; };
+		340CBE4A416D39CAC507DBBD5928BAF0 /* ChromaHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07599E1EBE5E207BFA17D9A511CBEF4D /* ChromaHandle.swift */; };
+		35BC58E27D051716E38D0B230861330D /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E96E0C6C606BEEC1FD2A904C2F655243 /* SideMenu-dummy.m */; };
+		363E5BECAA20AF25F8DE72EDC56FB767 /* ChromaColorPicker.h in Headers */ = {isa = PBXBuildFile; fileRef = A7A54296A53C702A01C28282B35F7FE5 /* ChromaColorPicker.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		463F21563EE5D119FCF28EB6A5D1FD8E /* ReorderController+SnapshotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1EF28613584390850A5ACA5825F3342 /* ReorderController+SnapshotView.swift */; };
+		49860952EC8904CF49B86785A3510321 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DE882CD5512493FD84BE03DDD979224B /* FontAwesome.ttf */; };
+		4ABF00436BADDDB04DE27BD6A7B7951B /* SwiftIconTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5FC09B3BBC797AA94BA31B8F3C8E1AD /* SwiftIconTextField.swift */; };
+		4D3A402D84667B9599FFED8B4C03780E /* ReorderController+GestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9DD3AB83B2FE12DCAC616A1279E5BC /* ReorderController+GestureRecognizer.swift */; };
+		4FBA139F2C3B722D5BA65F1FC7632229 /* ChromaColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A03884690C83C46A434EBFC8A54B36D /* ChromaColorPicker.swift */; };
+		512DA5F2F63C80FC1A94E3F99E7CD546 /* ReorderController+AutoScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC12B3A67C8849A8FF041B640AE3C464 /* ReorderController+AutoScroll.swift */; };
+		5388B3A897EB4D98607215D607977FB4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		5B48962A261C821FC756501F84C4944F /* GCCalendar.h in Headers */ = {isa = PBXBuildFile; fileRef = 3086062E2F2F4F343B2AA69B5BA745DE /* GCCalendar.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5F871677213427DAE69F1E6B8081654B /* SwiftIconFont+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2791439EE09DF3EDAD11BEBFF04D5B /* SwiftIconFont+String.swift */; };
+		669EE93F9664A94CD42A0A4B46307681 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		693EA295477E287EAF29B0AEDDD832FD /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		6C890EDF3616650E3D41DE75039C95D8 /* ReorderController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C0B22D9C63414098B924614D177CF2 /* ReorderController.swift */; };
+		6ED907E07C0E9609843986EC4064ED4C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		6F4BB3EFD7F1EB3BC3E3441DAEA5D32F /* themify.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AB44E499FB4C38E73442B30C88498A8C /* themify.ttf */; };
+		71D4D9C91F11ACD0E531FFBF0B38D35D /* MapIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8876ED429A5465E3B8DBEBD1EE2BA746 /* MapIcon.swift */; };
+		7332F85D762465796E616EAF69EC6A16 /* SegoeMDL2.swift in Sources */ = {isa = PBXBuildFile; fileRef = E6A2D5BD1B2FA444CBE3DF8C1FF92DA6 /* SegoeMDL2.swift */; };
+		789147B1553F0C1BB9055EF55779281B /* SwiftIconFont+UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78B8B43AF2738A79622142CB7686F52 /* SwiftIconFont+UILabel.swift */; };
+		7D5E457D1080308FBB6CEAD623FB4957 /* MaterialIcons-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 938B8F2204B3F59929A3EEB7D7D5EFA3 /* MaterialIcons-Regular.ttf */; };
+		82F0B83528ABEB0C03F1C9DE37152232 /* Pods-Planner-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 79D31D1029AB3A14CEF59CA8A840CBB5 /* Pods-Planner-dummy.m */; };
+		82FC4BDFD3DF9A8ADF4097974542530B /* UITableViewVibrantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BB051F6683AFF3CBB83C00D91A89DD /* UITableViewVibrantCell.swift */; };
+		869A246E3327279A633D33E0804DC1AD /* MaterialIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 665B6B928C01914A65EF97C4A001B3A7 /* MaterialIcon.swift */; };
+		869C2B72BFC8680E71CA7C050737C1C0 /* GCCalendarWeekView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70518265A0F7815F2CE8B591A047831A /* GCCalendarWeekView.swift */; };
+		89A047BB60930AE3FC3285762E359D78 /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 64896278F59166DAAD873A696AAA9516 /* Ionicons.ttf */; };
+		8ABC2CD38F78D10A531EBFB2B76FF658 /* SwiftIconFont+UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71FB8C653A6DF78F2F3125426EF3D5FC /* SwiftIconFont+UITextView.swift */; };
+		8C68A81BF5B16CB5CD6959D843007DEA /* IonIcons.swift in Sources */ = {isa = PBXBuildFile; fileRef = EFF3C155D4218FEE6696449C071EDC5F /* IonIcons.swift */; };
+		92FDF140B03DD509C05750054BEEF33A /* SwiftIconFont+UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ED1C06214AEAA921018B078E13FBF8F /* SwiftIconFont+UIImage.swift */; };
+		94683C3589A48729732CDE73BCEDAD97 /* ReorderController+DestinationRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87800B4210EC53FFED75689B307DBC4A /* ReorderController+DestinationRow.swift */; };
+		94735EB1BFBE473841978C26C1B45529 /* ColorModeToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6EF070D46F4F50DD81ECDEB37187FC /* ColorModeToggleButton.swift */; };
+		9490551845EB501670B2FA79E2FA2ADE /* UISideMenuNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C40780538AA60A97E96C252B1FA3E91 /* UISideMenuNavigationController.swift */; };
+		9902A2C6BB0A342751111639E469D755 /* SwiftIconFont+NSRange.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC3976F70E65AC8C3C17387F4D2AC16C /* SwiftIconFont+NSRange.swift */; };
+		9C74B74351550A41264D32A1BDF496AA /* SwiftIconFontView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603E7CEE5CD7346BF022EC0927492C20 /* SwiftIconFontView.swift */; };
+		A04545A74ADF966AF179551AFA489D9B /* ChromaAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA86EF1D24E298CF5F0101D38763042 /* ChromaAddButton.swift */; };
+		A38817B40786402DF2A8EA06CDC68D1B /* SwiftIconFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833E9E3977A2993D50C3218EED015B1D /* SwiftIconFont.swift */; };
+		A41A6A89F12562981797C8339AC1DFA7 /* SwiftIconFont+UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CC1FFD517C62CBD5DEC907ACF4A7D09 /* SwiftIconFont+UIButton.swift */; };
+		A630726F1E810665624971535852086A /* SwiftIconStepper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 77243094BC6FC96D716E1D1DDF256A2D /* SwiftIconStepper.swift */; };
+		AB80F9D71B0FC93319B60D3A5F6BC3D5 /* SwiftIconButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63494B0DA9CCDAF9A78BF61B90DEC34A /* SwiftIconButton.swift */; };
+		B1B8FB6C7C917BF802F494CB577F4687 /* ChromaShadeSlider.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6CEF638FF28DC2DC905FF5179809960 /* ChromaShadeSlider.swift */; };
+		B1C1319BE8498E9AD799AE285BF1445F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		B264E884E2DC3B6D103F4C45888FBA8B /* UITableView+Reorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = D94A700F0D070DAEB3915673304F96EF /* UITableView+Reorder.swift */; };
+		B2A58D5F6D9A1B7895E7D01C408C7067 /* GCCalendarDayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3CEE84B1ABAC0FE3EE706A8DB568A46 /* GCCalendarDayView.swift */; };
+		B4F7769657403DBFF38EAAD7F6837D21 /* ChromaColorPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31B6E65E5DC2C7C71566335BB3888501 /* ChromaColorPicker-dummy.m */; };
+		BEB717B92382015777597A7127BC67E7 /* GCCalendarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7808DA4F398616ADD117C9027D43D6B1 /* GCCalendarConfiguration.swift */; };
+		BF0A2283733E703D2CC1957B04EFDB40 /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64521210A25D273257F28FA0074E3BFA /* SideMenuManager.swift */; };
+		C47045E766451BCABB856972D36F2BA6 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E404AA6957590324067E330E0EC533 /* UIKit.framework */; };
+		C877BB3EE80EB714820219123322C7BA /* GCCalendarMonthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D23CCAB08C5184B1F646B72C892233 /* GCCalendarMonthView.swift */; };
+		CB556B7F0380002508717E989B2119F5 /* SwiftReorder-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5096EE7DFF612329212933381A32714 /* SwiftReorder-dummy.m */; };
+		D35903B6BFDC473409621463F0930B59 /* octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 14A3F37BA271ECBDD6D1895928A00E57 /* octicons.ttf */; };
+		D37FCD6D231114DCDB37FC271DB4AF60 /* SwiftIconFont-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 01D78965631C05FF64E435D2B1088EB2 /* SwiftIconFont-dummy.m */; };
+		D5227381F407149BC3DB1EA256EA26DB /* ThemifyIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8307251759CEF2AA6424AF82062B21BE /* ThemifyIcon.swift */; };
+		DD9287E94A248A6E5EF58E90F6D94C5F /* SideMenuTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 970A040A337AA8D0FF7D80E3612491BC /* SideMenuTransition.swift */; };
+		E5FDFCF7F31BE041959E171499B02425 /* SwiftIconFont+UITabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59569E4F4A5EE6B14790B4FF42386822 /* SwiftIconFont+UITabBarItem.swift */; };
+		E7F51996A4A874CEBD5710A4FE18A58C /* SwiftReorder-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 47CCFD0B8618658F07297907E0AF48FD /* SwiftReorder-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EDB8F8EB5E1BAAA519C8C070F580CD54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */; };
+		F4C5B3308181BF2B376525FF05675EA5 /* SwiftIconTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDF0E51E0699063A5FB49F1336529A2 /* SwiftIconTextView.swift */; };
+		F6FF3C4C7DC6D4B55A1A42F8CB1F02A8 /* GCCalendar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F37CDAD3B7BFA0BB1342D4A7C26379F /* GCCalendar-dummy.m */; };
+		F95AA60B927DD4AB6835E76C330FE3F0 /* GCCalendar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57192CFE6C9F56D0BF5147E1853919F6 /* GCCalendar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F988E8057E870CB8110A39E1F1663A06 /* open-iconic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BFCE5882CEF7EB04513C2E2026F53965 /* open-iconic.ttf */; };
+		FAB9BCF7273E180515FF6798FF21DF7B /* GCCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B879DEE05D377972C22E185AA83357 /* GCCalendarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		12C49DCE2BD7DF9426522F0F395B05DE /* PBXContainerItemProxy */ = {
+		AAA700D543FB3C011A9D530AF7DA469C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = FEAFBB12C7096AEFCA1AA8FA96E57D73;
-			remoteInfo = ChromaColorPicker;
-		};
-		204703BCCDF8190D800AC3EA1100BC2B /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5F1C9A702EB6E4A20D0FFA712023D32A;
-			remoteInfo = SideMenu;
-		};
-		9ACA13FC0AAF21465ADD0240564CFC5A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 5F961080F7E33B8C9D6336EE2FD28F7B;
+			remoteGlobalIDString = 25B4C439F6441E290CC2A124E8D377A7;
 			remoteInfo = SwiftReorder;
 		};
-		F93B11F02E4F82C98D8FE12C46B70657 /* PBXContainerItemProxy */ = {
+		B52F84FBC7F169A00EDC381F82F9E0D2 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 9811E08EC2822EEED9E9337B6CE6DF73;
 			remoteInfo = GCCalendar;
 		};
+		B6DDE4110E984A45378CF71994053642 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B7397938200E101428F315AF92FB9279;
+			remoteInfo = SwiftIconFont;
+		};
+		CA16BCFFF74EFD0558DFBA243D78C55D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F4062694934823B5680F86830E59105A;
+			remoteInfo = SideMenu;
+		};
+		EEB963AF6AB230C2885675BED78CE573 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FEAFBB12C7096AEFCA1AA8FA96E57D73;
+			remoteInfo = ChromaColorPicker;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0D86CA9EABE812C4E9DA8B8040E8903D /* SwiftReorder-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftReorder-Info.plist"; sourceTree = "<group>"; };
-		0E62930F0F85D5E5744533DC2DD74096 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
-		0F5CF444A43852238E7C314AEE9338BA /* ChromaColorPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChromaColorPicker.h; path = ChromaColorPicker/ChromaColorPicker.h; sourceTree = "<group>"; };
-		109401AD7500CC869CEBB04AA071FB08 /* ColorModeToggleButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorModeToggleButton.swift; path = ChromaColorPicker/ColorModeToggleButton.swift; sourceTree = "<group>"; };
-		1451D588D5CC8834E72BD186D4D436AE /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
-		169B0474C0D7CDC2B22D390A21896886 /* SwiftReorder-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftReorder-prefix.pch"; sourceTree = "<group>"; };
-		1AF9A565A1798F91EEA5EA1DFC5A8A5A /* ChromaColorPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChromaColorPicker.xcconfig; sourceTree = "<group>"; };
-		1EF79F46CD91DC6CA0F7AC60D8DCB878 /* GCCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GCCalendar.modulemap; sourceTree = "<group>"; };
-		247C49C900E84D02EF282A204D4E1C74 /* GCCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarView.swift; path = GCCalendar/GCCalendarView.swift; sourceTree = "<group>"; };
-		28CF59DFFE27EBBED9D82344D0E2A3EE /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
-		2C79200EA9C625F28AA9DB43E573BFF9 /* ReorderController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReorderController.swift; path = Source/ReorderController.swift; sourceTree = "<group>"; };
-		2D0DBAC83D976A2B3D2E42C79303803A /* ReorderController+SnapshotView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReorderController+SnapshotView.swift"; path = "Source/ReorderController+SnapshotView.swift"; sourceTree = "<group>"; };
-		31F0DA59A3E1D144B540EEFC7155E14B /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaShadeSlider.swift; path = ChromaColorPicker/ChromaShadeSlider.swift; sourceTree = "<group>"; };
-		32099C154A219AE429BD362CF0F26044 /* ChromaAddButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaAddButton.swift; path = ChromaColorPicker/ChromaAddButton.swift; sourceTree = "<group>"; };
+		01D78965631C05FF64E435D2B1088EB2 /* SwiftIconFont-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftIconFont-dummy.m"; sourceTree = "<group>"; };
+		0313F3F5651688D6F66A258087BDB911 /* SwiftIconFont-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftIconFont-umbrella.h"; sourceTree = "<group>"; };
+		07599E1EBE5E207BFA17D9A511CBEF4D /* ChromaHandle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaHandle.swift; path = ChromaColorPicker/ChromaHandle.swift; sourceTree = "<group>"; };
+		0948BF7E4144772CEBDBA836F4909AE0 /* FontAwesome.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontAwesome.swift; path = SwiftIconFont/Classes/Fonts/FontAwesome.swift; sourceTree = "<group>"; };
+		0A6EF070D46F4F50DD81ECDEB37187FC /* ColorModeToggleButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ColorModeToggleButton.swift; path = ChromaColorPicker/ColorModeToggleButton.swift; sourceTree = "<group>"; };
+		1077213629F2103DE65D0F227A20BD83 /* GCCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCCalendar-prefix.pch"; sourceTree = "<group>"; };
+		14A3F37BA271ECBDD6D1895928A00E57 /* octicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = octicons.ttf; path = SwiftIconFont/Resources/octicons.ttf; sourceTree = "<group>"; };
+		196651D38CACFBF740C521D0E893CA61 /* SwiftIconFont.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftIconFont.xcconfig; sourceTree = "<group>"; };
+		1A15316C8CFC811A80E31266AB803B16 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
+		1A4F096329C85D9501CC6E246083231B /* GCCalendarViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarViewDelegate.swift; path = GCCalendar/GCCalendarViewDelegate.swift; sourceTree = "<group>"; };
+		1B9DD3AB83B2FE12DCAC616A1279E5BC /* ReorderController+GestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReorderController+GestureRecognizer.swift"; path = "Source/ReorderController+GestureRecognizer.swift"; sourceTree = "<group>"; };
+		1D4D1E127F17ABBFC399AEF8EA1249FD /* SwiftIconFont.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftIconFont.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		220DAF741933CA778F147DD186967E64 /* Octicon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Octicon.swift; path = SwiftIconFont/Classes/Fonts/Octicon.swift; sourceTree = "<group>"; };
+		24BD10834C7B8AC9AE0FF40D2B7C7DFC /* ChromaColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ChromaColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A032A9A2B1C063C71FC345061329D43 /* SwiftIconBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconBarButtonItem.swift; path = SwiftIconFont/Classes/UI/SwiftIconBarButtonItem.swift; sourceTree = "<group>"; };
+		2C01AAC41E0DE5C3B8A88A0484AE4C3A /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		304CB3C0F5D51BAA8D362204EC21166F /* SwiftIconLabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconLabel.swift; path = SwiftIconFont/Classes/UI/SwiftIconLabel.swift; sourceTree = "<group>"; };
+		3086062E2F2F4F343B2AA69B5BA745DE /* GCCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCCalendar.h; path = GCCalendar/GCCalendar.h; sourceTree = "<group>"; };
+		31B6E65E5DC2C7C71566335BB3888501 /* ChromaColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChromaColorPicker-dummy.m"; sourceTree = "<group>"; };
+		33E4FDC57A059FDF286D9C907CE7A8B2 /* map-icons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "map-icons.ttf"; path = "SwiftIconFont/Resources/map-icons.ttf"; sourceTree = "<group>"; };
+		35E984B48D9AD74ECFC2FD8F32778CA9 /* SwiftIconFont-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftIconFont-Info.plist"; sourceTree = "<group>"; };
 		372B3592B69A5717F0480DE2D97FFC0A /* Pods-Planner-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Planner-frameworks.sh"; sourceTree = "<group>"; };
-		3DFF748E67F2109DC92D3909016BCD03 /* SwiftReorder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftReorder-dummy.m"; sourceTree = "<group>"; };
-		41453C3953315B26290628A2F8AADD41 /* GCCalendarDayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarDayView.swift; path = GCCalendar/GCCalendarDayView.swift; sourceTree = "<group>"; };
+		3A8EB04411AB6F3A94EB3B6EB0722668 /* SwiftIconFont-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftIconFont-prefix.pch"; sourceTree = "<group>"; };
+		3BC98FCA362A7D7ACB16B392CB494003 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Utilities.swift"; path = "ChromaColorPicker/UIColor+Utilities.swift"; sourceTree = "<group>"; };
+		3C40780538AA60A97E96C252B1FA3E91 /* UISideMenuNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UISideMenuNavigationController.swift; path = Pod/Classes/UISideMenuNavigationController.swift; sourceTree = "<group>"; };
+		3EFB441741B3A737F1611FF824789C2B /* GCCalendar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = GCCalendar.modulemap; sourceTree = "<group>"; };
+		40BA9B9275801D94988B980C6EFE29AE /* SwiftReorder.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftReorder.xcconfig; sourceTree = "<group>"; };
 		46256C324377B5956C8D047836E5FBD9 /* Pods-Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Planner.debug.xcconfig"; sourceTree = "<group>"; };
-		48B0F6CEFA9797A1A1D2A4C0622E6DF8 /* SwiftReorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftReorder.framework; path = SwiftReorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		52BED9D10A2A2A49505BB590F380A323 /* UITableView+Reorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Reorder.swift"; path = "Source/UITableView+Reorder.swift"; sourceTree = "<group>"; };
-		5BAB636C5AC9E992A1BDED97F0780441 /* ChromaColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ChromaColorPicker.framework; path = ChromaColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D3B452BFCA1D7F96D34F8309BE318BF /* GCCalendarWeekView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarWeekView.swift; path = GCCalendar/GCCalendarWeekView.swift; sourceTree = "<group>"; };
-		5DF0DB3FE25098CE1A6AE38E17844CAF /* SwiftReorder.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftReorder.xcconfig; sourceTree = "<group>"; };
-		5E7E73AB54904F156DDE9E0321C6EFA4 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
-		613C625E60F595969F600F2EC8860EC6 /* GCCalendarViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarViewDelegate.swift; path = GCCalendar/GCCalendarViewDelegate.swift; sourceTree = "<group>"; };
-		6168AB3B5C537C16BCF8E61AB35BA8BF /* GCCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GCCalendar-Info.plist"; sourceTree = "<group>"; };
-		62972E1F004152DACD7654D6D2763042 /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = GCCalendar.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		47CCFD0B8618658F07297907E0AF48FD /* SwiftReorder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftReorder-umbrella.h"; sourceTree = "<group>"; };
+		51AEE0CC2CF3328D9F8AD63F4DC06074 /* SwiftReorder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftReorder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		54176CB8360470C86FD79A741E349B3E /* SwiftReorder-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftReorder-Info.plist"; sourceTree = "<group>"; };
+		55311BB2DB9D36CB07B8452E467137A8 /* SwiftIconFont+UIBarButtonItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+UIBarButtonItem.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+UIBarButtonItem.swift"; sourceTree = "<group>"; };
+		57192CFE6C9F56D0BF5147E1853919F6 /* GCCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCCalendar-umbrella.h"; sourceTree = "<group>"; };
+		59569E4F4A5EE6B14790B4FF42386822 /* SwiftIconFont+UITabBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+UITabBarItem.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+UITabBarItem.swift"; sourceTree = "<group>"; };
+		5DFFE2D4351299FED1C73C621179B91C /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		603E7CEE5CD7346BF022EC0927492C20 /* SwiftIconFontView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconFontView.swift; path = SwiftIconFont/Classes/UI/SwiftIconFontView.swift; sourceTree = "<group>"; };
 		6341CF16F68C002B5BB68C182EA69350 /* Pods-Planner-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Planner-acknowledgements.plist"; sourceTree = "<group>"; };
-		6791EE5FC31C5B14E69F8C4A0081BC24 /* GCCalendarConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarConfiguration.swift; path = GCCalendar/GCCalendarConfiguration.swift; sourceTree = "<group>"; };
+		63494B0DA9CCDAF9A78BF61B90DEC34A /* SwiftIconButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconButton.swift; path = SwiftIconFont/Classes/UI/SwiftIconButton.swift; sourceTree = "<group>"; };
+		64521210A25D273257F28FA0074E3BFA /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
+		64896278F59166DAAD873A696AAA9516 /* Ionicons.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = Ionicons.ttf; path = SwiftIconFont/Resources/Ionicons.ttf; sourceTree = "<group>"; };
+		65C0B22D9C63414098B924614D177CF2 /* ReorderController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReorderController.swift; path = Source/ReorderController.swift; sourceTree = "<group>"; };
+		665B6B928C01914A65EF97C4A001B3A7 /* MaterialIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MaterialIcon.swift; path = SwiftIconFont/Classes/Fonts/MaterialIcon.swift; sourceTree = "<group>"; };
 		68961721303292A8C7D01C8AAB62C9D5 /* Pods-Planner-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Planner-acknowledgements.markdown"; sourceTree = "<group>"; };
-		6E46B3B873A5366E1DDDC5755CCC223B /* ChromaColorPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChromaColorPicker-prefix.pch"; sourceTree = "<group>"; };
-		75CE8DED73C59421C3A0C2680E6C9E86 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SideMenu.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		790D3C4468726757F317A1F2107362DE /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		6CC1FFD517C62CBD5DEC907ACF4A7D09 /* SwiftIconFont+UIButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+UIButton.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+UIButton.swift"; sourceTree = "<group>"; };
+		70518265A0F7815F2CE8B591A047831A /* GCCalendarWeekView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarWeekView.swift; path = GCCalendar/GCCalendarWeekView.swift; sourceTree = "<group>"; };
+		70BB051F6683AFF3CBB83C00D91A89DD /* UITableViewVibrantCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = UITableViewVibrantCell.swift; path = Pod/Classes/UITableViewVibrantCell.swift; sourceTree = "<group>"; };
+		71FB8C653A6DF78F2F3125426EF3D5FC /* SwiftIconFont+UITextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+UITextView.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+UITextView.swift"; sourceTree = "<group>"; };
+		74E404AA6957590324067E330E0EC533 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		765102908669E0FA9CDFC2CAA0D6C4EE /* SwiftReorder-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftReorder-prefix.pch"; sourceTree = "<group>"; };
+		77243094BC6FC96D716E1D1DDF256A2D /* SwiftIconStepper.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconStepper.swift; path = SwiftIconFont/Classes/UI/SwiftIconStepper.swift; sourceTree = "<group>"; };
+		7808DA4F398616ADD117C9027D43D6B1 /* GCCalendarConfiguration.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarConfiguration.swift; path = GCCalendar/GCCalendarConfiguration.swift; sourceTree = "<group>"; };
 		79D31D1029AB3A14CEF59CA8A840CBB5 /* Pods-Planner-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Planner-dummy.m"; sourceTree = "<group>"; };
-		7E22DA3E9B9F494847E037BAEF6D613F /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
-		861A098983223D359F2AC15A624045B5 /* UIColor+Utilities.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIColor+Utilities.swift"; path = "ChromaColorPicker/UIColor+Utilities.swift"; sourceTree = "<group>"; };
+		7A03884690C83C46A434EBFC8A54B36D /* ChromaColorPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaColorPicker.swift; path = ChromaColorPicker/ChromaColorPicker.swift; sourceTree = "<group>"; };
+		7BDF0E51E0699063A5FB49F1336529A2 /* SwiftIconTextView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconTextView.swift; path = SwiftIconFont/Classes/UI/SwiftIconTextView.swift; sourceTree = "<group>"; };
+		7ED1C06214AEAA921018B078E13FBF8F /* SwiftIconFont+UIImage.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+UIImage.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+UIImage.swift"; sourceTree = "<group>"; };
+		806A5A4F606F8FF660112E58DFD67EB8 /* Segoe mdl2 assets.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "Segoe mdl2 assets.ttf"; path = "SwiftIconFont/Resources/Segoe mdl2 assets.ttf"; sourceTree = "<group>"; };
+		8215D7B8811A819A7234F3F758662EF7 /* ChromaColorPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChromaColorPicker-umbrella.h"; sourceTree = "<group>"; };
+		82686981A4B9DADC8699DD6E5D5BFA5A /* ChromaColorPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChromaColorPicker.modulemap; sourceTree = "<group>"; };
+		826D27C9748E1BC9FB3E67159F8763A4 /* ChromaColorPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ChromaColorPicker.xcconfig; sourceTree = "<group>"; };
+		8307251759CEF2AA6424AF82062B21BE /* ThemifyIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ThemifyIcon.swift; path = SwiftIconFont/Classes/Fonts/ThemifyIcon.swift; sourceTree = "<group>"; };
+		833E9E3977A2993D50C3218EED015B1D /* SwiftIconFont.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconFont.swift; path = SwiftIconFont/Classes/SwiftIconFont.swift; sourceTree = "<group>"; };
+		835AC7F80D6D3E69E3503AD8B722D642 /* ChromaColorPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChromaColorPicker-Info.plist"; sourceTree = "<group>"; };
+		87800B4210EC53FFED75689B307DBC4A /* ReorderController+DestinationRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReorderController+DestinationRow.swift"; path = "Source/ReorderController+DestinationRow.swift"; sourceTree = "<group>"; };
+		8876ED429A5465E3B8DBEBD1EE2BA746 /* MapIcon.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = MapIcon.swift; path = SwiftIconFont/Classes/Fonts/MapIcon.swift; sourceTree = "<group>"; };
+		8C2791439EE09DF3EDAD11BEBFF04D5B /* SwiftIconFont+String.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+String.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+String.swift"; sourceTree = "<group>"; };
+		8EA86EF1D24E298CF5F0101D38763042 /* ChromaAddButton.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaAddButton.swift; path = ChromaColorPicker/ChromaAddButton.swift; sourceTree = "<group>"; };
+		8FCA7BB2E6229BBED169786C7FDAD6D3 /* SideMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SideMenu-Info.plist"; sourceTree = "<group>"; };
+		9000DBA34EEA402794D906C008E374BD /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
 		92E20844881F87658F30E5F0BC5EAC6D /* Pods-Planner-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Planner-Info.plist"; sourceTree = "<group>"; };
-		9431779A08C9F0F53317560AF6B8E844 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SideMenu.modulemap; sourceTree = "<group>"; };
-		95A4F321F69E855FAE2A86CC3D35E15B /* SwiftReorder.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftReorder.modulemap; sourceTree = "<group>"; };
-		9C963167C1148F9C1FD54A17BC96014D /* Pods_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Planner.framework; path = "Pods-Planner.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		9E0F4C9656BD7827DFE0FBF44BD51F16 /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
-		9E281F2BB7904B348DB3E50803B45D43 /* GCCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GCCalendar.xcconfig; sourceTree = "<group>"; };
-		9F97601E0FB488105C1FE038E5215FE5 /* ChromaHandle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaHandle.swift; path = ChromaColorPicker/ChromaHandle.swift; sourceTree = "<group>"; };
-		ABA64C0D9169507CE46B073C066BEDC3 /* ChromaColorPicker-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ChromaColorPicker-Info.plist"; sourceTree = "<group>"; };
-		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		BAB8681CC5D7619AA200452151AF9B81 /* GCCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GCCalendar-dummy.m"; sourceTree = "<group>"; };
+		938B8F2204B3F59929A3EEB7D7D5EFA3 /* MaterialIcons-Regular.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "MaterialIcons-Regular.ttf"; path = "SwiftIconFont/Resources/MaterialIcons-Regular.ttf"; sourceTree = "<group>"; };
+		970A040A337AA8D0FF7D80E3612491BC /* SideMenuTransition.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuTransition.swift; path = Pod/Classes/SideMenuTransition.swift; sourceTree = "<group>"; };
+		97D23CCAB08C5184B1F646B72C892233 /* GCCalendarMonthView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarMonthView.swift; path = GCCalendar/GCCalendarMonthView.swift; sourceTree = "<group>"; };
+		9F37CDAD3B7BFA0BB1342D4A7C26379F /* GCCalendar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "GCCalendar-dummy.m"; sourceTree = "<group>"; };
+		9FC1FFC65FC65C3F16CDE755521F62C4 /* FontLoader.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = FontLoader.swift; path = SwiftIconFont/Classes/FontLoader.swift; sourceTree = "<group>"; };
+		A12F1A08800359F30064637AD8A66B18 /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
+		A78B8B43AF2738A79622142CB7686F52 /* SwiftIconFont+UILabel.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+UILabel.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+UILabel.swift"; sourceTree = "<group>"; };
+		A7A54296A53C702A01C28282B35F7FE5 /* ChromaColorPicker.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = ChromaColorPicker.h; path = ChromaColorPicker/ChromaColorPicker.h; sourceTree = "<group>"; };
+		A7CCA609A97ACCF806AA2544EA0BE6DC /* SwiftIconTabBarItem.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconTabBarItem.swift; path = SwiftIconFont/Classes/UI/SwiftIconTabBarItem.swift; sourceTree = "<group>"; };
+		AB44E499FB4C38E73442B30C88498A8C /* themify.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = themify.ttf; path = SwiftIconFont/Resources/themify.ttf; sourceTree = "<group>"; };
+		B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		B3CEE84B1ABAC0FE3EE706A8DB568A46 /* GCCalendarDayView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarDayView.swift; path = GCCalendar/GCCalendarDayView.swift; sourceTree = "<group>"; };
+		B5FC09B3BBC797AA94BA31B8F3C8E1AD /* SwiftIconTextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftIconTextField.swift; path = SwiftIconFont/Classes/UI/SwiftIconTextField.swift; sourceTree = "<group>"; };
+		BD639B159B2543FA094FFFB5907F00AB /* GCCalendar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = GCCalendar.xcconfig; sourceTree = "<group>"; };
+		BFCE5882CEF7EB04513C2E2026F53965 /* open-iconic.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = "open-iconic.ttf"; path = "SwiftIconFont/Resources/open-iconic.ttf"; sourceTree = "<group>"; };
 		C5AAA60B80CBD893486EDD01EC6649F9 /* Pods-Planner-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Planner-umbrella.h"; sourceTree = "<group>"; };
-		CB648B4AD3617BD045D9B263E9C7234D /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
-		CCC43B01E556B5F58E895E9E183C1397 /* ReorderController+GestureRecognizer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReorderController+GestureRecognizer.swift"; path = "Source/ReorderController+GestureRecognizer.swift"; sourceTree = "<group>"; };
+		C6CEF638FF28DC2DC905FF5179809960 /* ChromaShadeSlider.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaShadeSlider.swift; path = ChromaColorPicker/ChromaShadeSlider.swift; sourceTree = "<group>"; };
+		CC12B3A67C8849A8FF041B640AE3C464 /* ReorderController+AutoScroll.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReorderController+AutoScroll.swift"; path = "Source/ReorderController+AutoScroll.swift"; sourceTree = "<group>"; };
 		D0C0385EA5789BCCD21BEEFEA446049A /* Pods-Planner.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Planner.modulemap"; sourceTree = "<group>"; };
-		D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		D6F5AC1BD786CCC1DC77D726BE3D4E51 /* GCCalendar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCCalendar-prefix.pch"; sourceTree = "<group>"; };
-		D7A101E8B6AA0147F28243EE8FB93901 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
-		DC65003D826426A94B851B2E5F1BA3DF /* ChromaColorPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = ChromaColorPicker.modulemap; sourceTree = "<group>"; };
+		D7B879DEE05D377972C22E185AA83357 /* GCCalendarView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarView.swift; path = GCCalendar/GCCalendarView.swift; sourceTree = "<group>"; };
+		D82024B2E52F94ECFDC75BC4FBB0EE30 /* SwiftIconFont.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftIconFont.modulemap; sourceTree = "<group>"; };
+		D94A700F0D070DAEB3915673304F96EF /* UITableView+Reorder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UITableView+Reorder.swift"; path = "Source/UITableView+Reorder.swift"; sourceTree = "<group>"; };
+		DC3976F70E65AC8C3C17387F4D2AC16C /* SwiftIconFont+NSRange.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+NSRange.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+NSRange.swift"; sourceTree = "<group>"; };
 		DC78CA94CBEF5544C57EA0801E225769 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
-		DC9D9B0D82A8FCB579D05F51694F1A91 /* ChromaColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ChromaColorPicker-dummy.m"; sourceTree = "<group>"; };
-		E09369A38242F1F542F52BA4BDB9A530 /* GCCalendar.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCCalendar.h; path = GCCalendar/GCCalendar.h; sourceTree = "<group>"; };
-		E215F9205E5BC106EA09F43C3F5C2118 /* ReorderController+AutoScroll.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReorderController+AutoScroll.swift"; path = "Source/ReorderController+AutoScroll.swift"; sourceTree = "<group>"; };
-		E5B2AAB27DC0A55E251FB62397DCC5E6 /* SwiftReorder-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftReorder-umbrella.h"; sourceTree = "<group>"; };
-		E60697126691F75AC90BD2253DDA9460 /* ChromaColorPicker.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ChromaColorPicker.swift; path = ChromaColorPicker/ChromaColorPicker.swift; sourceTree = "<group>"; };
-		E978ECF6E78134A0E16019F0ED04BA28 /* ReorderController+DestinationRow.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReorderController+DestinationRow.swift"; path = "Source/ReorderController+DestinationRow.swift"; sourceTree = "<group>"; };
-		F9256EBD7F5BAE751B06DC6FDF82C9CC /* GCCalendarMonthView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = GCCalendarMonthView.swift; path = GCCalendar/GCCalendarMonthView.swift; sourceTree = "<group>"; };
-		FC4F587A354FF3BE60A431D39C8711F0 /* ChromaColorPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChromaColorPicker-umbrella.h"; sourceTree = "<group>"; };
-		FE5B455352E70C9D25E755C8E73D934F /* GCCalendar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "GCCalendar-umbrella.h"; sourceTree = "<group>"; };
+		DE882CD5512493FD84BE03DDD979224B /* FontAwesome.ttf */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file; name = FontAwesome.ttf; path = SwiftIconFont/Resources/FontAwesome.ttf; sourceTree = "<group>"; };
+		DF9A652C0DB7B6BE0DE7D1E54F554191 /* SwiftReorder.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftReorder.modulemap; sourceTree = "<group>"; };
+		DFDAB39BDD45185CC10AAA7208DFEEB5 /* Iconic.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Iconic.swift; path = SwiftIconFont/Classes/Fonts/Iconic.swift; sourceTree = "<group>"; };
+		E18C89F2E76C64BB52FC4237ECDDA5AB /* SwiftIconFont+UITextField.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+UITextField.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+UITextField.swift"; sourceTree = "<group>"; };
+		E2F8499FFF011C49875BAFF4347845EC /* ChromaColorPicker-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ChromaColorPicker-prefix.pch"; sourceTree = "<group>"; };
+		E6A2D5BD1B2FA444CBE3DF8C1FF92DA6 /* SegoeMDL2.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SegoeMDL2.swift; path = SwiftIconFont/Classes/Fonts/SegoeMDL2.swift; sourceTree = "<group>"; };
+		E96E0C6C606BEEC1FD2A904C2F655243 /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		E9B5683FD34DEA58AAE9A3DE0C145B98 /* SwiftIconFont+UIImageView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "SwiftIconFont+UIImageView.swift"; path = "SwiftIconFont/Classes/Extensions/SwiftIconFont+UIImageView.swift"; sourceTree = "<group>"; };
+		EB6E63B6EF2E24DF4343C17414085F71 /* GCCalendar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "GCCalendar-Info.plist"; sourceTree = "<group>"; };
+		EFF3C155D4218FEE6696449C071EDC5F /* IonIcons.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = IonIcons.swift; path = SwiftIconFont/Classes/Fonts/IonIcons.swift; sourceTree = "<group>"; };
+		F1EF28613584390850A5ACA5825F3342 /* ReorderController+SnapshotView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "ReorderController+SnapshotView.swift"; path = "Source/ReorderController+SnapshotView.swift"; sourceTree = "<group>"; };
+		F5096EE7DFF612329212933381A32714 /* SwiftReorder-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftReorder-dummy.m"; sourceTree = "<group>"; };
+		F835C64BD96012B7B74EE436E7B5C9A6 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		F9388E1B782695966634A40F293485A8 /* Pods_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		3FC7A79C1E5245BB3C427FA6344653A0 /* Frameworks */ = {
+		1131658EFB6CCF83A7B5FEF850FC5D49 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6677927359F4B265CAB6883D5462791 /* Foundation.framework in Frameworks */,
+				EDB8F8EB5E1BAAA519C8C070F580CD54 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		40A4A233676C9B695EC133E63C97E033 /* Frameworks */ = {
+		115D1BF94564D7428FDF98599950F664 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				533328C4F9CF7C812CE2E27198EB90F7 /* Foundation.framework in Frameworks */,
+				B1C1319BE8498E9AD799AE285BF1445F /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,14 +262,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9CF1E5FE377C389190FC7864955AE52C /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				15516BFC4A975629870D6C082739BB9C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		A6D9D0FC09DCC33DD2C7DC0AFB284DAD /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -187,33 +270,33 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E0EEA91191F81610E4F01B08D1E57086 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				693EA295477E287EAF29B0AEDDD832FD /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E27FEFCC144913006013583C5814CB72 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6ED907E07C0E9609843986EC4064ED4C /* Foundation.framework in Frameworks */,
+				C47045E766451BCABB856972D36F2BA6 /* UIKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		06BE7E2AC8729BF0E7DB8892E1E96568 /* SwiftReorder */ = {
+		06CDD10DE71306278CF89108B3036DFD /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				2C79200EA9C625F28AA9DB43E573BFF9 /* ReorderController.swift */,
-				E215F9205E5BC106EA09F43C3F5C2118 /* ReorderController+AutoScroll.swift */,
-				E978ECF6E78134A0E16019F0ED04BA28 /* ReorderController+DestinationRow.swift */,
-				CCC43B01E556B5F58E895E9E183C1397 /* ReorderController+GestureRecognizer.swift */,
-				2D0DBAC83D976A2B3D2E42C79303803A /* ReorderController+SnapshotView.swift */,
-				52BED9D10A2A2A49505BB590F380A323 /* UITableView+Reorder.swift */,
-				44C8D1F5113F534739E18A3CC720EF1D /* Support Files */,
+				2EFB40531CB700ADF867FEEE78561E78 /* Foundation.framework */,
+				74E404AA6957590324067E330E0EC533 /* UIKit.framework */,
 			);
-			name = SwiftReorder;
-			path = SwiftReorder;
-			sourceTree = "<group>";
-		};
-		0E706C1BD3D6992563F3503DB0705980 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				428B5304211D8CA5A4A50E2D2250CEB6 /* ChromaColorPicker */,
-				25109F99A89491576CACAC52E339AEE8 /* GCCalendar */,
-				D381ACB0D7B43A0980534957A232D45D /* SideMenu */,
-				06BE7E2AC8729BF0E7DB8892E1E96568 /* SwiftReorder */,
-			);
-			name = Pods;
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		14F7A6B44D998C17F174F1E876664C01 /* Pods-Planner */ = {
@@ -233,46 +316,33 @@
 			path = "Target Support Files/Pods-Planner";
 			sourceTree = "<group>";
 		};
-		17D55EFFCBBE6C20FA73081956B4AA37 /* Support Files */ = {
+		2BD0F8C1904D9A84E64F70C8D97360A3 /* ChromaColorPicker */ = {
 			isa = PBXGroup;
 			children = (
-				9431779A08C9F0F53317560AF6B8E844 /* SideMenu.modulemap */,
-				D7A101E8B6AA0147F28243EE8FB93901 /* SideMenu.xcconfig */,
-				790D3C4468726757F317A1F2107362DE /* SideMenu-dummy.m */,
-				7E22DA3E9B9F494847E037BAEF6D613F /* SideMenu-Info.plist */,
-				CB648B4AD3617BD045D9B263E9C7234D /* SideMenu-prefix.pch */,
-				5E7E73AB54904F156DDE9E0321C6EFA4 /* SideMenu-umbrella.h */,
+				8EA86EF1D24E298CF5F0101D38763042 /* ChromaAddButton.swift */,
+				A7A54296A53C702A01C28282B35F7FE5 /* ChromaColorPicker.h */,
+				7A03884690C83C46A434EBFC8A54B36D /* ChromaColorPicker.swift */,
+				07599E1EBE5E207BFA17D9A511CBEF4D /* ChromaHandle.swift */,
+				C6CEF638FF28DC2DC905FF5179809960 /* ChromaShadeSlider.swift */,
+				0A6EF070D46F4F50DD81ECDEB37187FC /* ColorModeToggleButton.swift */,
+				3BC98FCA362A7D7ACB16B392CB494003 /* UIColor+Utilities.swift */,
+				8D733595F0C1BB535EF1F4E887078987 /* Support Files */,
+			);
+			path = ChromaColorPicker;
+			sourceTree = "<group>";
+		};
+		2E92577F124383E9DC198C8030E3D8DA /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EFB441741B3A737F1611FF824789C2B /* GCCalendar.modulemap */,
+				BD639B159B2543FA094FFFB5907F00AB /* GCCalendar.xcconfig */,
+				9F37CDAD3B7BFA0BB1342D4A7C26379F /* GCCalendar-dummy.m */,
+				EB6E63B6EF2E24DF4343C17414085F71 /* GCCalendar-Info.plist */,
+				1077213629F2103DE65D0F227A20BD83 /* GCCalendar-prefix.pch */,
+				57192CFE6C9F56D0BF5147E1853919F6 /* GCCalendar-umbrella.h */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SideMenu";
-			sourceTree = "<group>";
-		};
-		25109F99A89491576CACAC52E339AEE8 /* GCCalendar */ = {
-			isa = PBXGroup;
-			children = (
-				E09369A38242F1F542F52BA4BDB9A530 /* GCCalendar.h */,
-				6791EE5FC31C5B14E69F8C4A0081BC24 /* GCCalendarConfiguration.swift */,
-				41453C3953315B26290628A2F8AADD41 /* GCCalendarDayView.swift */,
-				F9256EBD7F5BAE751B06DC6FDF82C9CC /* GCCalendarMonthView.swift */,
-				247C49C900E84D02EF282A204D4E1C74 /* GCCalendarView.swift */,
-				613C625E60F595969F600F2EC8860EC6 /* GCCalendarViewDelegate.swift */,
-				5D3B452BFCA1D7F96D34F8309BE318BF /* GCCalendarWeekView.swift */,
-				666358C87935921EAE900B80CEDD55B8 /* Support Files */,
-			);
-			name = GCCalendar;
-			path = GCCalendar;
-			sourceTree = "<group>";
-		};
-		262CF74D97639271E497557F7197C7F4 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				5BAB636C5AC9E992A1BDED97F0780441 /* ChromaColorPicker.framework */,
-				62972E1F004152DACD7654D6D2763042 /* GCCalendar.framework */,
-				9C963167C1148F9C1FD54A17BC96014D /* Pods_Planner.framework */,
-				75CE8DED73C59421C3A0C2680E6C9E86 /* SideMenu.framework */,
-				48B0F6CEFA9797A1A1D2A4C0622E6DF8 /* SwiftReorder.framework */,
-			);
-			name = Products;
+			path = "../Target Support Files/GCCalendar";
 			sourceTree = "<group>";
 		};
 		354B4C36B33E9EDC1495FEB0CC617380 /* Targets Support Files */ = {
@@ -283,112 +353,223 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		428B5304211D8CA5A4A50E2D2250CEB6 /* ChromaColorPicker */ = {
+		3855E1CF28208DF6CF274E267355DEC7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				32099C154A219AE429BD362CF0F26044 /* ChromaAddButton.swift */,
-				0F5CF444A43852238E7C314AEE9338BA /* ChromaColorPicker.h */,
-				E60697126691F75AC90BD2253DDA9460 /* ChromaColorPicker.swift */,
-				9F97601E0FB488105C1FE038E5215FE5 /* ChromaHandle.swift */,
-				31F0DA59A3E1D144B540EEFC7155E14B /* ChromaShadeSlider.swift */,
-				109401AD7500CC869CEBB04AA071FB08 /* ColorModeToggleButton.swift */,
-				861A098983223D359F2AC15A624045B5 /* UIColor+Utilities.swift */,
-				E33882393C414476BC2AC696C24542B0 /* Support Files */,
+				24BD10834C7B8AC9AE0FF40D2B7C7DFC /* ChromaColorPicker.framework */,
+				2C01AAC41E0DE5C3B8A88A0484AE4C3A /* GCCalendar.framework */,
+				F9388E1B782695966634A40F293485A8 /* Pods_Planner.framework */,
+				5DFFE2D4351299FED1C73C621179B91C /* SideMenu.framework */,
+				1D4D1E127F17ABBFC399AEF8EA1249FD /* SwiftIconFont.framework */,
+				51AEE0CC2CF3328D9F8AD63F4DC06074 /* SwiftReorder.framework */,
 			);
-			name = ChromaColorPicker;
-			path = ChromaColorPicker;
+			name = Products;
 			sourceTree = "<group>";
 		};
-		44C8D1F5113F534739E18A3CC720EF1D /* Support Files */ = {
+		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				95A4F321F69E855FAE2A86CC3D35E15B /* SwiftReorder.modulemap */,
-				5DF0DB3FE25098CE1A6AE38E17844CAF /* SwiftReorder.xcconfig */,
-				3DFF748E67F2109DC92D3909016BCD03 /* SwiftReorder-dummy.m */,
-				0D86CA9EABE812C4E9DA8B8040E8903D /* SwiftReorder-Info.plist */,
-				169B0474C0D7CDC2B22D390A21896886 /* SwiftReorder-prefix.pch */,
-				E5B2AAB27DC0A55E251FB62397DCC5E6 /* SwiftReorder-umbrella.h */,
+				06CDD10DE71306278CF89108B3036DFD /* iOS */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftReorder";
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		44D5347904CF754D6785B84253F2574A /* iOS */ = {
+		45E88217E1C282B0B84E93CF3A9F64B0 /* GCCalendar */ = {
 			isa = PBXGroup;
 			children = (
-				D6DFF15000AFE2A371BF499E7AFDA808 /* Foundation.framework */,
+				3086062E2F2F4F343B2AA69B5BA745DE /* GCCalendar.h */,
+				7808DA4F398616ADD117C9027D43D6B1 /* GCCalendarConfiguration.swift */,
+				B3CEE84B1ABAC0FE3EE706A8DB568A46 /* GCCalendarDayView.swift */,
+				97D23CCAB08C5184B1F646B72C892233 /* GCCalendarMonthView.swift */,
+				D7B879DEE05D377972C22E185AA83357 /* GCCalendarView.swift */,
+				1A4F096329C85D9501CC6E246083231B /* GCCalendarViewDelegate.swift */,
+				70518265A0F7815F2CE8B591A047831A /* GCCalendarWeekView.swift */,
+				2E92577F124383E9DC198C8030E3D8DA /* Support Files */,
 			);
-			name = iOS;
+			path = GCCalendar;
 			sourceTree = "<group>";
 		};
-		666358C87935921EAE900B80CEDD55B8 /* Support Files */ = {
+		5EB0814BF7DE9235081EEB0F4DFBAF1B /* SwiftReorder */ = {
 			isa = PBXGroup;
 			children = (
-				1EF79F46CD91DC6CA0F7AC60D8DCB878 /* GCCalendar.modulemap */,
-				9E281F2BB7904B348DB3E50803B45D43 /* GCCalendar.xcconfig */,
-				BAB8681CC5D7619AA200452151AF9B81 /* GCCalendar-dummy.m */,
-				6168AB3B5C537C16BCF8E61AB35BA8BF /* GCCalendar-Info.plist */,
-				D6F5AC1BD786CCC1DC77D726BE3D4E51 /* GCCalendar-prefix.pch */,
-				FE5B455352E70C9D25E755C8E73D934F /* GCCalendar-umbrella.h */,
+				65C0B22D9C63414098B924614D177CF2 /* ReorderController.swift */,
+				CC12B3A67C8849A8FF041B640AE3C464 /* ReorderController+AutoScroll.swift */,
+				87800B4210EC53FFED75689B307DBC4A /* ReorderController+DestinationRow.swift */,
+				1B9DD3AB83B2FE12DCAC616A1279E5BC /* ReorderController+GestureRecognizer.swift */,
+				F1EF28613584390850A5ACA5825F3342 /* ReorderController+SnapshotView.swift */,
+				D94A700F0D070DAEB3915673304F96EF /* UITableView+Reorder.swift */,
+				ADC5D29EB25B6E580A97798CD2A1A0CF /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/GCCalendar";
+			path = SwiftReorder;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				B36AB396275697EEE1A5B13BA8A38FE3 /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				0E706C1BD3D6992563F3503DB0705980 /* Pods */,
-				262CF74D97639271E497557F7197C7F4 /* Products */,
+				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
+				C2A897C0CBE17D078FE3EE86DDEC0D05 /* Pods */,
+				3855E1CF28208DF6CF274E267355DEC7 /* Products */,
 				354B4C36B33E9EDC1495FEB0CC617380 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		8D733595F0C1BB535EF1F4E887078987 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				44D5347904CF754D6785B84253F2574A /* iOS */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		D381ACB0D7B43A0980534957A232D45D /* SideMenu */ = {
-			isa = PBXGroup;
-			children = (
-				1451D588D5CC8834E72BD186D4D436AE /* SideMenuManager.swift */,
-				9E0F4C9656BD7827DFE0FBF44BD51F16 /* SideMenuTransition.swift */,
-				0E62930F0F85D5E5744533DC2DD74096 /* UISideMenuNavigationController.swift */,
-				28CF59DFFE27EBBED9D82344D0E2A3EE /* UITableViewVibrantCell.swift */,
-				17D55EFFCBBE6C20FA73081956B4AA37 /* Support Files */,
-			);
-			name = SideMenu;
-			path = SideMenu;
-			sourceTree = "<group>";
-		};
-		E33882393C414476BC2AC696C24542B0 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				DC65003D826426A94B851B2E5F1BA3DF /* ChromaColorPicker.modulemap */,
-				1AF9A565A1798F91EEA5EA1DFC5A8A5A /* ChromaColorPicker.xcconfig */,
-				DC9D9B0D82A8FCB579D05F51694F1A91 /* ChromaColorPicker-dummy.m */,
-				ABA64C0D9169507CE46B073C066BEDC3 /* ChromaColorPicker-Info.plist */,
-				6E46B3B873A5366E1DDDC5755CCC223B /* ChromaColorPicker-prefix.pch */,
-				FC4F587A354FF3BE60A431D39C8711F0 /* ChromaColorPicker-umbrella.h */,
+				82686981A4B9DADC8699DD6E5D5BFA5A /* ChromaColorPicker.modulemap */,
+				826D27C9748E1BC9FB3E67159F8763A4 /* ChromaColorPicker.xcconfig */,
+				31B6E65E5DC2C7C71566335BB3888501 /* ChromaColorPicker-dummy.m */,
+				835AC7F80D6D3E69E3503AD8B722D642 /* ChromaColorPicker-Info.plist */,
+				E2F8499FFF011C49875BAFF4347845EC /* ChromaColorPicker-prefix.pch */,
+				8215D7B8811A819A7234F3F758662EF7 /* ChromaColorPicker-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/ChromaColorPicker";
 			sourceTree = "<group>";
 		};
+		ADC5D29EB25B6E580A97798CD2A1A0CF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				DF9A652C0DB7B6BE0DE7D1E54F554191 /* SwiftReorder.modulemap */,
+				40BA9B9275801D94988B980C6EFE29AE /* SwiftReorder.xcconfig */,
+				F5096EE7DFF612329212933381A32714 /* SwiftReorder-dummy.m */,
+				54176CB8360470C86FD79A741E349B3E /* SwiftReorder-Info.plist */,
+				765102908669E0FA9CDFC2CAA0D6C4EE /* SwiftReorder-prefix.pch */,
+				47CCFD0B8618658F07297907E0AF48FD /* SwiftReorder-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftReorder";
+			sourceTree = "<group>";
+		};
+		B25AF5B7FCDF09E8135438DD264046C7 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				D82024B2E52F94ECFDC75BC4FBB0EE30 /* SwiftIconFont.modulemap */,
+				196651D38CACFBF740C521D0E893CA61 /* SwiftIconFont.xcconfig */,
+				01D78965631C05FF64E435D2B1088EB2 /* SwiftIconFont-dummy.m */,
+				35E984B48D9AD74ECFC2FD8F32778CA9 /* SwiftIconFont-Info.plist */,
+				3A8EB04411AB6F3A94EB3B6EB0722668 /* SwiftIconFont-prefix.pch */,
+				0313F3F5651688D6F66A258087BDB911 /* SwiftIconFont-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftIconFont";
+			sourceTree = "<group>";
+		};
+		C2A897C0CBE17D078FE3EE86DDEC0D05 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2BD0F8C1904D9A84E64F70C8D97360A3 /* ChromaColorPicker */,
+				45E88217E1C282B0B84E93CF3A9F64B0 /* GCCalendar */,
+				FF071EE9637C289F398F679DDC1D1577 /* SideMenu */,
+				FC8ECE471D53E22FE13DE1FE9E862855 /* SwiftIconFont */,
+				5EB0814BF7DE9235081EEB0F4DFBAF1B /* SwiftReorder */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D369D507EE29C8A72AF01BB68465257B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				DE882CD5512493FD84BE03DDD979224B /* FontAwesome.ttf */,
+				64896278F59166DAAD873A696AAA9516 /* Ionicons.ttf */,
+				33E4FDC57A059FDF286D9C907CE7A8B2 /* map-icons.ttf */,
+				938B8F2204B3F59929A3EEB7D7D5EFA3 /* MaterialIcons-Regular.ttf */,
+				14A3F37BA271ECBDD6D1895928A00E57 /* octicons.ttf */,
+				BFCE5882CEF7EB04513C2E2026F53965 /* open-iconic.ttf */,
+				806A5A4F606F8FF660112E58DFD67EB8 /* Segoe mdl2 assets.ttf */,
+				AB44E499FB4C38E73442B30C88498A8C /* themify.ttf */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		F8E1C79A741693A500237E45ABA17B98 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				9000DBA34EEA402794D906C008E374BD /* SideMenu.modulemap */,
+				1A15316C8CFC811A80E31266AB803B16 /* SideMenu.xcconfig */,
+				E96E0C6C606BEEC1FD2A904C2F655243 /* SideMenu-dummy.m */,
+				8FCA7BB2E6229BBED169786C7FDAD6D3 /* SideMenu-Info.plist */,
+				F835C64BD96012B7B74EE436E7B5C9A6 /* SideMenu-prefix.pch */,
+				A12F1A08800359F30064637AD8A66B18 /* SideMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SideMenu";
+			sourceTree = "<group>";
+		};
+		FC8ECE471D53E22FE13DE1FE9E862855 /* SwiftIconFont */ = {
+			isa = PBXGroup;
+			children = (
+				0948BF7E4144772CEBDBA836F4909AE0 /* FontAwesome.swift */,
+				9FC1FFC65FC65C3F16CDE755521F62C4 /* FontLoader.swift */,
+				DFDAB39BDD45185CC10AAA7208DFEEB5 /* Iconic.swift */,
+				EFF3C155D4218FEE6696449C071EDC5F /* IonIcons.swift */,
+				8876ED429A5465E3B8DBEBD1EE2BA746 /* MapIcon.swift */,
+				665B6B928C01914A65EF97C4A001B3A7 /* MaterialIcon.swift */,
+				220DAF741933CA778F147DD186967E64 /* Octicon.swift */,
+				E6A2D5BD1B2FA444CBE3DF8C1FF92DA6 /* SegoeMDL2.swift */,
+				2A032A9A2B1C063C71FC345061329D43 /* SwiftIconBarButtonItem.swift */,
+				63494B0DA9CCDAF9A78BF61B90DEC34A /* SwiftIconButton.swift */,
+				833E9E3977A2993D50C3218EED015B1D /* SwiftIconFont.swift */,
+				DC3976F70E65AC8C3C17387F4D2AC16C /* SwiftIconFont+NSRange.swift */,
+				8C2791439EE09DF3EDAD11BEBFF04D5B /* SwiftIconFont+String.swift */,
+				55311BB2DB9D36CB07B8452E467137A8 /* SwiftIconFont+UIBarButtonItem.swift */,
+				6CC1FFD517C62CBD5DEC907ACF4A7D09 /* SwiftIconFont+UIButton.swift */,
+				7ED1C06214AEAA921018B078E13FBF8F /* SwiftIconFont+UIImage.swift */,
+				E9B5683FD34DEA58AAE9A3DE0C145B98 /* SwiftIconFont+UIImageView.swift */,
+				A78B8B43AF2738A79622142CB7686F52 /* SwiftIconFont+UILabel.swift */,
+				59569E4F4A5EE6B14790B4FF42386822 /* SwiftIconFont+UITabBarItem.swift */,
+				E18C89F2E76C64BB52FC4237ECDDA5AB /* SwiftIconFont+UITextField.swift */,
+				71FB8C653A6DF78F2F3125426EF3D5FC /* SwiftIconFont+UITextView.swift */,
+				603E7CEE5CD7346BF022EC0927492C20 /* SwiftIconFontView.swift */,
+				304CB3C0F5D51BAA8D362204EC21166F /* SwiftIconLabel.swift */,
+				77243094BC6FC96D716E1D1DDF256A2D /* SwiftIconStepper.swift */,
+				A7CCA609A97ACCF806AA2544EA0BE6DC /* SwiftIconTabBarItem.swift */,
+				B5FC09B3BBC797AA94BA31B8F3C8E1AD /* SwiftIconTextField.swift */,
+				7BDF0E51E0699063A5FB49F1336529A2 /* SwiftIconTextView.swift */,
+				8307251759CEF2AA6424AF82062B21BE /* ThemifyIcon.swift */,
+				D369D507EE29C8A72AF01BB68465257B /* Resources */,
+				B25AF5B7FCDF09E8135438DD264046C7 /* Support Files */,
+			);
+			path = SwiftIconFont;
+			sourceTree = "<group>";
+		};
+		FF071EE9637C289F398F679DDC1D1577 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				64521210A25D273257F28FA0074E3BFA /* SideMenuManager.swift */,
+				970A040A337AA8D0FF7D80E3612491BC /* SideMenuTransition.swift */,
+				3C40780538AA60A97E96C252B1FA3E91 /* UISideMenuNavigationController.swift */,
+				70BB051F6683AFF3CBB83C00D91A89DD /* UITableViewVibrantCell.swift */,
+				F8E1C79A741693A500237E45ABA17B98 /* Support Files */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		3B5B13FA3E8A569EB941FB187419A47A /* Headers */ = {
+		46CB03EE62FC6C8A151869107DF749B7 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7E82C01E224F8C300FD7F8F51F943DD8 /* Pods-Planner-umbrella.h in Headers */,
+				E7F51996A4A874CEBD5710A4FE18A58C /* SwiftReorder-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		57D4934C6BBF26033AE1F5AD45E1C9F5 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				01C452092336B827F8CC1D4ECB97AC13 /* SwiftIconFont-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7EFDDBA3F32ACD9DDF5A1E14F20EB7A9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2F518EF226730365D343C820F42921D8 /* SideMenu-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,22 +582,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A5B29FE5FA46026EA2F677ACF2130440 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				22D79BC5A2CC718FC18D93E4A7D02C1D /* SwiftReorder-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C69AA671BE38F6C9DFCBEDB8573D287F /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D8E555AD7B1B44D91FDFA0B95E0648C9 /* SideMenu-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		DCAFAB88425DA208D9ADA72964D4DE94 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -426,35 +591,25 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EFC958C44E7BF41318DF25CF32A3FEEB /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0CC5FD0AABE31BEC2C88AFC4A83E9F8D /* Pods-Planner-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		5F1C9A702EB6E4A20D0FFA712023D32A /* SideMenu */ = {
+		25B4C439F6441E290CC2A124E8D377A7 /* SwiftReorder */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C8E9702F899643AD77F1A70A74E3DD71 /* Build configuration list for PBXNativeTarget "SideMenu" */;
+			buildConfigurationList = FA46AE81A70D430FA353690408BE65DB /* Build configuration list for PBXNativeTarget "SwiftReorder" */;
 			buildPhases = (
-				C69AA671BE38F6C9DFCBEDB8573D287F /* Headers */,
-				B7503FA525F4C5E0D8517D3593321001 /* Sources */,
-				40A4A233676C9B695EC133E63C97E033 /* Frameworks */,
-				80631EF50B1520E8C856A6B46058A67F /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SideMenu;
-			productName = SideMenu;
-			productReference = 75CE8DED73C59421C3A0C2680E6C9E86 /* SideMenu.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		5F961080F7E33B8C9D6336EE2FD28F7B /* SwiftReorder */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD8256CE7AD135C6B7D91BC41FF867FC /* Build configuration list for PBXNativeTarget "SwiftReorder" */;
-			buildPhases = (
-				A5B29FE5FA46026EA2F677ACF2130440 /* Headers */,
-				E77889DA80DB173CB9243D0703D4F55D /* Sources */,
-				3FC7A79C1E5245BB3C427FA6344653A0 /* Frameworks */,
-				900467515BAA66A5121ED170B41D2A7F /* Resources */,
+				46CB03EE62FC6C8A151869107DF749B7 /* Headers */,
+				605808DF935E9103A629311FEB309DC4 /* Sources */,
+				E0EEA91191F81610E4F01B08D1E57086 /* Frameworks */,
+				33CE2252AB684468C2CE37AE834E712F /* Resources */,
 			);
 			buildRules = (
 			);
@@ -462,7 +617,7 @@
 			);
 			name = SwiftReorder;
 			productName = SwiftReorder;
-			productReference = 48B0F6CEFA9797A1A1D2A4C0622E6DF8 /* SwiftReorder.framework */;
+			productReference = 51AEE0CC2CF3328D9F8AD63F4DC06074 /* SwiftReorder.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		9811E08EC2822EEED9E9337B6CE6DF73 /* GCCalendar */ = {
@@ -480,29 +635,66 @@
 			);
 			name = GCCalendar;
 			productName = GCCalendar;
-			productReference = 62972E1F004152DACD7654D6D2763042 /* GCCalendar.framework */;
+			productReference = 2C01AAC41E0DE5C3B8A88A0484AE4C3A /* GCCalendar.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		FCA13E6BDBBAEAE0246653DCBB0781B5 /* Pods-Planner */ = {
+		B7397938200E101428F315AF92FB9279 /* SwiftIconFont */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7857AE0FFE05505DE11C9F69215ADF43 /* Build configuration list for PBXNativeTarget "Pods-Planner" */;
+			buildConfigurationList = B3D9882133570FC5BFB5FBB07AB4597B /* Build configuration list for PBXNativeTarget "SwiftIconFont" */;
 			buildPhases = (
-				3B5B13FA3E8A569EB941FB187419A47A /* Headers */,
-				9D1C6A4CA13E08A40C3BD69CBF349D8B /* Sources */,
-				9CF1E5FE377C389190FC7864955AE52C /* Frameworks */,
-				A81022118A8A0178B57D1A291A6E5D9F /* Resources */,
+				57D4934C6BBF26033AE1F5AD45E1C9F5 /* Headers */,
+				0DBF692D6DCD6A772D837DAE69B427F9 /* Sources */,
+				E27FEFCC144913006013583C5814CB72 /* Frameworks */,
+				E4A4B6A26582A7F37A97E671567A47E0 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1B24A0C4683B81E24ED1AB837F3C7339 /* PBXTargetDependency */,
-				6E1CEDF71872B81BABA5E1CBA5968A90 /* PBXTargetDependency */,
-				3CF3D53B25F2B9FCBD2BC759DF219317 /* PBXTargetDependency */,
-				1D2898F322E70A7B9B2CAFE86DF782D5 /* PBXTargetDependency */,
+			);
+			name = SwiftIconFont;
+			productName = SwiftIconFont;
+			productReference = 1D4D1E127F17ABBFC399AEF8EA1249FD /* SwiftIconFont.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		E807D5F3C76CD77529673EFA9059E78E /* Pods-Planner */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BCD9884ED52D97838951FE5D1B0CEFE9 /* Build configuration list for PBXNativeTarget "Pods-Planner" */;
+			buildPhases = (
+				EFC958C44E7BF41318DF25CF32A3FEEB /* Headers */,
+				D14C90E7CEAEC70E63D1707B330903A2 /* Sources */,
+				115D1BF94564D7428FDF98599950F664 /* Frameworks */,
+				ACEDBE4CEEF05F3F19AB2260B40D8A0B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				69AC301B211C38E347BE310C37B46F32 /* PBXTargetDependency */,
+				9CB3CFB352DFFBD871826B68B06A2D2C /* PBXTargetDependency */,
+				83A64A0887D2CC6991ADD10C2E21AFD3 /* PBXTargetDependency */,
+				7E7562ACBE850FF277DFD74DF56D7FCF /* PBXTargetDependency */,
+				73451DF22F7B3F8010CEE71F93A27717 /* PBXTargetDependency */,
 			);
 			name = "Pods-Planner";
 			productName = "Pods-Planner";
-			productReference = 9C963167C1148F9C1FD54A17BC96014D /* Pods_Planner.framework */;
+			productReference = F9388E1B782695966634A40F293485A8 /* Pods_Planner.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		F4062694934823B5680F86830E59105A /* SideMenu */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D9577622329992883FE0F3435B3689A2 /* Build configuration list for PBXNativeTarget "SideMenu" */;
+			buildPhases = (
+				7EFDDBA3F32ACD9DDF5A1E14F20EB7A9 /* Headers */,
+				D93BDA482DE18832EE895B5540F97DF8 /* Sources */,
+				1131658EFB6CCF83A7B5FEF850FC5D49 /* Frameworks */,
+				B6AFE7726206ED3A39ED327CF1B6DE6A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SideMenu;
+			productName = SideMenu;
+			productReference = 5DFFE2D4351299FED1C73C621179B91C /* SideMenu.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		FEAFBB12C7096AEFCA1AA8FA96E57D73 /* ChromaColorPicker */ = {
@@ -520,7 +712,7 @@
 			);
 			name = ChromaColorPicker;
 			productName = ChromaColorPicker;
-			productReference = 5BAB636C5AC9E992A1BDED97F0780441 /* ChromaColorPicker.framework */;
+			productReference = 24BD10834C7B8AC9AE0FF40D2B7C7DFC /* ChromaColorPicker.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -530,7 +722,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0930;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1010;
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -540,35 +732,36 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 262CF74D97639271E497557F7197C7F4 /* Products */;
+			productRefGroup = 3855E1CF28208DF6CF274E267355DEC7 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FEAFBB12C7096AEFCA1AA8FA96E57D73 /* ChromaColorPicker */,
 				9811E08EC2822EEED9E9337B6CE6DF73 /* GCCalendar */,
-				FCA13E6BDBBAEAE0246653DCBB0781B5 /* Pods-Planner */,
-				5F1C9A702EB6E4A20D0FFA712023D32A /* SideMenu */,
-				5F961080F7E33B8C9D6336EE2FD28F7B /* SwiftReorder */,
+				E807D5F3C76CD77529673EFA9059E78E /* Pods-Planner */,
+				F4062694934823B5680F86830E59105A /* SideMenu */,
+				B7397938200E101428F315AF92FB9279 /* SwiftIconFont */,
+				25B4C439F6441E290CC2A124E8D377A7 /* SwiftReorder */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		80631EF50B1520E8C856A6B46058A67F /* Resources */ = {
+		33CE2252AB684468C2CE37AE834E712F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		900467515BAA66A5121ED170B41D2A7F /* Resources */ = {
+		ACEDBE4CEEF05F3F19AB2260B40D8A0B /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A81022118A8A0178B57D1A291A6E5D9F /* Resources */ = {
+		B6AFE7726206ED3A39ED327CF1B6DE6A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -589,9 +782,60 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E4A4B6A26582A7F37A97E671567A47E0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				49860952EC8904CF49B86785A3510321 /* FontAwesome.ttf in Resources */,
+				89A047BB60930AE3FC3285762E359D78 /* Ionicons.ttf in Resources */,
+				2D502F3E7A499EA709861C48332F5137 /* map-icons.ttf in Resources */,
+				7D5E457D1080308FBB6CEAD623FB4957 /* MaterialIcons-Regular.ttf in Resources */,
+				D35903B6BFDC473409621463F0930B59 /* octicons.ttf in Resources */,
+				F988E8057E870CB8110A39E1F1663A06 /* open-iconic.ttf in Resources */,
+				2E1D81A22835ED3D66ADE1F3E1074646 /* Segoe mdl2 assets.ttf in Resources */,
+				6F4BB3EFD7F1EB3BC3E3441DAEA5D32F /* themify.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0DBF692D6DCD6A772D837DAE69B427F9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2E3C0275B6EE920359FE97D63C2F60CE /* FontAwesome.swift in Sources */,
+				2C281E8FC06671867A8DA90DA682C0DC /* FontLoader.swift in Sources */,
+				1DC576849AD27C4ECB63CFD33D4D2DC0 /* Iconic.swift in Sources */,
+				8C68A81BF5B16CB5CD6959D843007DEA /* IonIcons.swift in Sources */,
+				71D4D9C91F11ACD0E531FFBF0B38D35D /* MapIcon.swift in Sources */,
+				869A246E3327279A633D33E0804DC1AD /* MaterialIcon.swift in Sources */,
+				2783B5784AF179E9F550FD15DAB10524 /* Octicon.swift in Sources */,
+				7332F85D762465796E616EAF69EC6A16 /* SegoeMDL2.swift in Sources */,
+				3164DD12AAF4FE6D67FD40BCD4EE2260 /* SwiftIconBarButtonItem.swift in Sources */,
+				AB80F9D71B0FC93319B60D3A5F6BC3D5 /* SwiftIconButton.swift in Sources */,
+				9902A2C6BB0A342751111639E469D755 /* SwiftIconFont+NSRange.swift in Sources */,
+				5F871677213427DAE69F1E6B8081654B /* SwiftIconFont+String.swift in Sources */,
+				11509379FD0E1258DB593897B3E0E633 /* SwiftIconFont+UIBarButtonItem.swift in Sources */,
+				A41A6A89F12562981797C8339AC1DFA7 /* SwiftIconFont+UIButton.swift in Sources */,
+				92FDF140B03DD509C05750054BEEF33A /* SwiftIconFont+UIImage.swift in Sources */,
+				30CA2D5510CCBDA42EA1828F0AA4C8A9 /* SwiftIconFont+UIImageView.swift in Sources */,
+				789147B1553F0C1BB9055EF55779281B /* SwiftIconFont+UILabel.swift in Sources */,
+				E5FDFCF7F31BE041959E171499B02425 /* SwiftIconFont+UITabBarItem.swift in Sources */,
+				2DF005B64D06744CE83C40DDD39002F6 /* SwiftIconFont+UITextField.swift in Sources */,
+				8ABC2CD38F78D10A531EBFB2B76FF658 /* SwiftIconFont+UITextView.swift in Sources */,
+				D37FCD6D231114DCDB37FC271DB4AF60 /* SwiftIconFont-dummy.m in Sources */,
+				A38817B40786402DF2A8EA06CDC68D1B /* SwiftIconFont.swift in Sources */,
+				9C74B74351550A41264D32A1BDF496AA /* SwiftIconFontView.swift in Sources */,
+				21743701DD367519661FF2D467C6BA2E /* SwiftIconLabel.swift in Sources */,
+				A630726F1E810665624971535852086A /* SwiftIconStepper.swift in Sources */,
+				14704764CB561E7E1F42A58A7C800298 /* SwiftIconTabBarItem.swift in Sources */,
+				4ABF00436BADDDB04DE27BD6A7B7951B /* SwiftIconTextField.swift in Sources */,
+				F4C5B3308181BF2B376525FF05675EA5 /* SwiftIconTextView.swift in Sources */,
+				D5227381F407149BC3DB1EA256EA26DB /* ThemifyIcon.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4D615B75C5AB38CF9C10377BA92BCEF3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,6 +847,20 @@
 				FAB9BCF7273E180515FF6798FF21DF7B /* GCCalendarView.swift in Sources */,
 				249689B2FAFC577B33188B1F4DC2286F /* GCCalendarViewDelegate.swift in Sources */,
 				869C2B72BFC8680E71CA7C050737C1C0 /* GCCalendarWeekView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		605808DF935E9103A629311FEB309DC4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				512DA5F2F63C80FC1A94E3F99E7CD546 /* ReorderController+AutoScroll.swift in Sources */,
+				94683C3589A48729732CDE73BCEDAD97 /* ReorderController+DestinationRow.swift in Sources */,
+				4D3A402D84667B9599FFED8B4C03780E /* ReorderController+GestureRecognizer.swift in Sources */,
+				463F21563EE5D119FCF28EB6A5D1FD8E /* ReorderController+SnapshotView.swift in Sources */,
+				6C890EDF3616650E3D41DE75039C95D8 /* ReorderController.swift in Sources */,
+				CB556B7F0380002508717E989B2119F5 /* SwiftReorder-dummy.m in Sources */,
+				B264E884E2DC3B6D103F4C45888FBA8B /* UITableView+Reorder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -620,75 +878,66 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		9D1C6A4CA13E08A40C3BD69CBF349D8B /* Sources */ = {
+		D14C90E7CEAEC70E63D1707B330903A2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C144FFB4E6130AC8F66CDCCE5BD211AF /* Pods-Planner-dummy.m in Sources */,
+				82F0B83528ABEB0C03F1C9DE37152232 /* Pods-Planner-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B7503FA525F4C5E0D8517D3593321001 /* Sources */ = {
+		D93BDA482DE18832EE895B5540F97DF8 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A87A3C8B72B5FBC960825781ED324B2F /* SideMenu-dummy.m in Sources */,
-				807E17F8A159D69FB1051246715696CF /* SideMenuManager.swift in Sources */,
-				C3CAA01E46D1874E3C42CA8B16AE8900 /* SideMenuTransition.swift in Sources */,
-				62A999E1F49F89D83A3A43E2A3E3C747 /* UISideMenuNavigationController.swift in Sources */,
-				716B468E1F14221D9A7A002F1E5185A4 /* UITableViewVibrantCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E77889DA80DB173CB9243D0703D4F55D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				16CAC83D2F33F44D4AF8D59AF3A58C35 /* ReorderController+AutoScroll.swift in Sources */,
-				2066B9E78D112449516A3E8D2764221C /* ReorderController+DestinationRow.swift in Sources */,
-				3B8A1B58177ECC01068879E77AADE632 /* ReorderController+GestureRecognizer.swift in Sources */,
-				B0C928B008E005FF04DE13D574D84006 /* ReorderController+SnapshotView.swift in Sources */,
-				77C392F56186703282938AF70FA91C03 /* ReorderController.swift in Sources */,
-				094E01D5745D999AE1CBC155EC1B043B /* SwiftReorder-dummy.m in Sources */,
-				3F1FE9C839EA9B39748003BAE667DC27 /* UITableView+Reorder.swift in Sources */,
+				35BC58E27D051716E38D0B230861330D /* SideMenu-dummy.m in Sources */,
+				BF0A2283733E703D2CC1957B04EFDB40 /* SideMenuManager.swift in Sources */,
+				DD9287E94A248A6E5EF58E90F6D94C5F /* SideMenuTransition.swift in Sources */,
+				9490551845EB501670B2FA79E2FA2ADE /* UISideMenuNavigationController.swift in Sources */,
+				82FC4BDFD3DF9A8ADF4097974542530B /* UITableViewVibrantCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1B24A0C4683B81E24ED1AB837F3C7339 /* PBXTargetDependency */ = {
+		69AC301B211C38E347BE310C37B46F32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ChromaColorPicker;
 			target = FEAFBB12C7096AEFCA1AA8FA96E57D73 /* ChromaColorPicker */;
-			targetProxy = 12C49DCE2BD7DF9426522F0F395B05DE /* PBXContainerItemProxy */;
+			targetProxy = EEB963AF6AB230C2885675BED78CE573 /* PBXContainerItemProxy */;
 		};
-		1D2898F322E70A7B9B2CAFE86DF782D5 /* PBXTargetDependency */ = {
+		73451DF22F7B3F8010CEE71F93A27717 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftReorder;
-			target = 5F961080F7E33B8C9D6336EE2FD28F7B /* SwiftReorder */;
-			targetProxy = 9ACA13FC0AAF21465ADD0240564CFC5A /* PBXContainerItemProxy */;
+			target = 25B4C439F6441E290CC2A124E8D377A7 /* SwiftReorder */;
+			targetProxy = AAA700D543FB3C011A9D530AF7DA469C /* PBXContainerItemProxy */;
 		};
-		3CF3D53B25F2B9FCBD2BC759DF219317 /* PBXTargetDependency */ = {
+		7E7562ACBE850FF277DFD74DF56D7FCF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftIconFont;
+			target = B7397938200E101428F315AF92FB9279 /* SwiftIconFont */;
+			targetProxy = B6DDE4110E984A45378CF71994053642 /* PBXContainerItemProxy */;
+		};
+		83A64A0887D2CC6991ADD10C2E21AFD3 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SideMenu;
-			target = 5F1C9A702EB6E4A20D0FFA712023D32A /* SideMenu */;
-			targetProxy = 204703BCCDF8190D800AC3EA1100BC2B /* PBXContainerItemProxy */;
+			target = F4062694934823B5680F86830E59105A /* SideMenu */;
+			targetProxy = CA16BCFFF74EFD0558DFBA243D78C55D /* PBXContainerItemProxy */;
 		};
-		6E1CEDF71872B81BABA5E1CBA5968A90 /* PBXTargetDependency */ = {
+		9CB3CFB352DFFBD871826B68B06A2D2C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = GCCalendar;
 			target = 9811E08EC2822EEED9E9337B6CE6DF73 /* GCCalendar */;
-			targetProxy = F93B11F02E4F82C98D8FE12C46B70657 /* PBXContainerItemProxy */;
+			targetProxy = B52F84FBC7F169A00EDC381F82F9E0D2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		13BE8DC3542114669440A307B99B66AB /* Debug */ = {
+		0A1EC957D387C3EEA9E747AD27FC38AC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7A101E8B6AA0147F28243EE8FB93901 /* SideMenu.xcconfig */;
+			baseConfigurationReference = 1A15316C8CFC811A80E31266AB803B16 /* SideMenu.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -717,11 +966,10 @@
 			};
 			name = Debug;
 		};
-		171A718FF7AFA377E314145ECA019EBF /* Debug */ = {
+		28AE572AEBFCE4C66C4EBC6C4D8E355C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DF0DB3FE25098CE1A6AE38E17844CAF /* SwiftReorder.xcconfig */;
+			baseConfigurationReference = 196651D38CACFBF740C521D0E893CA61 /* SwiftIconFont.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -731,23 +979,24 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SwiftReorder/SwiftReorder-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwiftReorder/SwiftReorder-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftIconFont/SwiftIconFont-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftIconFont/SwiftIconFont-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwiftReorder/SwiftReorder.modulemap";
-				PRODUCT_MODULE_NAME = SwiftReorder;
-				PRODUCT_NAME = SwiftReorder;
+				MODULEMAP_FILE = "Target Support Files/SwiftIconFont/SwiftIconFont.modulemap";
+				PRODUCT_MODULE_NAME = SwiftIconFont;
+				PRODUCT_NAME = SwiftIconFont;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Debug;
+			name = Release;
 		};
 		2E4862B51B002880AAF1C3675BA7C3DA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -802,19 +1051,49 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 4.2;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Release;
 		};
-		2ED8EB88D473C88499296360F319C38F /* Release */ = {
+		2EF801C7E1849E427FA99155BC26C879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40BA9B9275801D94988B980C6EFE29AE /* SwiftReorder.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftReorder/SwiftReorder-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftReorder/SwiftReorder-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftReorder/SwiftReorder.modulemap";
+				PRODUCT_MODULE_NAME = SwiftReorder;
+				PRODUCT_NAME = SwiftReorder;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		47BE90AAFBF95B2C53005084ADE89204 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DC78CA94CBEF5544C57EA0801E225769 /* Pods-Planner.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -845,46 +1124,10 @@
 			};
 			name = Release;
 		};
-		47363F565F56651B9E8FF670AD970127 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46256C324377B5956C8D047836E5FBD9 /* Pods-Planner.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Planner/Pods-Planner-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Planner/Pods-Planner.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		6A87873D67D791A52CA45FC9DA765A88 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E281F2BB7904B348DB3E50803B45D43 /* GCCalendar.xcconfig */;
+			baseConfigurationReference = BD639B159B2543FA094FFFB5907F00AB /* GCCalendar.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -915,9 +1158,8 @@
 		};
 		71F62B08F1AFD87378B0854FBC698E52 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AF9A565A1798F91EEA5EA1DFC5A8A5A /* ChromaColorPicker.xcconfig */;
+			baseConfigurationReference = 826D27C9748E1BC9FB3E67159F8763A4 /* ChromaColorPicker.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -945,6 +1187,73 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Release;
+		};
+		728F0CC6EDA468E8B9B2CA56711576BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A15316C8CFC811A80E31266AB803B16 /* SideMenu.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
+				PRODUCT_MODULE_NAME = SideMenu;
+				PRODUCT_NAME = SideMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		919B62F030C8D9EC0F7F89E814E08F09 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46256C324377B5956C8D047836E5FBD9 /* Pods-Planner.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Planner/Pods-Planner-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Planner/Pods-Planner.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
 		};
 		A106045A76089DDF3D57084904357E27 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1012,9 +1321,8 @@
 		};
 		A5738D476E84CB7B6E128B73E9B43704 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1AF9A565A1798F91EEA5EA1DFC5A8A5A /* ChromaColorPicker.xcconfig */;
+			baseConfigurationReference = 826D27C9748E1BC9FB3E67159F8763A4 /* ChromaColorPicker.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1042,11 +1350,41 @@
 			};
 			name = Debug;
 		};
-		C5939BB5A4B7DB65ACABA8AA03DA7C31 /* Release */ = {
+		BCC32E4296780C42B2883A8EB1BA1CF5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5DF0DB3FE25098CE1A6AE38E17844CAF /* SwiftReorder.xcconfig */;
+			baseConfigurationReference = 196651D38CACFBF740C521D0E893CA61 /* SwiftIconFont.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftIconFont/SwiftIconFont-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SwiftIconFont/SwiftIconFont-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SwiftIconFont/SwiftIconFont.modulemap";
+				PRODUCT_MODULE_NAME = SwiftIconFont;
+				PRODUCT_NAME = SwiftIconFont;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C477C8D1FAF87359B41A743F7419899D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 40BA9B9275801D94988B980C6EFE29AE /* SwiftReorder.xcconfig */;
+			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1069,17 +1407,15 @@
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
 		C59EB6CB7E0146C80E1EDE222E969F4A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9E281F2BB7904B348DB3E50803B45D43 /* GCCalendar.xcconfig */;
+			baseConfigurationReference = BD639B159B2543FA094FFFB5907F00AB /* GCCalendar.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -1107,40 +1443,6 @@
 			};
 			name = Debug;
 		};
-		E4DE4A0962CBA1957EBF3C862F735614 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D7A101E8B6AA0147F28243EE8FB93901 /* SideMenu.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/SideMenu/SideMenu-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SideMenu/SideMenu-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SideMenu/SideMenu.modulemap";
-				PRODUCT_MODULE_NAME = SideMenu;
-				PRODUCT_NAME = SideMenu;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1162,15 +1464,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7857AE0FFE05505DE11C9F69215ADF43 /* Build configuration list for PBXNativeTarget "Pods-Planner" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				47363F565F56651B9E8FF670AD970127 /* Debug */,
-				2ED8EB88D473C88499296360F319C38F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		8E75CD54B557568019C87A63DF0A4D3A /* Build configuration list for PBXNativeTarget "ChromaColorPicker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1180,20 +1473,38 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C8E9702F899643AD77F1A70A74E3DD71 /* Build configuration list for PBXNativeTarget "SideMenu" */ = {
+		B3D9882133570FC5BFB5FBB07AB4597B /* Build configuration list for PBXNativeTarget "SwiftIconFont" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				13BE8DC3542114669440A307B99B66AB /* Debug */,
-				E4DE4A0962CBA1957EBF3C862F735614 /* Release */,
+				BCC32E4296780C42B2883A8EB1BA1CF5 /* Debug */,
+				28AE572AEBFCE4C66C4EBC6C4D8E355C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DD8256CE7AD135C6B7D91BC41FF867FC /* Build configuration list for PBXNativeTarget "SwiftReorder" */ = {
+		BCD9884ED52D97838951FE5D1B0CEFE9 /* Build configuration list for PBXNativeTarget "Pods-Planner" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				171A718FF7AFA377E314145ECA019EBF /* Debug */,
-				C5939BB5A4B7DB65ACABA8AA03DA7C31 /* Release */,
+				919B62F030C8D9EC0F7F89E814E08F09 /* Debug */,
+				47BE90AAFBF95B2C53005084ADE89204 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D9577622329992883FE0F3435B3689A2 /* Build configuration list for PBXNativeTarget "SideMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A1EC957D387C3EEA9E747AD27FC38AC /* Debug */,
+				728F0CC6EDA468E8B9B2CA56711576BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA46AE81A70D430FA353690408BE65DB /* Build configuration list for PBXNativeTarget "SwiftReorder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C477C8D1FAF87359B41A743F7419899D /* Debug */,
+				2EF801C7E1849E427FA99155BC26C879 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
