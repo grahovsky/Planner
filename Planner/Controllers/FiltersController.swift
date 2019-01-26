@@ -21,7 +21,7 @@ class FiltersController: UITableViewController {
     var initState: (Bool, Bool, Bool, Bool)!
     
     var changed:Bool {
-        return initState != (PrefsManager.current.showEmptyCategories, PrefsManager.current.showEmptyPriorities, PrefsManager.current.showEmptyDates, PrefsManager.current.showCompleted)
+        return initState != (PrefsManager.current.showEmptyCategories, PrefsManager.current.showEmptyPriorities, PrefsManager.current.showTasksWithoutDate, PrefsManager.current.showCompletedTasks)
     }
     
     override func viewDidLoad() {
@@ -29,10 +29,10 @@ class FiltersController: UITableViewController {
         
         switchEmptyCategories.isOn = PrefsManager.current.showEmptyCategories
         switchEmptyPriorities.isOn = PrefsManager.current.showEmptyPriorities
-        switchEmptyDates.isOn = PrefsManager.current.showEmptyDates
-        switchCompleted.isOn = PrefsManager.current.showCompleted
+        switchEmptyDates.isOn = PrefsManager.current.showTasksWithoutDate
+        switchCompleted.isOn = PrefsManager.current.showCompletedTasks
         
-        initState = (PrefsManager.current.showEmptyCategories, PrefsManager.current.showEmptyPriorities, PrefsManager.current.showEmptyDates, PrefsManager.current.showCompleted)
+        initState = (PrefsManager.current.showEmptyCategories, PrefsManager.current.showEmptyPriorities, PrefsManager.current.showTasksWithoutDate, PrefsManager.current.showCompletedTasks)
     }
 
     // MARK: - Table view
@@ -59,11 +59,11 @@ class FiltersController: UITableViewController {
     }
 
     @IBAction func switchedEmptyDates(_ sender: UISwitch) {
-        PrefsManager.current.showEmptyDates = sender.isOn
+        PrefsManager.current.showTasksWithoutDate = sender.isOn
     }
     
     @IBAction func switchedCompleted(_ sender: UISwitch) {
-        PrefsManager.current.showCompleted = sender.isOn
+        PrefsManager.current.showCompletedTasks = sender.isOn
     }
  
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

@@ -4,6 +4,7 @@ PODS:
   - SideMenu (5.0.3)
   - SwiftIconFont (3.0.0)
   - SwiftReorder (6.0.1)
+  - Toaster (2.1.1)
 
 DEPENDENCIES:
   - ChromaColorPicker
@@ -11,6 +12,7 @@ DEPENDENCIES:
   - SideMenu
   - SwiftIconFont
   - SwiftReorder
+  - Toaster
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -19,6 +21,7 @@ SPEC REPOS:
     - SideMenu
     - SwiftIconFont
     - SwiftReorder
+    - Toaster
 
 SPEC CHECKSUMS:
   ChromaColorPicker: 78194fbae9f342d3781ac178c4d92c7652197d18
@@ -26,7 +29,8 @@ SPEC CHECKSUMS:
   SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
   SwiftIconFont: 2ba18554a77c44948dc35b561b344e3c23834a84
   SwiftReorder: b59368b978c9826116147672ff1f59a2d4dd9110
+  Toaster: a6c9532de1ded8105e77376f7dffeb2e12b46dbb
 
-PODFILE CHECKSUM: 9e750e2f3205f9b537932a0ba833385a458b8d2b
+PODFILE CHECKSUM: 804957cf3bac755c05eed6b75bbe2c0b3ba603dd
 
 COCOAPODS: 1.6.0.beta.2

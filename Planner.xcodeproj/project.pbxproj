@@ -52,6 +52,7 @@
 		B55C210321B5A5EA006B1310 /* PrefsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C210221B5A5EA006B1310 /* PrefsManager.swift */; };
 		B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A411FA21B0659D008C281F /* GCCalendar.framework */; };
 		B5BDC16121F1393100389486 /* EditPriorityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC16021F1393000389486 /* EditPriorityController.swift */; };
+		B5BE73F621FCC99500230618 /* Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BE73F521FCC99500230618 /* Toaster.framework */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		B55C210221B5A5EA006B1310 /* PrefsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrefsManager.swift; sourceTree = "<group>"; };
 		B5A411FA21B0659D008C281F /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BDC16021F1393000389486 /* EditPriorityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPriorityController.swift; sourceTree = "<group>"; };
+		B5BE73F521FCC99500230618 /* Toaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -113,6 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5BE73F621FCC99500230618 /* Toaster.framework in Frameworks */,
 				B50E0C1921FA61DF00FFEB50 /* SwiftIconFont.framework in Frameworks */,
 				B50E0C1521FA4CF900FFEB50 /* SwiftReorder.framework in Frameworks */,
 				B50E0C1321FA4CF300FFEB50 /* ChromaColorPicker.framework in Frameworks */,
@@ -128,6 +131,7 @@
 		0B5A073FA9189EF526DBB3F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B5BE73F521FCC99500230618 /* Toaster.framework */,
 				B50E0C1821FA61DF00FFEB50 /* SwiftIconFont.framework */,
 				B50E0C1421FA4CF900FFEB50 /* SwiftReorder.framework */,
 				B50E0C1221FA4CF300FFEB50 /* ChromaColorPicker.framework */,
@@ -426,6 +430,7 @@
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftIconFont/SwiftIconFont.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftReorder/SwiftReorder.framework",
+				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -436,6 +441,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIconFont.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftReorder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;

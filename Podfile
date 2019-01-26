@@ -11,5 +11,6 @@ pod 'SideMenu'
 pod 'ChromaColorPicker'
 pod 'SwiftReorder'
 pod 'SwiftIconFont'
+pod 'Toaster'
 
 end

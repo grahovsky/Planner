@@ -3,10 +3,11 @@ import UIKit
 import CoreData
 import SideMenu
 import SwiftIconFont
+import Toaster
 
 //контроллер для отображения списка задач
 class TaskListController: UITableViewController {
-
+    
     let taskDAO = TaskDaoDbImpl.current
     let categoryDAO = CategoryDaoDbImpl.current
     let priorityDAO = PriorityDaoDbImpl.current
@@ -22,14 +23,19 @@ class TaskListController: UITableViewController {
     
     var searchController: UISearchController! // поисковый элемент, который будет добавляться поверх таблицы задач
     
-    var taskCount: Int {
-       return taskDAO.items.count
+    // для сокращения кода
+    var searchBar:UISearchBar{
+        return searchController.searchBar
     }
-
+    
+    var taskCount: Int {
+        return taskDAO.items.count
+    }
+    
     var searchBarActive = false
     
     override func viewDidLoad() {
-       
+        
         super.viewDidLoad()
         self.hideKeyboardWhenTappedAround()
         
@@ -40,21 +46,21 @@ class TaskListController: UITableViewController {
         initSlideMenu()
         
         initIcons()
-
+        
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     override func viewWillAppear(_ animated: Bool) {
         
-//        if PrefsManager.current.filterUpdate {
-//            updateTable()
-//            PrefsManager.current.filterUpdate = false
-//        }
-            
+        //        if PrefsManager.current.filterUpdate {
+        //            updateTable()
+        //            PrefsManager.current.filterUpdate = false
+        //        }
+        
     }
     
     
@@ -78,16 +84,16 @@ class TaskListController: UITableViewController {
         navigationItem.rightBarButtonItem?.icon(from: .themify, code: "plus", ofSize: 20)
         navigationItem.leftBarButtonItem?.icon(from: .themify, code: "menu", ofSize: 20)
     }
-
+    
     // MARK: tableView
-
+    
     // методы вызываются автоматически компонентом tableView
-
+    
     // сколько секций нужно отображать в таблице
     override func numberOfSections(in tableView: UITableView) -> Int {
         return sectionCount
     }
-
+    
     // сколько будет записей в каждой секции
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -99,9 +105,9 @@ class TaskListController: UITableViewController {
         default:
             return 0
         }
-            
+        
     }
-
+    
     // отображение данных в строке
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -114,7 +120,7 @@ class TaskListController: UITableViewController {
             textQuickTask = cell.textQuickTask
             textQuickTask.placeholder = "введите быструю задачу"
             return cell
-        
+            
         case taskListSection:
             
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "cellTask", for: indexPath) as? TaskListCell else{
@@ -128,7 +134,7 @@ class TaskListController: UITableViewController {
             
             // задаем цвет по приоритету
             if let priority = task.priority {
-               cell.labelPriority.backgroundColor = priority.color as? UIColor
+                cell.labelPriority.backgroundColor = priority.color as? UIColor
             } else {
                 cell.labelPriority.backgroundColor = UIColor.white
             }
@@ -175,7 +181,7 @@ class TaskListController: UITableViewController {
             return UITableViewCell()
             
         }
-
+        
     }
     
     // установка высоты строки
@@ -189,7 +195,7 @@ class TaskListController: UITableViewController {
         }
     }
     
- 
+    
     
     override func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         
@@ -200,19 +206,19 @@ class TaskListController: UITableViewController {
     }
     
     // собственные наборы действий для строк
-//    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-//
-//        switch indexPath.section {
-//        case taskListSection:
-//            let delete  = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
-//                self.deleteTask(indexPath)
-//            }
-//            return [delete]
-//        default:
-//            return []
-//        }
-//
-//    }
+    //    override func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+    //
+    //        switch indexPath.section {
+    //        case taskListSection:
+    //            let delete  = UITableViewRowAction(style: .default, title: "Удалить") { (action, indexPath) in
+    //                self.deleteTask(indexPath)
+    //            }
+    //            return [delete]
+    //        default:
+    //            return []
+    //        }
+    //
+    //    }
     
     // какие строки можно редактировать
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -227,19 +233,19 @@ class TaskListController: UITableViewController {
     
     // удаление строки не используется, т.к. editActionsForRowAt // уже используется
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-
+        
         if indexPath.section == taskListSection {
-
+            
             if editingStyle == .delete {
-
+                
                 deleteTask(indexPath)
-
+                
             } else if editingStyle == .insert {
                 // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
             }
-
+            
         }
-
+        
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -255,10 +261,10 @@ class TaskListController: UITableViewController {
         performSegue(withIdentifier: "UpdateTask", sender: tableView.cellForRow(at: indexPath))
         
     }
-
+    
     
     // MARK: - Navigation
-
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
@@ -280,11 +286,12 @@ class TaskListController: UITableViewController {
             
             // получаем выбранную задачу
             let selectedTask = taskDAO.items[selectedIndex]
-
+            
             controller.title = "Редактирование"
             controller.task = selectedTask
             controller.delegаte = self
-        
+            controller.mode = TaskDetailsMode.update
+            
         case "CreateTask":
             
             guard let controller = segue.destination as? TaskDetailsController else { fatalError("error") }
@@ -296,16 +303,17 @@ class TaskListController: UITableViewController {
             controller.title = "Создание"
             controller.task = task
             controller.delegаte = self
+            controller.mode = TaskDetailsMode.add
             
         default:
             return
         }
-    
+        
     }
     
     //MARK: actions
     @IBAction func  deleteFromTaskDetails(segue: UIStoryboardSegue) {
-     
+        
         guard segue.source is TaskDetailsController else { return }
         
         if segue.identifier == "DeleteTaskFromDetails", let selectedIndexPath = tableView.indexPathForSelectedRow {
@@ -332,13 +340,13 @@ class TaskListController: UITableViewController {
     
     func updateTable() {
         
-        let sortType = TaskSortType(rawValue: PrefsManager.current.selectedScope)! // определяем тип сортировки по текущему выбранному значению scope button из search bar
+        let sortType = TaskSortType(rawValue: PrefsManager.current.sortType)! // определяем тип сортировки по текущему выбранному значению scope button из search bar
         
         // усли активен режим поиска и текст не пустой
         if searchBarActive && searchController.searchBar.text != nil && !(searchController.searchBar.text?.isEmpty)! {
-            taskDAO.search(text: searchController.searchBar.text!, categories: categoryDAO.checkedItems(), priorities: priorityDAO.checkedItems(), sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showEmptyDates, showTasksCompleted: PrefsManager.current.showCompleted)
+            taskDAO.search(text: searchController.searchBar.text!, categories: categoryDAO.checkedItems(), priorities: priorityDAO.checkedItems(), sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showTasksWithoutDate, showTasksCompleted: PrefsManager.current.showCompletedTasks)
         } else { // без поиска
-            taskDAO.search(text: nil, categories: categoryDAO.checkedItems(), priorities: priorityDAO.checkedItems(), sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showEmptyDates, showTasksCompleted: PrefsManager.current.showCompleted)
+            taskDAO.search(text: nil, categories: categoryDAO.checkedItems(), priorities: priorityDAO.checkedItems(), sortType: sortType, showTasksEmptyCategories: PrefsManager.current.showEmptyCategories, showTasksEmptyPriorities: PrefsManager.current.showEmptyPriorities, showTasksEmptyDates: PrefsManager.current.showTasksWithoutDate, showTasksCompleted: PrefsManager.current.showCompletedTasks)
         }
         
         tableView.reloadData()
@@ -395,7 +403,7 @@ class TaskListController: UITableViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(400)) {
             
             // если отключен показ завершенных задач
-            if !PrefsManager.current.showCompleted {
+            if !PrefsManager.current.showCompletedTasks {
                 
                 
                 // удалить задачу из коллекции и таблицы
@@ -411,9 +419,9 @@ class TaskListController: UITableViewController {
         }
         
     }
-
-    @IBAction func tapCompleteTask(_ sender: UIButton) {
     
+    @IBAction func tapCompleteTask(_ sender: UIButton) {
+        
         // определяем индекс строки по нажатой кнопке в ячейке
         let viewPosition = sender.convert(CGPoint.zero, to: tableView) // координата относительно tableView
         let indexPath = tableView.indexPathForRow(at: viewPosition)!
@@ -426,64 +434,159 @@ class TaskListController: UITableViewController {
     }
     
     @IBAction func quickTaskAdd(_ sender: UITextField) {
-    
+        
+        guard !isEmptyTrim(textQuickTask.text) else {
+            return
+        }
+        
         let task = Task(context: taskDAO.context)
         task.name = sender.text
+        
         sender.text = nil
+        
         createTask(task)
         
         updateTable()
-    
+        
     }
     
-    func createTask(_ task: Task) {
+    // добавить новую задачу
+    func createTask(_ task:Task){
+        taskDAO.add(task)
         
-        if let name = task.name?.trimmingCharacters(in: .whitespacesAndNewlines), !name.isEmpty {
-            task.name = name
-        } else {
-            task.name = "Новая задача"
+        attemptUpdate(task, forceUpdate: false, text: "Задача добавлена, но не показывается \nиз-за фильтра:")
+        
+    }
+    
+    // обновить задачу
+    func updateTask(_ task:Task){
+        taskDAO.update(task)
+        
+        attemptUpdate(task, forceUpdate: true, text: "Задача обновлена, но не показывается \nиз-за фильтра:")
+        
+        
+    }
+    
+    // нужно обновлять таблицу или нет
+    // Если новая/отредактированная задача не подпадает в текущий список (из-за фильтрации, поиска и пр.) - уведомить об этом пользователя (чтобы не паниковал, куда девалась  задача)
+    // прогоняем через все условия фильтра (можно было реализовать по-простому с помощью  items.contains(task) - но если массив будет большим - возможны "подвисания")
+    func attemptUpdate(_ task:Task, forceUpdate:Bool, text:String){ // forceUpdate - если в любом случае нужно обновить
+        
+        var willShow = true // задача будет отображаться в текущем списке
+        
+        var text = text // чтобы можно было изменять текст (т.к. параметр функции - константа)
+        
+        // чтобы не зависал UI - выполняем асинхронно
+        DispatchQueue.main.asyncAfter(deadline: .now()+1) {
+            
+            // если НЕ показываем заверешенные задачи, а у задачи статус "завершен"
+            if !PrefsManager.current.showCompletedTasks && task.completed == true{
+                willShow = false
+            }
+                
+            else
+                
+                // если НЕ показываем задачи без категории, а у задачи пустая категория
+                if !PrefsManager.current.showEmptyCategories && task.category == nil{
+                    willShow = false
+                    text = text + "\"НЕ показывать задачи с пустыми категорями\""
+                }
+                    
+                else
+                    
+                    // если НЕ показываем задачи без приоритета, а у задачи пустой приоритет
+                    if !PrefsManager.current.showEmptyPriorities && task.priority == nil{
+                        willShow = false
+                        text = text + "\"НЕ показывать задачи с пустыми приоритетами\""
+                    }
+                        
+                    else
+                        
+                        // если НЕ показываем задачи без даты, а у задачи пустая дата
+                        if !PrefsManager.current.showTasksWithoutDate && task.deadline == nil{
+                            willShow = false
+                            text = text + "\"НЕ показывать задачи без даты\""
+                        }
+                            
+                            
+                        else
+                            
+                            // если не проходит по фильтрации категорий
+                            if let category = task.category, !self.categoryDAO.checkedItems().contains(category){
+                                willShow = false
+                                text = text + "\"НЕ показывать категорию \(category.name!)\""
+                            }
+                                
+                            else
+                                
+                                // если не проходит по фильтрации приоритетов
+                                if let priority = task.priority, !self.priorityDAO.checkedItems().contains(priority){
+                                    willShow = false
+                                    text = text + "\"НЕ показывать приоритет \(priority.name!)\""
+                                    
+                                }
+                                    
+                                    
+                                else
+                                    
+                                    // если открыт поиск, а имя задачи не содержит текст поиска
+                                    if (self.searchBarActive && task.name?.lowercased().range(of:self.searchBar.text!.lowercased()) == nil) {
+                                        willShow = false
+                                        text = text + "\"имя НЕ содержит \(self.searchBar.text!)\""
+                                        
+                                        
+            }
+            
+            if willShow { // если задача должна показываться - обновляем таблицу
+           
+                self.updateTable()
+            
+            } else {
+                
+                if forceUpdate{ // если все равно надо обновить (например, при обновлении)
+                    self.updateTable()
+                }
+                
+                // уведомить пользователя о том, что задача не будет отображаться в текущем списке из-за фильтров
+                Toast(text: text, delay: 0, duration: Delay.long).show()
+                
+            }
+            
         }
-        
-        taskDAO.addOrUpdate(task)
-        
-        // индекс для новой задачи
-        let indexPath = IndexPath(item: taskCount-1, section: taskListSection)
-        
-        // вставляем запись в конец списка
-        tableView.insertRows(at: [indexPath], with: .top)
         
     }
     
     
 }
 
+
+
+
 //MARK: ActionResultDelegate
 
 extension TaskListController: ActionResultDelegate {
-
+    
     // может обрабатывать ответы (слушать действия) от любых контроллеров
     func done(source: UIViewController, data: Any?) {
         
         // если пришел ответ от TaskDetailsController
+        guard let controller = source as?  TaskDetailsController else{
+            fatalError("fatal error with cell")
+        }
+        
         // сохраняет новую задачу или обновляет измененную задачу
-        if source is TaskDetailsController {
-           
-            // редактирование, т.е. обновление (selectedIndexPath != nil)
-            if let selectedIndexPath = tableView.indexPathForSelectedRow { // определяем выбранную строку
-                
-                let task = data as! Task
-                
-                taskDAO.update(task) // обновляем задачу
-                
-            } else {
-                
-                let task = data as! Task
-                
-                createTask(task) // создаем новую задачу
-                
-            }
+        
+        switch controller.mode {
+        case .add?:
+            let task = data as! Task
             
-            updateTable()
+            createTask(task) // создаем новую задачу
+        case .update?:
+            let task = data as! Task
+            
+            updateTask(task) // обновляем  задачу
+        default:
+            return
         }
         
     }
@@ -491,7 +594,7 @@ extension TaskListController: ActionResultDelegate {
     func cancel(source: UIViewController, data: Any?) {
         
     }
-
+    
 }
 
 //обработка действий при поиске
@@ -502,8 +605,8 @@ extension TaskListController: UISearchResultsUpdating {
         // не используем
         // будем использовать searchBarTextDidEndEditing при окончании ввода текста
     }
-
-
+    
+    
 }
 
 extension TaskListController: UISearchBarDelegate {
@@ -551,7 +654,7 @@ extension TaskListController: UISearchBarDelegate {
         
         // добавляем scope buttons
         searchController.searchBar.scopeButtonTitles = ["А-Я", "Приоритет", "Дата"]
-        searchController.searchBar.selectedScopeButtonIndex = PrefsManager.current.selectedScope
+        searchController.searchBar.selectedScopeButtonIndex = PrefsManager.current.sortType
         
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
@@ -570,11 +673,11 @@ extension TaskListController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, selectedScopeButtonIndexDidChange selectedScope: Int) {
         
-        if PrefsManager.current.selectedScope == selectedScope{ // если значение не изменилось (нажали уже активную кнопку) - ничего не делаем
+        if PrefsManager.current.sortType == selectedScope{ // если значение не изменилось (нажали уже активную кнопку) - ничего не делаем
             return
         }
         
-        PrefsManager.current.selectedScope = selectedScope // сохраняем выбранный scope button (способ сортировки списка задач)
+        PrefsManager.current.sortType = selectedScope // сохраняем выбранный scope button (способ сортировки списка задач)
         
         updateTable() // обновить список задач согласно тексту поиска (если есть), сортировке и пр.
         

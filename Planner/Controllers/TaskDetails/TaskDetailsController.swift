@@ -30,6 +30,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     
     var delegаte: ActionResultDelegate! // для уведомления и вызова функции из контроллера списка задач
     
+    var mode:TaskDetailsMode!
     
     // для хранения ссылок на компоненты из ячеек
     var textTaskName: UITextField!
@@ -409,4 +410,9 @@ extension TaskDetailsController: ActionResultDelegate {
     }
     
     
+}
+
+enum TaskDetailsMode{
+    case add
+    case update
 }

@@ -8,80 +8,83 @@
 
 import Foundation
 
-class PrefsManager {
+// класс для работы с настройками приложения (чтение, запись)
+class PrefsManager{
     
+    // названия настроек храним в статичных константах
+    let showCompletedTasksKey = "showCompletedTasks"
+    let showEmptyPrioritiesKey = "showEmptyPriorities"
+    let showTasksWithoutDateKey = "showTasksWithoutDate"
+    let showEmptyCategoriesKey = "showEmptyCategories"
+    let sortTypeKey = "sortType"
+    
+    // синглтон
     static let current = PrefsManager()
     
-    private init() {
+    private init(){
         
         // создать ключи для хранения значений настроек (только при первом запуске)
-        UserDefaults.standard.register(defaults: ["showEmptyCategories" : true])
-        UserDefaults.standard.register(defaults: ["showEmptyPriorities" : true])
-        UserDefaults.standard.register(defaults: ["showEmptyDates" : true])
-        UserDefaults.standard.register(defaults: ["showCompleted" : true])
-        UserDefaults.standard.register(defaults: ["selectedScope" : 0])
-        //UserDefaults.standard.register(defaults: ["filterUpdate" : false])
+        UserDefaults.standard.register(defaults: [showEmptyCategoriesKey : true])
+        UserDefaults.standard.register(defaults: [showEmptyPrioritiesKey : true])
+        UserDefaults.standard.register(defaults: [showCompletedTasksKey : false]) // скрывать завершенные задачи
+        UserDefaults.standard.register(defaults: [showTasksWithoutDateKey : true])
+        UserDefaults.standard.register(defaults: [sortTypeKey : 0]) // сортировка по имени
         
     }
     
     // MARK: filter settings
     
-    // показать или нет в общем списке задачи, у которых не были указаны категории
-    var showEmptyCategories: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "showEmptyCategories")
+    //  показывать или нет в общем списке задачи, у которых не были указаны категории
+    var showEmptyPriorities:Bool{
+        get{
+            return UserDefaults.standard.bool(forKey: showEmptyPrioritiesKey)
         }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "showEmptyCategories")
-        }
-    }
-    
-    // показать или нет в общем списке задачи, у которых не были указаны приоритеты
-    var showEmptyPriorities: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "showEmptyPriorities")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "showEmptyPriorities")
+        set{
+            UserDefaults.standard.set(newValue, forKey: showEmptyPrioritiesKey)
         }
     }
     
-    // показать или нет в общем списке задачи, у которых не были указаны приоритеты
-    var showEmptyDates: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "showEmptyDates")
+    //  показывать или нет в общем списке задачи, у которых не были указаны категории
+    var showEmptyCategories:Bool{
+        get{
+            return UserDefaults.standard.bool(forKey: showEmptyCategoriesKey)
         }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "showEmptyDates")
-        }
-    }
-    
-    // показать или нет в общем списке задачи, у которых не были указаны приоритеты
-    var showCompleted: Bool {
-        get {
-            return UserDefaults.standard.bool(forKey: "showCompleted")
-        }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "showCompleted")
+        set{
+            UserDefaults.standard.set(newValue, forKey: showEmptyCategoriesKey)
         }
     }
     
-    var selectedScope: Int {
-        get {
-            return UserDefaults.standard.integer(forKey: "selectedScope")
+    
+    //  показывать или нет завершенные задачи
+    var showCompletedTasks:Bool{
+        get{
+            return UserDefaults.standard.bool(forKey: showCompletedTasksKey)
         }
-        set {
-            UserDefaults.standard.set(newValue, forKey: "selectedScope")
+        set{
+            UserDefaults.standard.set(newValue, forKey: showCompletedTasksKey)
         }
     }
     
-//    var filterUpdate: Bool {
-//        get {
-//            return UserDefaults.standard.bool(forKey: "filterUpdate")
-//        }
-//        set {
-//            UserDefaults.standard.set(newValue, forKey: "filterUpdate")
-//        }
-//    }
+    //  показывать или нет в общем списке задачи, у которых не указаны сроки выполнения
+    var showTasksWithoutDate:Bool{
+        get{
+            return UserDefaults.standard.bool(forKey: showTasksWithoutDateKey)
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: showTasksWithoutDateKey)
+        }
+    }
+    
+    // MARK: sort settings
+    
+    // тип сортировки для списка задач
+    var sortType:Int{
+        get{
+            return UserDefaults.standard.integer(forKey: sortTypeKey)
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: sortTypeKey)
+        }
+    }
     
 }
