@@ -9,24 +9,28 @@
 import UIKit
 
 class SideMenuController: UITableViewController {
-
+    
+    
+    @IBOutlet weak var cellFeedback: UITableViewCell!
+    @IBOutlet weak var cellShare: UITableViewCell!
+    
     let commonSection = 0
     let dictionarySection = 1
     let helpSection = 2
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
         
         tableView.backgroundColor = .darkGray
         
     }
-
+    
     // MARK: - Table view
     
     
@@ -47,6 +51,37 @@ class SideMenuController: UITableViewController {
         
         let header = view as! UITableViewHeaderFooterView
         header.tintColor = .darkGray
+        
+    }
+    
+    // действия при нажатии на пункты меню
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.isUserInteractionEnabled = false // защита от двойных нажатий (при новом показе контроллера значение isUserInteractionEnabled будет true)
+        
+        // if tableView.cellForRow(at: indexPath) === cellFeedback // === - проверка на соответствие элементов
+        
+        let changedCell = tableView.cellForRow(at: indexPath)
+        
+        switch changedCell {
+        case cellFeedback:
+            // "Написать разработчику"
+            let email = "grahovsky@gmail.com" // TODO: вынести адрес в plist
+            if let url = URL(string: "mailto:\(email)") {
+                UIApplication.shared.open(url)
+            }
+        case cellShare:
+            // "Поделиться"
+            let shareController = UIActivityViewController(activityItems: ["Пользуйтесь Planner"], applicationActivities: nil)
+            
+            shareController.popoverPresentationController?.sourceView = self.view
+            
+            present(shareController, animated: true, completion: nil)
+        default:
+            break
+        }
+        
+        tableView.isUserInteractionEnabled = true // возвращаем возможность нажимать на таблицу (требовалось для защиты от двойных нажатий)
         
     }
     
@@ -111,6 +146,6 @@ class SideMenuController: UITableViewController {
         
         
     }
-
-
+    
+    
 }
