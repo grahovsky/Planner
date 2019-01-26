@@ -19,7 +19,6 @@
 		22A98B812025922E0051183B /* CategoryDaoDbImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B7E2025922E0051183B /* CategoryDaoDbImpl.swift */; };
 		22A98B822025922E0051183B /* TaskDaoDbImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A98B7F2025922E0051183B /* TaskDaoDbImpl.swift */; };
 		22E01EC82014C2FB004B5989 /* TaskListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E01EC72014C2FB004B5989 /* TaskListCell.swift */; };
-		22E92C751FE16FC3001F8493 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22E92C741FE16FC3001F8493 /* Main.storyboard */; };
 		6849E896E9C1BD1F3E80674B /* Pods_Planner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */; };
 		B50B860821A7336200AD0AB8 /* Crud.swift in Sources */ = {isa = PBXBuildFile; fileRef = B50B860721A7336200AD0AB8 /* Crud.swift */; };
 		B50E0C1321FA4CF300FFEB50 /* ChromaColorPicker.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B50E0C1221FA4CF300FFEB50 /* ChromaColorPicker.framework */; };
@@ -53,6 +52,7 @@
 		B5A411FB21B0659D008C281F /* GCCalendar.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5A411FA21B0659D008C281F /* GCCalendar.framework */; };
 		B5BDC16121F1393100389486 /* EditPriorityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC16021F1393000389486 /* EditPriorityController.swift */; };
 		B5BE73F621FCC99500230618 /* Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BE73F521FCC99500230618 /* Toaster.framework */; };
+		B5BE73F821FD080F00230618 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BE73FA21FD080F00230618 /* Main.storyboard */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -71,7 +71,6 @@
 		22A98B7E2025922E0051183B /* CategoryDaoDbImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryDaoDbImpl.swift; sourceTree = "<group>"; };
 		22A98B7F2025922E0051183B /* TaskDaoDbImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskDaoDbImpl.swift; sourceTree = "<group>"; };
 		22E01EC72014C2FB004B5989 /* TaskListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListCell.swift; sourceTree = "<group>"; };
-		22E92C741FE16FC3001F8493 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9979425144FBD7CD114CA42F /* Pods-Planner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.debug.xcconfig"; sourceTree = "<group>"; };
 		9E5D4E37B0D3049F337135EB /* Pods_Planner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Planner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B50B860721A7336200AD0AB8 /* Crud.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crud.swift; sourceTree = "<group>"; };
@@ -106,6 +105,9 @@
 		B5A411FA21B0659D008C281F /* GCCalendar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GCCalendar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BDC16021F1393000389486 /* EditPriorityController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPriorityController.swift; sourceTree = "<group>"; };
 		B5BE73F521FCC99500230618 /* Toaster.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Toaster.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B5BE73F721FCFDB000230618 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		B5BE73FB21FD081300230618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B5BE740221FD0B3A00230618 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -188,7 +190,7 @@
 		22162C422011D60C000AAED5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
-				22E92C741FE16FC3001F8493 /* Main.storyboard */,
+				B5BE73FA21FD080F00230618 /* Main.storyboard */,
 				22759C7C1FDEA6E500E9A1E0 /* LaunchScreen.storyboard */,
 			);
 			path = Storyboards;
@@ -409,7 +411,7 @@
 			files = (
 				22759C7E1FDEA6E500E9A1E0 /* LaunchScreen.storyboard in Resources */,
 				22759C7B1FDEA6E500E9A1E0 /* Assets.xcassets in Resources */,
-				22E92C751FE16FC3001F8493 /* Main.storyboard in Resources */,
+				B5BE73F821FD080F00230618 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,8 +526,18 @@
 			isa = PBXVariantGroup;
 			children = (
 				22759C7D1FDEA6E500E9A1E0 /* Base */,
+				B5BE73F721FCFDB000230618 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		B5BE73FA21FD080F00230618 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5BE73FB21FD081300230618 /* Base */,
+				B5BE740221FD0B3A00230618 /* ru */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -535,6 +547,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -581,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -594,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -634,7 +648,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
