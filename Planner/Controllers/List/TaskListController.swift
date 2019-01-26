@@ -305,6 +305,27 @@ class TaskListController: UITableViewController {
             controller.delegаte = self
             controller.mode = TaskDetailsMode.add
             
+        case "ShowTaskInfo": // переходим в контроллер для просмотра доп. инфо
+            
+            // определить индекс строки таблицы для нажатой кнопки
+            let button = sender as! UIButton
+            let buttonPosition = button.convert(CGPoint.zero, to: self.tableView)
+            let indexPath = self.tableView.indexPathForRow(at: buttonPosition)!
+            
+            // определяем задачу, для которой нажали на кнопку блокнота
+            let selectedTask = taskDAO.items[indexPath.row]
+            
+            
+            // получаем доступ к целевому контроллеру
+            guard let controller = segue.destination as? TaskInfoController else { // segue.destination - целевой контроллер
+                fatalError("error")
+            }
+            
+            controller.taskInfo = selectedTask.info // передаем текущее значение
+            //                controller.delegate = self // для возврата результата действий
+            controller.navigationTitle = selectedTask.name
+            controller.taskInfoShowMode = .readOnly
+            
         default:
             return
         }

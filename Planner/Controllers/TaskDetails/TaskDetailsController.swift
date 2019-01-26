@@ -217,17 +217,14 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
                 fatalError("cell type")
             }
             
-            // будет хранить конечный текст для отображения
-            var value:String
-            
-            if let name = taskInfo {
-                value = name
-            } else {
-                value = ""
-            }
-            
             // заполняем компонент данными из задачи
-            cell.textTaskInfo.text = value
+            if taskInfo != nil {
+                cell.textTaskInfo.text = taskInfo
+                cell.textTaskInfo.textColor = UIColor.darkGray
+            } else { // либо пишем подсказку
+                cell.textTaskInfo.text = "Нажмите для заполнения"
+                cell.textTaskInfo.textColor = UIColor.lightGray
+            }
             
             textTaskInfo = cell.textTaskInfo
             
@@ -351,6 +348,8 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             if let controller = segue.destination as? TaskInfoController {
                 controller.taskInfo = taskInfo
                 controller.delegаte = self
+                controller.navigationTitle = "Редактирование"
+                controller.taskInfoShowMode = .edit
             }
         case "SelectDatetime":
             if let controller = segue.destination as? DatetimePickerController {
