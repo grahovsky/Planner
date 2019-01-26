@@ -47,6 +47,8 @@ class TaskListController: UITableViewController {
         
         initIcons()
         
+        // initContextListeners() только для отладки
+        
     }
     
     override func didReceiveMemoryWarning() {
@@ -54,13 +56,47 @@ class TaskListController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+
+    // MARK: core data context listeners
+    
+    // слушатели изменений контекста Core Data
+    func initContextListeners(){
         
-        //        if PrefsManager.current.filterUpdate {
-        //            updateTable()
-        //            PrefsManager.current.filterUpdate = false
-        //        }
+        NotificationCenter.default.addObserver(self, selector: #selector(contextObjectsDidChange(_:)), name: Notification.Name.NSManagedObjectContextObjectsDidChange, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(contextWillSave(_:)), name: Notification.Name.NSManagedObjectContextWillSave, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(contextDidSave(_:)), name: Notification.Name.NSManagedObjectContextDidSave, object: nil)
+    }
+    
+    @objc func contextObjectsDidChange(_ notification: Notification) {
+        guard let userInfo = notification.userInfo else { return }
         
+        if let inserts = userInfo[NSInsertedObjectsKey] as? Set<NSManagedObject>, inserts.count > 0 {
+            print("--- INSERTS ---")
+            for insert in inserts {
+                print(insert.changedValues())
+            }
+        }
+        
+        if let updates = userInfo[NSUpdatedObjectsKey] as? Set<NSManagedObject>, updates.count > 0 {
+            print("--- UPDATES ---")
+            for update in updates {
+                print(update.changedValues())
+            }
+        }
+        
+        if let deletes = userInfo[NSDeletedObjectsKey] as? Set<NSManagedObject>, deletes.count > 0 {
+            print("--- DELETES ---")
+            print(deletes)
+        }
+        
+    }
+    
+    @objc func contextWillSave(_ notification: Notification) {
+        print(notification)
+    }
+    
+    @objc func contextDidSave(_ notification: Notification) {
+        print(notification)
     }
     
     
@@ -296,12 +332,8 @@ class TaskListController: UITableViewController {
             
             guard let controller = segue.destination as? TaskDetailsController else { fatalError("error") }
             
-            let task = Task(context: taskDAO.context)
-            // task.name = "Новая задача"
-            task.name = nil
-            
             controller.title = "Создание"
-            controller.task = task
+            controller.task = nil //создаем задачу только после сохранения
             controller.delegаte = self
             controller.mode = TaskDetailsMode.add
             

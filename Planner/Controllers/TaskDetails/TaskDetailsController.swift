@@ -41,7 +41,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let task = task {
+        if mode == .update { //при обновлении
             taskName = task.name
             taskInfo = task.info
             taskPriority = task.priority
@@ -261,6 +261,10 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func tapSave(_ sender: UIBarButtonItem) {
     
+        if task == nil {
+            task = Task(context: TaskDaoDbImpl.current.context)
+        }
+        
         if let taskName = taskName, !taskName.isEmpty {
             task.name = taskName
         } else {
