@@ -33,6 +33,8 @@ class FiltersController: UITableViewController {
         switchCompleted.isOn = PrefsManager.current.showCompletedTasks
         
         initState = (PrefsManager.current.showEmptyCategories, PrefsManager.current.showEmptyPriorities, PrefsManager.current.showTasksWithoutDate, PrefsManager.current.showCompletedTasks)
+        
+        title = lsFilter
     }
 
     // MARK: - Table view
@@ -66,9 +68,19 @@ class FiltersController: UITableViewController {
         PrefsManager.current.showCompletedTasks = sender.isOn
     }
  
+    // футер для секции с фильтрацией
+    override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
+        if section == filterSection{
+            return lsSelectedTasksWillShow
+        }
+        
+        return ""
+        
+    }
+    
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if section == filterSection {
-            return "Выберите значения"
+            return lsSelectValue
         }
         
         return ""

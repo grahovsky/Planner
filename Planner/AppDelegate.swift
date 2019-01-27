@@ -1,6 +1,7 @@
 
 import UIKit
 import CoreData
+import L10n_swift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -14,6 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let urls = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
 //        print(urls[urls.count-1] as URL) // получаем путь к папкам приложения
 
+        
+        L10n.shared.language = Locale.current.languageCode!
 
         return true
     }

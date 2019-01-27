@@ -1,13 +1,9 @@
 /* 
-  Localizable.strings
+  InfoPlist.strings
   Planner
 
   Created by Konstantin on 27/01/2019.
   Copyright © 2019 Tim. All rights reserved.
 */
 
-task.list = "Task list";
-
-sarch.byName = "Search by name";
-
-
+"CFBundleName" = "Планер";

@@ -143,7 +143,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
                 value = name
                 cell.labelTaskCategory.textColor = .darkText
             } else {
-                value = "Не выбрано"
+                value = lsNotSelected
                 cell.labelTaskCategory.textColor = .lightGray
             }
             
@@ -167,7 +167,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
                 value = name
                 cell.labelTaskPriority.textColor = .darkText
             } else {
-                value = "Не выбрано"
+                value = lsNotSelected
                 cell.labelTaskPriority.textColor = .lightGray
             }
             
@@ -197,7 +197,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
                 cell.buttonDatetimePicker.setTitleColor(.gray, for: .normal)
                 cell.buttonClearDeadline.isHidden = false
             } else {
-                value = "Не указано"
+                value = lsSelectDate
                 cell.buttonDatetimePicker.setTitleColor(.lightGray, for: .normal)
                 cell.buttonClearDeadline.isHidden = true
             }
@@ -222,7 +222,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
                 cell.textTaskInfo.text = taskInfo
                 cell.textTaskInfo.textColor = UIColor.darkGray
             } else { // либо пишем подсказку
-                cell.textTaskInfo.text = "Нажмите для заполнения"
+                cell.textTaskInfo.text = lsTapToFill
                 cell.textTaskInfo.textColor = UIColor.lightGray
             }
             
@@ -239,11 +239,11 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         switch section {
-        case Section.Name.rawValue: return "Название"
-        case Section.Category.rawValue: return "Категория"
-        case Section.Priority.rawValue: return "Приоритет"
-        case Section.Deadline.rawValue: return "Дата"
-        case Section.Info.rawValue: return "Доп. инфо"
+        case Section.Name.rawValue: return lsName
+        case Section.Category.rawValue: return lsCategory
+        case Section.Priority.rawValue: return lsPriority
+        case Section.Deadline.rawValue: return lsDate
+        case Section.Info.rawValue: return lsInfo
         default: return ""
         }
         
@@ -268,7 +268,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
         if let taskName = taskName, !taskName.isEmpty {
             task.name = taskName
         } else {
-            task.name = "Новая задача"
+            task.name = lsNewTask
         }
         task.info = textTaskInfo.text
         task.category = taskCategory
@@ -290,7 +290,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func tapDeleteTask(_ sender: UIButton) {
         
-        confirmAction(text: "Действительно хотите удалить задачу?") {
+        confirmAction(text: lsConfirmDeleteTask) {
             self.performSegue(withIdentifier: "DeleteTaskFromDetails", sender: self) // реализация замыкания (trailing closure), которое передается как параметр
         }
     
@@ -299,7 +299,7 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
     
     @IBAction func tapCompleteTask(_ sender: UIButton) {
         
-        confirmAction(text: "Действительно хотите выполнить задачу?") {
+        confirmAction(text: lsConfirmCompleteTask) {
             self.performSegue(withIdentifier: "CompleteTaskFromDetails", sender: self)
         }
 
@@ -338,21 +338,21 @@ class TaskDetailsController: UIViewController, UITableViewDataSource, UITableVie
             if let controller = segue.destination as? CategoryListController {
                 controller.selectedItem = taskCategory
                 controller.delegаte = self
-                controller.navigationTitle = "Выбор"
+                controller.navigationTitle = lsSelectCategory
                 controller.showMode = .select
             }
         case "SelectPriority":
             if let controller = segue.destination as? PriorityListController {
                 controller.selectedItem = taskPriority
                 controller.delegаte = self
-                controller.navigationTitle = "Выбор"
+                controller.navigationTitle = lsSelectPriority
                 controller.showMode = .select
             }
         case "EditTaskInfo":
             if let controller = segue.destination as? TaskInfoController {
                 controller.taskInfo = taskInfo
                 controller.delegаte = self
-                controller.navigationTitle = "Редактирование"
+                controller.navigationTitle = lsEdit
                 controller.taskInfoShowMode = .edit
             }
         case "SelectDatetime":

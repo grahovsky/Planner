@@ -96,7 +96,7 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResu
             labelHeaderTitle.lineBreakMode = .byWordWrapping
             labelHeaderTitle.numberOfLines = 0
             
-            labelHeaderTitle.text = "Вы можете фильтровать задачи с помощью выбора приоритетов"
+            labelHeaderTitle.text = lsCanFilter
             
             if priority.checked {
                 cell.buttonCheckPriority.setImage(UIImage(named: "check_green"), for: .normal)
@@ -118,7 +118,7 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResu
             
             buttonSelectDeselectAll.isHidden = true
             
-            labelHeaderTitle.text = "Выберите один приоритет для задачи"
+            labelHeaderTitle.text = lsSelectPriority
             
             
             if selectedItem != nil && selectedItem == priority {
@@ -134,37 +134,6 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResu
         
     }
     
-    // редактирование категории
-    func editPriority(indexPath: IndexPath) {
-        
-        // определяем какой именно объект редактируем (чтобы потом сохранять именно его)
-        let currentItem = self.DAO.items[indexPath.row]
-        
-        // запоминаем старое значение (чтобы потом понимать, было ли изменение и не выполнять лишних действий)
-        let oldValue = currentItem.name
-        
-        // показываем диалоговое окно и реализуем замыкание, которое будет выполняться при нажатии на кнопку ОК
-        showDialog(title: "Редактирование", message: "Введите название", initValue: currentItem.name!, actionClosure: { name in
-            
-            if !self.isEmptyTrim(name){ //значение name из текстового поля передается в замыкание
-                currentItem.name = name
-            } else {
-                currentItem.name = "Новый приоритет"
-            }
-            
-            if currentItem.name != oldValue{
-                //  обновляем в БД и в таблице
-                self.updateItem(currentItem, indexPath: indexPath)
-                
-                self.changed = true // произошли изменения
-            } else {
-                self.changed = false
-            }
-            
-        })
-        
-        
-    }
     
     // MARK: override
     override func getAll() -> [Priority] {
@@ -214,7 +183,7 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResu
             }
             
             controller.priority = DAO.items[tableView.indexPathForSelectedRow!.row] // какой элемент в данный момент редактируем
-            controller.navigationTitle = "Редактирование"
+            controller.navigationTitle = lsEdit
             controller.delegate = self
             
             return
@@ -228,7 +197,7 @@ class PriorityListController: DictonaryController<PriorityDaoDbImpl>, ActionResu
                 fatalError("error")
             }
             
-            controller.navigationTitle = "Новый приоритет"
+            controller.navigationTitle = lsNewPriority
             
             controller.delegate = self
             

@@ -163,9 +163,9 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         let newTitle: String
         
         if DAO.checkedItems().count > 0 {
-            newTitle = "Снять"
+            newTitle = lsDeselectAll
         } else {
-            newTitle = "Все"
+            newTitle = lsSelectAll
         }
         
         if self.buttonSelectDeselectDict.title(for: .normal) != newTitle {
@@ -369,7 +369,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         
         definesPresentationContext = true // для правильного отображения внутри таблицы, без параметра может выходить поверх таблицы
         
-        searchBar.placeholder = "Начните вводить название"
+        searchBar.placeholder = lsStartTypingName
         searchBar.backgroundColor = .white
         
         searchController.searchResultsUpdater = self
@@ -422,7 +422,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         searchBarText = ""
         getAll() // этот метод должен быть реализован в дочернем классе
         tableViewDict.reloadData()
-        searchBar.placeholder = "Начните набирать название"
+        searchBar.placeholder = lsStartTypingName
     }
 }
 

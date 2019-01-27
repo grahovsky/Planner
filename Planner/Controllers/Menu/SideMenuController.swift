@@ -72,7 +72,7 @@ class SideMenuController: UITableViewController {
             }
         case cellShare:
             // "Поделиться"
-            let shareController = UIActivityViewController(activityItems: ["Пользуйтесь Planner"], applicationActivities: nil)
+            let shareController = UIActivityViewController(activityItems: [lsShareText], applicationActivities: nil)
             
             shareController.popoverPresentationController?.sourceView = self.view
             
@@ -89,11 +89,11 @@ class SideMenuController: UITableViewController {
         
         switch section {
         case commonSection:
-            return "Общие"
+            return lsMenuCommon
         case dictionarySection:
-            return "Справочники"
+            return lsMenuDictionaries
         case helpSection:
-            return "Помощь"
+            return lsMenuHelp
         default:
             return ""
         }
@@ -133,12 +133,12 @@ class SideMenuController: UITableViewController {
             guard let controller = segue.destination as? CategoryListController else { return }
             
             controller.showMode = .edit
-            controller.navigationTitle = "Редактирование"
+            controller.navigationTitle = lsEdit
         case "EditPriorities":
             guard let controller = segue.destination as? PriorityListController else { return }
             
             controller.showMode = .edit
-            controller.navigationTitle = "Редактирование"
+            controller.navigationTitle = lsEdit
             
         default:
             return

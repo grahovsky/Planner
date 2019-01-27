@@ -47,14 +47,14 @@ extension UIViewController {
             
             switch diff {
             case 0:
-                label.text = "Сегодня" // TODO: локализация
+                label.text = lsToday
             case 1:
-                label.text = "Завтра"
+                label.text = lsTomorrow
             case 0...:
-                label.text = "\(diff) дн."
+                label.text = "\(diff) \(lsDays)."
             case ..<0:
                 label.textColor = .red
-                label.text = "\(diff) дн."
+                label.text = "\(diff) \(lsDays)."
             default:
                 break
             }
@@ -67,7 +67,7 @@ extension UIViewController {
     func confirmAction(text: String, actionClosure: @escaping () -> Void) {
         
         // объект диалогового окна
-        let dialogMessage = UIAlertController(title: "Подтверждение", message: text, preferredStyle: .actionSheet)
+        let dialogMessage = UIAlertController(title: lsConfirm, message: text, preferredStyle: .actionSheet)
         
         // действие ок
         let okAction = UIAlertAction(title: "OK", style: .default) { (action) in
@@ -75,7 +75,7 @@ extension UIViewController {
         }
         
         // действие отмена
-        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: nil)
+        let cancelAction = UIAlertAction(title: lsCancel, style: .cancel, handler: nil)
        
         // добавить действия в диалоговое окно
         dialogMessage.addAction(okAction)
@@ -110,7 +110,7 @@ extension UIViewController {
             }))
             
             // при нажатии на Cancel - ничего не делаем (окно закроется само)
-            alert.addAction(UIAlertAction(title: "Отмена", style: .cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: lsCancel, style: .cancel, handler: nil))
             self.present(alert, animated: true, completion: nil) // показать диалоговое окно с анимацией появления
             
         }
@@ -142,7 +142,7 @@ extension UIViewController {
         let buttonClose = UIBarButtonItem()
         buttonClose.target = self
         buttonClose.action = close
-        buttonClose.title = "Закрыть"
+        buttonClose.title = lsClose
         navigationItem.leftBarButtonItem = buttonClose
         
  
@@ -151,6 +151,18 @@ extension UIViewController {
         let buttonAdd = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: add)
         navigationItem.rightBarButtonItem = buttonAdd
         
+    }
+    
+    // добавляет только 1 кнопку - Закрыть
+    func createCloseButtonOnly(close: Selector = #selector(cancel)){ // если не передавать параметр - по-умолчанию будет вызываться cancel
+        
+        let buttonClose = UIBarButtonItem()
+        buttonClose.target = self
+        buttonClose.action = close
+        buttonClose.title = lsClose
+        navigationItem.leftBarButtonItem = buttonClose
+        
+        navigationItem.rightBarButtonItem = nil
     }
     
     // по-умолчанию на cancel будет закрываться контроллер (если другой контроллер у себя не переопределит метод)
@@ -199,7 +211,7 @@ extension UIViewController {
             tableView.separatorStyle = .singleLine
         } else {
             tableView.separatorStyle = .none //чтобы не было пустых линий
-            tableView.backgroundView = createNoDateView("Нет данных") // показать сообщение, что нет данных в таблице
+            tableView.backgroundView = createNoDateView(lsNoData) // показать сообщение, что нет данных в таблице
         }
     }
 

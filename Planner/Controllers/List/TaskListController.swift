@@ -52,7 +52,7 @@ class TaskListController: UITableViewController {
         
         // initContextListeners() только для отладки
         
-        title = NSLocalizedString("task.list", comment: "")
+        title = lsTaskList
         
     }
     
@@ -159,7 +159,7 @@ class TaskListController: UITableViewController {
                 fatalError("cell type")
             }
             textQuickTask = cell.textQuickTask
-            textQuickTask.placeholder = "введите быструю задачу"
+            textQuickTask.placeholder = lsQuickTask
             return cell
             
         case taskListSection:
@@ -171,7 +171,7 @@ class TaskListController: UITableViewController {
             let task = taskDAO.items[indexPath.row]
             
             cell.labelTaskName.text = task.name
-            cell.labelTaskCategory.text = (task.category?.name ?? "")
+            cell.labelTaskCategory.text = (task.category?.name ?? "(\(lsNoCategory))")
             
             // задаем цвет по приоритету
             if let priority = task.priority {
@@ -328,7 +328,7 @@ class TaskListController: UITableViewController {
             // получаем выбранную задачу
             let selectedTask = taskDAO.items[selectedIndex]
             
-            controller.title = "Редактирование"
+            controller.title = lsEdit
             controller.task = selectedTask
             controller.delegаte = self
             controller.mode = TaskDetailsMode.update
@@ -337,7 +337,7 @@ class TaskListController: UITableViewController {
             
             guard let controller = segue.destination as? TaskDetailsController else { fatalError("error") }
             
-            controller.title = "Создание"
+            controller.title = lsNewTask
             controller.task = nil //создаем задачу только после сохранения
             controller.delegаte = self
             controller.mode = TaskDetailsMode.add
@@ -512,7 +512,7 @@ class TaskListController: UITableViewController {
     func createTask(_ task:Task){
         taskDAO.add(task)
         
-        attemptUpdate(task, forceUpdate: false, text: "Задача добавлена, но не показывается \nиз-за фильтра:")
+        attemptUpdate(task, forceUpdate: false, text: lsTaskAddedButNotShow)
         
     }
     
@@ -520,19 +520,20 @@ class TaskListController: UITableViewController {
     func updateTask(_ task:Task){
         taskDAO.update(task)
         
-        attemptUpdate(task, forceUpdate: true, text: "Задача обновлена, но не показывается \nиз-за фильтра:")
+        attemptUpdate(task, forceUpdate: true, text: lsTaskUpdatedButNotShow)
         
         
     }
     
     // нужно обновлять таблицу или нет
     // Если новая/отредактированная задача не подпадает в текущий список (из-за фильтрации, поиска и пр.) - уведомить об этом пользователя (чтобы не паниковал, куда девалась  задача)
-    // прогоняем через все условия фильтра (можно было реализовать по-простому с помощью  items.contains(task) - но если массив будет большим - возможны "подвисания")
+    // прогоняем через все условия фильтра (можно было реализовать по-простому с помощью  items.contains - но если массив будет большим - возможны "подвисания")
     func attemptUpdate(_ task:Task, forceUpdate:Bool, text:String){ // forceUpdate - если в любом случае нужно обновить
         
         var willShow = true // задача будет отображаться в текущем списке
         
         var text = text // чтобы можно было изменять текст (т.к. параметр функции - константа)
+        
         
         // чтобы не зависал UI - выполняем асинхронно
         DispatchQueue.main.asyncAfter(deadline: .now()+1) {
@@ -547,7 +548,7 @@ class TaskListController: UITableViewController {
                 // если НЕ показываем задачи без категории, а у задачи пустая категория
                 if !PrefsManager.current.showEmptyCategories && task.category == nil{
                     willShow = false
-                    text = text + "\"НЕ показывать задачи с пустыми категорями\""
+                    text = text + "\"\(lsNotShowEmptyCategories)\""
                 }
                     
                 else
@@ -555,7 +556,7 @@ class TaskListController: UITableViewController {
                     // если НЕ показываем задачи без приоритета, а у задачи пустой приоритет
                     if !PrefsManager.current.showEmptyPriorities && task.priority == nil{
                         willShow = false
-                        text = text + "\"НЕ показывать задачи с пустыми приоритетами\""
+                        text = text + "\"\(lsNotShowEmptyPriorities)\""
                     }
                         
                     else
@@ -563,7 +564,7 @@ class TaskListController: UITableViewController {
                         // если НЕ показываем задачи без даты, а у задачи пустая дата
                         if !PrefsManager.current.showTasksWithoutDate && task.deadline == nil{
                             willShow = false
-                            text = text + "\"НЕ показывать задачи без даты\""
+                            text = text + "\"\(lsNotShowWithoutDate)\""
                         }
                             
                             
@@ -572,7 +573,7 @@ class TaskListController: UITableViewController {
                             // если не проходит по фильтрации категорий
                             if let category = task.category, !self.categoryDAO.checkedItems().contains(category){
                                 willShow = false
-                                text = text + "\"НЕ показывать категорию \(category.name!)\""
+                                text = text + "\"\(lsNotShowCategory)\""
                             }
                                 
                             else
@@ -580,7 +581,7 @@ class TaskListController: UITableViewController {
                                 // если не проходит по фильтрации приоритетов
                                 if let priority = task.priority, !self.priorityDAO.checkedItems().contains(priority){
                                     willShow = false
-                                    text = text + "\"НЕ показывать приоритет \(priority.name!)\""
+                                    text = text + "\"\(lsNotShowPriority)\""
                                     
                                 }
                                     
@@ -590,18 +591,17 @@ class TaskListController: UITableViewController {
                                     // если открыт поиск, а имя задачи не содержит текст поиска
                                     if (self.searchBarActive && task.name?.lowercased().range(of:self.searchBar.text!.lowercased()) == nil) {
                                         willShow = false
-                                        text = text + "\"имя НЕ содержит \(self.searchBar.text!)\""
+                                        text = text + "\(lsNameNotContains) "+"\'\(self.searchBar.text!)\'"
+                                        
                                         
                                         
             }
             
             if willShow { // если задача должна показываться - обновляем таблицу
-           
                 self.updateTable()
-            
-            } else {
+            }else{
                 
-                if forceUpdate{ // если все равно надо обновить (например, при обновлении)
+                if forceUpdate{ // если все равно надо обновить
                     self.updateTable()
                 }
                 
@@ -613,7 +613,6 @@ class TaskListController: UITableViewController {
         }
         
     }
-    
     
 }
 
@@ -707,11 +706,11 @@ extension TaskListController: UISearchBarDelegate {
         
         definesPresentationContext = true // для правильного отображения внутри таблицы, без параметра может выходить поверх таблицы
         
-        searchController.searchBar.placeholder = NSLocalizedString("sarch.byName", comment: "")
+        searchBar.placeholder = lsSearchByName
         searchController.searchBar.backgroundColor = .white
         
         // добавляем scope buttons
-        searchController.searchBar.scopeButtonTitles = ["А-Я", "Приоритет", "Дата"]
+        searchController.searchBar.scopeButtonTitles = [lsAZ, lsPriority, lsDate]
         searchController.searchBar.selectedScopeButtonIndex = PrefsManager.current.sortType
         
         searchController.searchResultsUpdater = self

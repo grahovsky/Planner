@@ -85,7 +85,7 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
             labelHeaderTitle.lineBreakMode = .byWordWrapping
             labelHeaderTitle.numberOfLines = 0
             
-            labelHeaderTitle.text = "Вы можете фильтровать задачи с помощью выбора категорий"
+            labelHeaderTitle.text = lsCanFilter
             
             if category.checked {
                 cell.buttonCheckCategory.setImage(UIImage(named: "check_green"), for: .normal)
@@ -107,7 +107,7 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
             
             buttonSelectDeselectAll.isHidden = true
             
-            labelHeaderTitle.text = "Выберите одну категорию для задачи"
+            labelHeaderTitle.text = lsSelectCategory
 
             
             if selectedItem != nil && selectedItem == category {
@@ -133,12 +133,12 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         let oldValue = currentItem.name
         
         // показываем диалоговое окно и реализуем замыкание, которое будет выполняться при нажатии на кнопку ОК
-        showDialog(title: "Редактирование", message: "Введите название", initValue: currentItem.name!, actionClosure: { name in
+        showDialog(title: lsNewCategory, message: lsFillName, initValue: currentItem.name!, actionClosure: { name in
             
             if !self.isEmptyTrim(name){ //значение name из текстового поля передается в замыкание
                 currentItem.name = name
             } else {
-                currentItem.name = "Новая категория"
+                currentItem.name = lsNewCategory
             }
             
             if currentItem.name != oldValue{
@@ -154,19 +154,7 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         
         
     }
-    
-    // редактирование категории
-    override func add() {
-        
-        showDialog(title: "Новая категория", message: "Введите название") { (name) in
-            
-            let newCategory = Category(context: self.DAO.context)
-            newCategory.name = name // имя получаем как параметр замыкания
-            self.addItem(newCategory)
-            
-        }
-        
-    }
+
     
     
     // MARK: override
@@ -182,12 +170,12 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
     override func addItemAction() {
         
         // показываем диалоговое окно и реализуем замыкание, которое будет выполняться при нажатии на кнопку ОК
-        showDialog(title: "Новая категория", message: "Введите название", actionClosure: {name in
+        showDialog(title: lsNewCategory, message: lsFillName, actionClosure: {name in
             
             let cat = Category(context: self.DAO.context)
             
             if self.isEmptyTrim(name){
-                cat.name = "Новая категория"
+                cat.name = lsNewCategory
             }else{
                 cat.name = name // имя получаем как параметр замыкания
             }
@@ -209,12 +197,12 @@ class CategoryListController: DictonaryController<CategoryDaoDbImpl>{
         let oldValue = currentItem.name
         
         // показываем диалоговое окно и реализуем замыкание, которое будет выполняться при нажатии на кнопку ОК
-        showDialog(title: "Редактирование", message: "Введите название", initValue: currentItem.name!, actionClosure: {name in
+        showDialog(title: lsEdit, message: lsFillName, initValue: currentItem.name!, actionClosure: {name in
             
             if !self.isEmptyTrim(name){ //значение name из текстового поля передается в замыкание
                 currentItem.name = name
             }else{
-                currentItem.name = "Новая категория"
+                currentItem.name = lsNewCategory
             }
             
             if currentItem.name != oldValue{

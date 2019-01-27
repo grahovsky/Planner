@@ -12,5 +12,6 @@ pod 'ChromaColorPicker'
 pod 'SwiftReorder'
 pod 'SwiftIconFont'
 pod 'Toaster'
+pod 'L10n-swift'
 
 end
