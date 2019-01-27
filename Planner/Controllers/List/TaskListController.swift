@@ -37,17 +37,22 @@ class TaskListController: UITableViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        self.hideKeyboardWhenTappedAround()
-        
-        taskDAO.getAll(sortType: TaskSortType(rawValue: currentScopeIndex)!)
+       
+        currentScopeIndex = PrefsManager.current.sortType
         
         setupSearchController()
         
         initSlideMenu()
         
+        updateTable()
+        
+        hideKeyboardWhenTappedAround()
+        
         initIcons()
         
         // initContextListeners() только для отладки
+        
+        title = NSLocalizedString("task.list", comment: "")
         
     }
     
@@ -702,7 +707,7 @@ extension TaskListController: UISearchBarDelegate {
         
         definesPresentationContext = true // для правильного отображения внутри таблицы, без параметра может выходить поверх таблицы
         
-        searchController.searchBar.placeholder = "Поиск по названию"
+        searchController.searchBar.placeholder = NSLocalizedString("sarch.byName", comment: "")
         searchController.searchBar.backgroundColor = .white
         
         // добавляем scope buttons

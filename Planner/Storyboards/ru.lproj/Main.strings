@@ -1,9 +1,14 @@
-
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "0Ce-bb-LV9"; */
 "0Ce-bb-LV9.normalTitle" = "Button";
 
 /* Class = "UIButton"; normalTitle = "buttonComplete"; ObjectID = "1Qp-1Z-zYr"; */
 "1Qp-1Z-zYr.normalTitle" = "buttonComplete";
+
+/* Class = "UILabel"; text = "labelDeadline"; ObjectID = "7A1-nU-iRN"; */
+"7A1-nU-iRN.text" = "labelDeadline";
+
+/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "9vx-L2-qfF"; */
+"9vx-L2-qfF.title" = "Item";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "47t-P2-4eZ"; */
 "47t-P2-4eZ.text" = "Label";
@@ -11,29 +16,56 @@
 /* Class = "UIBarButtonItem"; title = "Закрыть"; ObjectID = "51x-3R-BV9"; */
 "51x-3R-BV9.title" = "Закрыть";
 
-/* Class = "UILabel"; text = "labelDeadline"; ObjectID = "7A1-nU-iRN"; */
-"7A1-nU-iRN.text" = "labelDeadline";
-
 /* Class = "UILabel"; text = "Filters"; ObjectID = "95z-4s-Rgl"; */
 "95z-4s-Rgl.text" = "Фильтры";
 
-/* Class = "UIBarButtonItem"; title = "Item"; ObjectID = "9vx-L2-qfF"; */
-"9vx-L2-qfF.title" = "Item";
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "aCi-Wl-Tqc"; */
+"aCi-Wl-Tqc.title" = "Title";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aK1-WF-2ik"; */
+"aK1-WF-2ik.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "aSD-y4-gig"; */
+"aSD-y4-gig.title" = "Title";
 
 /* Class = "UILabel"; text = "Задачи без приоритета"; ObjectID = "B78-Vb-OhE"; */
 "B78-Vb-OhE.text" = "Задачи без приоритета";
 
+/* Class = "UILabel"; text = "Settings"; ObjectID = "be7-HJ-JAk"; */
+"be7-HJ-JAk.text" = "Настройки";
+
 /* Class = "UIViewController"; title = "Main"; ObjectID = "BYZ-38-t0r"; */
 "BYZ-38-t0r.title" = "Main";
+
+/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "cKx-PL-uor"; */
+"cKx-PL-uor.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "dDs-tC-zxK"; */
+"dDs-tC-zxK.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "des-8h-dLr"; */
+"des-8h-dLr.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fFn-BA-2sR"; */
+"fFn-BA-2sR.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Задачи без даты завершения"; ObjectID = "G9c-y8-cmH"; */
 "G9c-y8-cmH.text" = "Задачи без даты завершения";
 
+/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "gqY-Oa-LI5"; */
+"gqY-Oa-LI5.normalTitle" = "Save";
+
 /* Class = "UILabel"; text = "Задачи без категории"; ObjectID = "GZD-0a-gwI"; */
 "GZD-0a-gwI.text" = "Задачи без категории";
 
+/* Class = "UINavigationItem"; title = "Title"; ObjectID = "hbT-Bu-Ydh"; */
+"hbT-Bu-Ydh.title" = "Title";
+
 /* Class = "UIButton"; normalTitle = "Today"; ObjectID = "Hg2-8P-EG2"; */
 "Hg2-8P-EG2.normalTitle" = "Today";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "l28-b6-TCe"; */
+"l28-b6-TCe.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "Help"; ObjectID = "LMD-3c-psd"; */
 "LMD-3c-psd.text" = "Помощь";
@@ -41,17 +73,41 @@
 /* Class = "UILabel"; text = "Label"; ObjectID = "MtA-X9-wFy"; */
 "MtA-X9-wFy.text" = "Label";
 
+/* Class = "UILabel"; text = "labelDeadline"; ObjectID = "n4m-Ir-lma"; */
+"n4m-Ir-lma.text" = "labelDeadline";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "n4V-W6-uqT"; */
+"n4V-W6-uqT.text" = "Label";
+
 /* Class = "UILabel"; text = "Categories"; ObjectID = "NAv-4c-ood"; Note = "пункт меню"; */
 "NAv-4c-ood.text" = "Категории";
 
+/* Class = "UITableViewSection"; headerTitle = "NAME"; ObjectID = "o9D-xT-yV1"; */
+"o9D-xT-yV1.headerTitle" = "NAME";
+
 /* Class = "UILabel"; text = "Feedback"; ObjectID = "P0j-IL-QSN"; */
-"P0j-IL-QSN.text" = "Feedback";
+"P0j-IL-QSN.text" = "Обратная связь";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "qa4-b8-RTe"; */
+"qa4-b8-RTe.normalTitle" = "Cancel";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "Rph-bg-ZQd"; */
 "Rph-bg-ZQd.text" = "Label";
 
+/* Class = "UITableViewSection"; headerTitle = "SELECT COLOR"; ObjectID = "rXg-TH-bUt"; */
+"rXg-TH-bUt.headerTitle" = "SELECT COLOR";
+
 /* Class = "UILabel"; text = "Label"; ObjectID = "UKB-ya-ax6"; */
 "UKB-ya-ax6.text" = "Label";
+
+/* Class = "UILabel"; text = "labelName"; ObjectID = "v7f-tk-9CB"; */
+"v7f-tk-9CB.text" = "labelName";
+
+/* Class = "UILabel"; text = "labelCategory"; ObjectID = "vQD-iv-Zy4"; */
+"vQD-iv-Zy4.text" = "labelCategory";
+
+/* Class = "UILabel"; text = "Priorities"; ObjectID = "w4x-FK-LOP"; */
+"w4x-FK-LOP.text" = "Приоритеты";
 
 /* Class = "UILabel"; text = "Завершенные задачи"; ObjectID = "WDV-ho-lCW"; */
 "WDV-ho-lCW.text" = "Завершенные задачи";
@@ -68,68 +124,12 @@
 /* Class = "UIButton"; normalTitle = "buttonInfo"; ObjectID = "YLz-fZ-btn"; */
 "YLz-fZ-btn.normalTitle" = "buttonInfo";
 
-/* Class = "UITextView"; text = "Тестовый проект для обучения \"iOS\"  Приложение будет постоянно дорабатываться"; ObjectID = "YQ1-iz-sDv"; */
-"YQ1-iz-sDv.text" = "Тестовый проект для обучения \"iOS\"  Приложение будет постоянно дорабатываться";
-
-/* Class = "UINavigationItem"; title = "Title"; ObjectID = "aCi-Wl-Tqc"; */
-"aCi-Wl-Tqc.title" = "Title";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aK1-WF-2ik"; */
-"aK1-WF-2ik.normalTitle" = "Button";
-
-/* Class = "UINavigationItem"; title = "Title"; ObjectID = "aSD-y4-gig"; */
-"aSD-y4-gig.title" = "Title";
-
-/* Class = "UILabel"; text = "Settings"; ObjectID = "be7-HJ-JAk"; */
-"be7-HJ-JAk.text" = "Настройки";
-
-/* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "cKx-PL-uor"; */
-"cKx-PL-uor.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "dDs-tC-zxK"; */
-"dDs-tC-zxK.text" = "Label";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "des-8h-dLr"; */
-"des-8h-dLr.text" = "Label";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "fFn-BA-2sR"; */
-"fFn-BA-2sR.normalTitle" = "Button";
-
-/* Class = "UIButton"; normalTitle = "Save"; ObjectID = "gqY-Oa-LI5"; */
-"gqY-Oa-LI5.normalTitle" = "Save";
-
-/* Class = "UINavigationItem"; title = "Title"; ObjectID = "hbT-Bu-Ydh"; */
-"hbT-Bu-Ydh.title" = "Title";
-
-/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "l28-b6-TCe"; */
-"l28-b6-TCe.normalTitle" = "Button";
-
-/* Class = "UILabel"; text = "Label"; ObjectID = "n4V-W6-uqT"; */
-"n4V-W6-uqT.text" = "Label";
-
-/* Class = "UILabel"; text = "labelDeadline"; ObjectID = "n4m-Ir-lma"; */
-"n4m-Ir-lma.text" = "labelDeadline";
-
-/* Class = "UITableViewSection"; headerTitle = "NAME"; ObjectID = "o9D-xT-yV1"; */
-"o9D-xT-yV1.headerTitle" = "NAME";
-
-/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "qa4-b8-RTe"; */
-"qa4-b8-RTe.normalTitle" = "Cancel";
-
-/* Class = "UITableViewSection"; headerTitle = "SELECT COLOR"; ObjectID = "rXg-TH-bUt"; */
-"rXg-TH-bUt.headerTitle" = "SELECT COLOR";
-
-/* Class = "UILabel"; text = "labelName"; ObjectID = "v7f-tk-9CB"; */
-"v7f-tk-9CB.text" = "labelName";
-
-/* Class = "UILabel"; text = "labelCategory"; ObjectID = "vQD-iv-Zy4"; */
-"vQD-iv-Zy4.text" = "labelCategory";
-
-/* Class = "UILabel"; text = "Priorities"; ObjectID = "w4x-FK-LOP"; */
-"w4x-FK-LOP.text" = "Приоритеты";
-
 /* Class = "UITextView"; text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."; ObjectID = "yn4-Co-QJ8"; */
 "yn4-Co-QJ8.text" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
+/* Class = "UITextView"; text = "Тестовый проект для обучения \"iOS\"  Приложение будет постоянно дорабатываться"; ObjectID = "YQ1-iz-sDv"; */
+"YQ1-iz-sDv.text" = "Тестовый проект для обучения \"iOS\"  Приложение будет постоянно дорабатываться";
+
 /* Class = "UILabel"; text = "Share"; ObjectID = "yyV-YG-g55"; Note = "пункт меню"; */
 "yyV-YG-g55.text" = "Поделиться";
+

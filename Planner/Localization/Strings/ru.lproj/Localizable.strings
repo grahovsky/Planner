@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  Planner
+
+  Created by Konstantin on 27/01/2019.
+  Copyright © 2019 Tim. All rights reserved.
+*/
+
+task.list = "Список задач";
+
+sarch.byName = "Поиск по названию";
+

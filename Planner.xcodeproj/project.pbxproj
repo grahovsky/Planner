@@ -53,6 +53,7 @@
 		B5BDC16121F1393100389486 /* EditPriorityController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5BDC16021F1393000389486 /* EditPriorityController.swift */; };
 		B5BE73F621FCC99500230618 /* Toaster.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BE73F521FCC99500230618 /* Toaster.framework */; };
 		B5BE73F821FD080F00230618 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5BE73FA21FD080F00230618 /* Main.storyboard */; };
+		B5DA8ED621FDA8A800B20D6D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B5DA8ED821FDA8A800B20D6D /* Localizable.strings */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -108,6 +109,8 @@
 		B5BE73F721FCFDB000230618 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		B5BE73FB21FD081300230618 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5BE740221FD0B3A00230618 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		B5DA8ED721FDA8A800B20D6D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		B5DA8ED921FDA8AA00B20D6D /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -217,6 +220,7 @@
 		22759C6F1FDEA6E500E9A1E0 /* Planner */ = {
 			isa = PBXGroup;
 			children = (
+				B5DA8ED221FDA86000B20D6D /* Localization */,
 				B55C210121B5A5C9006B1310 /* Managers */,
 				B522E34E21AAFE2300B8FAF8 /* UIViews */,
 				B522E33E21A9A1F300B8FAF8 /* Delegates */,
@@ -347,6 +351,22 @@
 			path = PrioriytDetails;
 			sourceTree = "<group>";
 		};
+		B5DA8ED221FDA86000B20D6D /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				B5DA8ED321FDA86E00B20D6D /* Strings */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		B5DA8ED321FDA86E00B20D6D /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				B5DA8ED821FDA8A800B20D6D /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -393,6 +413,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 22759C641FDEA6E500E9A1E0;
 			productRefGroup = 22759C6E1FDEA6E500E9A1E0 /* Products */;
@@ -409,6 +430,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5DA8ED621FDA8A800B20D6D /* Localizable.strings in Resources */,
 				22759C7E1FDEA6E500E9A1E0 /* LaunchScreen.storyboard in Resources */,
 				22759C7B1FDEA6E500E9A1E0 /* Assets.xcassets in Resources */,
 				B5BE73F821FD080F00230618 /* Main.storyboard in Resources */,
@@ -538,6 +560,15 @@
 				B5BE740221FD0B3A00230618 /* ru */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		B5DA8ED821FDA8A800B20D6D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5DA8ED721FDA8A800B20D6D /* en */,
+				B5DA8ED921FDA8AA00B20D6D /* ru */,
+			);
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
