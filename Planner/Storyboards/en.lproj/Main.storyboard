@@ -625,6 +625,9 @@
                                                     <attributedString key="userComments">
                                                         <fragment content="пункт меню"/>
                                                     </attributedString>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="string" keyPath="l10nText" value="menu.share"/>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>

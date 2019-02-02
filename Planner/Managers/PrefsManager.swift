@@ -18,6 +18,7 @@ class PrefsManager{
     let showEmptyCategoriesKey = "showEmptyCategories"
     let sortTypeKey = "sortType"
     let langKey = "lang"
+    let launchedKey = "launched"
     
     // синглтон
     static let current = PrefsManager()
@@ -31,6 +32,7 @@ class PrefsManager{
         UserDefaults.standard.register(defaults: [showTasksWithoutDateKey : true])
         UserDefaults.standard.register(defaults: [sortTypeKey : 0]) // сортировка по имени
         UserDefaults.standard.register(defaults: [langKey : Locale.preferredLanguages[0]]) // при первом запуске - записываем язык системы
+        UserDefaults.standard.register(defaults: [launchedKey : false])
         
     }
     
@@ -98,6 +100,17 @@ class PrefsManager{
         }
         set {
             UserDefaults.standard.set(newValue, forKey: langKey)
+        }
+    }
+    
+    // MARK: launched - первый это запуск приложения или нет
+    
+    var launched:Bool{
+        get{
+            return UserDefaults.standard.bool(forKey: launchedKey)
+        }
+        set{
+            UserDefaults.standard.set(newValue, forKey: launchedKey)
         }
     }
     

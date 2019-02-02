@@ -67,6 +67,35 @@ class CategoryDaoDbImpl: DictDAO, CommonSearchDAO {
         
     }
 
+    // MARK: demo data
+        
+    func initDemoCategories(){
+        let cat1 = Category(context:context)
+        cat1.name = lsDemoCat1
+        cat1.checked = true
+        
+        let cat2 = Category(context:context)
+        cat2.name = lsDemoCat2
+        cat2.checked = true
+        
+        let cat3 = Category(context:context)
+        cat3.name = lsDemoCat3
+        cat3.checked = true
+        
+        let cat4 = Category(context:context)
+        cat4.name = lsDemoCat4
+        cat4.checked = true
+        
+        let cat5 = Category(context:context)
+        cat5.name = lsDemoCat5
+        cat5.checked = true
+        
+        add(cat1)
+        add(cat2)
+        add(cat3)
+        add(cat4)
+        add(cat5)
+    }
 
 }
 
