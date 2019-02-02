@@ -33,7 +33,7 @@
                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                             <connections>
-                                                <action selector="quickTaskAdd:" destination="ABY-Q6-nzl" eventType="touchDragEnter" id="pKZ-wr-EPc"/>
+                                                <action selector="quickTaskAd:" destination="ABY-Q6-nzl" eventType="editingDidEnd" id="Bfa-2X-IaW"/>
                                             </connections>
                                         </textField>
                                     </subviews>
@@ -1361,7 +1361,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="cellLang" id="i4h-rt-oQr" customClass="LangListCell" customModule="Planner" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="56" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="i4h-rt-oQr" id="ui9-tN-HRF">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -1509,7 +1509,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Tdv-Sh-rHv"/>
         <segue reference="B0l-de-h2w"/>
-        <segue reference="Vwy-bK-kjx"/>
+        <segue reference="fun-61-fJN"/>
         <segue reference="t9p-08-RPL"/>
         <segue reference="MGf-VC-Ecw"/>
     </inferredMetricsTieBreakers>

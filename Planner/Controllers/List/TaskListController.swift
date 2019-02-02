@@ -436,9 +436,9 @@ class TaskListController: UITableViewController {
     
     func deleteTask(_ indexPath: IndexPath) {
         
-//        let task = taskDAO.items[indexPath.row]
-//
-//        taskDAO.delete(task) // удалить задачу из БД
+        let task = taskDAO.items[indexPath.row]
+
+        taskDAO.delete(task) // удалить задачу из БД
 //        taskDAO.items.remove(at: indexPath.row)
 //
 //        // удалить саму строку и объект из коллекции (массива)
@@ -493,8 +493,8 @@ class TaskListController: UITableViewController {
         
     }
     
-    @IBAction func quickTaskAdd(_ sender: UITextField) {
-        
+    @IBAction func quickTaskAd(_ sender: UITextField) {        
+    
         guard !isEmptyTrim(textQuickTask.text) else {
             return
         }
