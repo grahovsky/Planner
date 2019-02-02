@@ -62,6 +62,7 @@
 		B5DA8EF22205CF9400B20D6D /* LangListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DA8EF02205CF9400B20D6D /* LangListCell.swift */; };
 		B5DA8EF62205D0AB00B20D6D /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DA8EF42205D0AA00B20D6D /* SettingsController.swift */; };
 		B5DA8EF72205D0AB00B20D6D /* LangListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5DA8EF52205D0AA00B20D6D /* LangListController.swift */; };
+		B5DA8EFA22064AA800B20D6D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5DA8EF822064AA800B20D6D /* LaunchScreen.storyboard */; };
 		B5F4524F21AD9F0800711BE4 /* QuickTaskCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -125,6 +126,7 @@
 		B5DA8EF02205CF9400B20D6D /* LangListCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangListCell.swift; sourceTree = "<group>"; };
 		B5DA8EF42205D0AA00B20D6D /* SettingsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		B5DA8EF52205D0AA00B20D6D /* LangListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LangListController.swift; sourceTree = "<group>"; };
+		B5DA8EF922064AA800B20D6D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5F4524E21AD9F0800711BE4 /* QuickTaskCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickTaskCell.swift; sourceTree = "<group>"; };
 		DE5F7B5628D869D5E10739A7 /* Pods-Planner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Planner.release.xcconfig"; path = "Pods/Target Support Files/Pods-Planner/Pods-Planner.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,6 +215,7 @@
 		22162C422011D60C000AAED5 /* Storyboards */ = {
 			isa = PBXGroup;
 			children = (
+				B5DA8EF822064AA800B20D6D /* LaunchScreen.storyboard */,
 				B5BE73FA21FD080F00230618 /* Main.storyboard */,
 			);
 			path = Storyboards;
@@ -457,6 +460,7 @@
 				B5DA8EE021FDD24300B20D6D /* Localizable.strings in Resources */,
 				22759C7B1FDEA6E500E9A1E0 /* Assets.xcassets in Resources */,
 				B5BE73F821FD080F00230618 /* Main.storyboard in Resources */,
+				B5DA8EFA22064AA800B20D6D /* LaunchScreen.storyboard in Resources */,
 				B5DA8EE721FDDF3500B20D6D /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -593,6 +597,14 @@
 				B5DA8EE321FDD25300B20D6D /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B5DA8EF822064AA800B20D6D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B5DA8EF922064AA800B20D6D /* en */,
+			);
+			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
