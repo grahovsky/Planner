@@ -160,3 +160,10 @@ taskAddedButNotShow = "Задача добавлена, но не показыв
 taskUpdatedButNotShow = "Задача обновлена, но не показывается \nиз-за фильтра:";
 
 
+// язык
+
+lang = "Язык";
+
+langChanged = "Язык изменен";
+
+selectLang = "Выбериты язык";

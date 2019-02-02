@@ -13,5 +13,6 @@ pod 'SwiftReorder'
 pod 'SwiftIconFont'
 pod 'Toaster'
 pod 'L10n-swift'
+pod 'FlagKit'
 
 end

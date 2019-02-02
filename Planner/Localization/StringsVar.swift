@@ -105,3 +105,9 @@ var lsNameNotContains:String{return "nameNotContains".l10n()}
 var lsTaskAddedButNotShow:String{return "taskAddedButNotShow".l10n()}
 var lsTaskUpdatedButNotShow:String{return "taskUpdatedButNotShow".l10n()}
 
+
+// язык
+
+var lsLang:String{return "lang".l10n()}
+var lsLangChanged:String{return "langChanged".l10n()}
+var lsSelectLang:String{return "selectLang".l10n()}

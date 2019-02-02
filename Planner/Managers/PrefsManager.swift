@@ -17,6 +17,7 @@ class PrefsManager{
     let showTasksWithoutDateKey = "showTasksWithoutDate"
     let showEmptyCategoriesKey = "showEmptyCategories"
     let sortTypeKey = "sortType"
+    let langKey = "lang"
     
     // синглтон
     static let current = PrefsManager()
@@ -29,6 +30,7 @@ class PrefsManager{
         UserDefaults.standard.register(defaults: [showCompletedTasksKey : false]) // скрывать завершенные задачи
         UserDefaults.standard.register(defaults: [showTasksWithoutDateKey : true])
         UserDefaults.standard.register(defaults: [sortTypeKey : 0]) // сортировка по имени
+        UserDefaults.standard.register(defaults: [langKey : Locale.preferredLanguages[0]]) // при первом запуске - записываем язык системы
         
     }
     
@@ -84,6 +86,18 @@ class PrefsManager{
         }
         set{
             UserDefaults.standard.set(newValue, forKey: sortTypeKey)
+        }
+    }
+    
+    // MARK: lang
+    
+    // текущий язык приложения
+    var lang:String {
+        get {
+            return UserDefaults.standard.string(forKey: langKey)!
+        }
+        set {
+            UserDefaults.standard.set(newValue, forKey: langKey)
         }
     }
     

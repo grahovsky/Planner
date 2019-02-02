@@ -161,8 +161,13 @@ taskAddedButNotShow = "Task added but not show:";
 taskUpdatedButNotShow = "Task updated but not show:";
 
 
+// язык
 
+lang = "Language";
 
+langChanged = "Language changed";
+
+selectLang = "Select language";
 
 
 

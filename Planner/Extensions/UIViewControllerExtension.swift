@@ -124,12 +124,12 @@ extension UIViewController {
         
         // короткая запись создания кнопки
         // реализацию cancel передаем в параметре
-        let buttonCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: cancel)
+        let buttonCancel = UIBarButtonItem(title: lsCancel, style: .plain, target: self, action: cancel)
         navigationItem.leftBarButtonItem = buttonCancel
         
         // короткая запись создания кнопки
         // реализацию save передаем в параметре
-        let buttonSave = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: save)
+        let buttonSave = UIBarButtonItem(title: lsSave, style: .plain, target: self, action: save)
         navigationItem.rightBarButtonItem = buttonSave
         
     }

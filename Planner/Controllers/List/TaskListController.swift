@@ -436,17 +436,20 @@ class TaskListController: UITableViewController {
     
     func deleteTask(_ indexPath: IndexPath) {
         
-        let task = taskDAO.items[indexPath.row]
+//        let task = taskDAO.items[indexPath.row]
+//
+//        taskDAO.delete(task) // удалить задачу из БД
+//        taskDAO.items.remove(at: indexPath.row)
+//
+//        // удалить саму строку и объект из коллекции (массива)
+//        if taskDAO.items.isEmpty {
+//            tableView.deleteSections(IndexSet([taskListSection]), with: .left)
+//        } else {
+//            tableView.deleteRows(at: [indexPath], with: .left)
+//        }
         
-        taskDAO.delete(task) // удалить задачу из БД
-        taskDAO.items.remove(at: indexPath.row)
-        
-        // удалить саму строку и объект из коллекции (массива)
-        if taskDAO.items.isEmpty {
-            tableView.deleteSections(IndexSet([taskListSection]), with: .left)
-        } else {
-            tableView.deleteRows(at: [indexPath], with: .left)
-        }
+        updateTable()
+        updateTableBackground(tableView, count: taskCount)
         
     }
     
@@ -463,16 +466,18 @@ class TaskListController: UITableViewController {
             // если отключен показ завершенных задач
             if !PrefsManager.current.showCompletedTasks {
                 
-                
                 // удалить задачу из коллекции и таблицы
-                self.taskDAO.items.remove(at: indexPath.row)
+                //self.taskDAO.items.remove(at: indexPath.row)
                 
                 // если это последняя запись - удаляем всю секцию, иначе будет ошибка при попытке отображения таблицы
-                if self.taskDAO.items.isEmpty {
-                    self.tableView.deleteSections(IndexSet([self.taskListSection]), with: .top)
-                } else {
-                    self.tableView.deleteRows(at: [indexPath], with: .top)
-                }
+//                if self.taskDAO.items.isEmpty {
+//                    self.tableView.deleteSections(IndexSet([self.taskListSection]), with: .top)
+//                } else {
+//                    self.tableView.deleteRows(at: [indexPath.row], with: .top)
+//                }
+                self.updateTable()
+                self.updateTableBackground(self.tableView, count: self.taskCount)
+                
             }
         }
         
@@ -483,9 +488,6 @@ class TaskListController: UITableViewController {
         // определяем индекс строки по нажатой кнопке в ячейке
         let viewPosition = sender.convert(CGPoint.zero, to: tableView) // координата относительно tableView
         let indexPath = tableView.indexPathForRow(at: viewPosition)!
-        
-        // принимаем вызов только из TaskListCell
-        guard (tableView.cellForRow(at: indexPath) as? TaskListCell) != nil else { fatalError("cell type") }
         
         completeTask(indexPath)
         
