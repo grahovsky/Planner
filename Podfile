@@ -14,5 +14,6 @@ pod 'SwiftIconFont'
 pod 'Toaster'
 pod 'L10n-swift'
 pod 'FlagKit'
+pod 'SwiftyOnboard'
 
 end

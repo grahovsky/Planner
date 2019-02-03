@@ -200,5 +200,15 @@ demoInfo6 = "95";
 demoInfo9 = "900$";
 
 
+// intro
+next = "Next";
+skip = "Skip";
+begin = "Begin";
+
+introTaskList = "Task list with quick task";
+introFilter = "Filters";
+introSearch = "Search and sort";
+introDict = "Dictionaries";
+introColors = "Colors";
 
 

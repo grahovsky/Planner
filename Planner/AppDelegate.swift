@@ -15,18 +15,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 //        let urls = FileManager.default.urls(for: .libraryDirectory, in: .userDomainMask)
 //        print(urls[urls.count-1] as URL) // получаем путь к папкам приложения
 
+        LangManager.current.initLanguages()
         
-        // определяем текущий язык системы
-        let currentLangCode = Locale.init(identifier: PrefsManager.current.lang).languageCode! // чтобы привести к единому двузначному коду все возможные языки (en_US = en, ru_RU = ru и т.д.)
+        // определяем, какой контроллер нужно запустить (entry point в самом storyboard - удален)
         
-        // если язык системы не поддерживается приложением - показывать на английском
-        if !L10n.shared.supportedLanguages.contains(currentLangCode){
-            L10n.shared.language = "en"
-        }else{
-            L10n.shared.language = currentLangCode // используем существующую локаль
+        var vcName = ""
+        
+        // если запускается первый раз
+        if !PrefsManager.current.launched {
+            vcName = "IntroController"
         }
+        else {
+            vcName = "FirstNavigationController"
+        }
+        
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window!.rootViewController = VCManager.current.loadVC(name: vcName)
+        window!.makeKeyAndVisible()
 
         return true
+    }
+    
+    
+    // метод вызывается при поворотах экрана
+    // для контроллера со слайдами - не разрешаем поворот экрана (т.к. библиотека SwiftyOnboard не поддерживает горизонтальное отображение)
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        
+        if self.window?.rootViewController is IntroController {
+            return UIInterfaceOrientationMask.portrait
+        }
+        else {
+            return UIInterfaceOrientationMask.all // внутри приложения можно поворачивать экран и контент будет тоже изменяться
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

@@ -145,3 +145,14 @@ var lsDemoInfo4:String{return "demoInfo4".l10n()}
 var lsDemoInfo5:String{return "demoInfo5".l10n()}
 var lsDemoInfo6:String{return "demoInfo6".l10n()}
 var lsDemoInfo9:String{return "demoInfo9".l10n()}
+
+// intro
+var lsNext:String{return "next".l10n()}
+var lsSkip:String{return "skip".l10n()}
+var lsBegin:String{return "begin".l10n()}
+
+var lsIntroTaskList:String{return "introTaskList".l10n()}
+var lsIntroFilter:String{return "introFilter".l10n()}
+var lsIntroSearch:String{return "introSearch".l10n()}
+var lsIntroDict:String{return "introDict".l10n()}
+var lsIntroColors:String{return "introColors".l10n()}

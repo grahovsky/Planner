@@ -143,7 +143,7 @@ class DictonaryController<T:DictDAO>: UIViewController, UITableViewDataSource, U
         } else {
             DAO.items.map(){$0.checked = true}
         }
-        
+    
         tableViewDict.reloadSections([sectionList], with: .none)
         
         updateSelectDeselectButton()

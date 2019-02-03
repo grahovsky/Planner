@@ -40,6 +40,9 @@
 		B522E35021AAFE4E00B8FAF8 /* AreaTapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */; };
 		B522E35221AB2AE800B8FAF8 /* TaskInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */; };
 		B546231E21AE617000B81B1F /* CommonSearchDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = B546231D21AE617000B81B1F /* CommonSearchDAO.swift */; };
+		B55B2B812207007300BCFC81 /* SwiftyOnboard.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55B2B802207007300BCFC81 /* SwiftyOnboard.framework */; };
+		B55B2B83220701A700BCFC81 /* VCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B2B82220701A700BCFC81 /* VCManager.swift */; };
+		B55B2B852207027A00BCFC81 /* IntroController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55B2B842207027A00BCFC81 /* IntroController.swift */; };
 		B55C20F221B3252B006B1310 /* DatetimePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F121B3252B006B1310 /* DatetimePickerController.swift */; };
 		B55C20F421B3263D006B1310 /* UIViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */; };
 		B55C20F621B4607F006B1310 /* SideMenu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B55C20F521B4607F006B1310 /* SideMenu.framework */; };
@@ -103,6 +106,9 @@
 		B522E34F21AAFE4E00B8FAF8 /* AreaTapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AreaTapButton.swift; sourceTree = "<group>"; };
 		B522E35121AB2AE800B8FAF8 /* TaskInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskInfoController.swift; sourceTree = "<group>"; };
 		B546231D21AE617000B81B1F /* CommonSearchDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonSearchDAO.swift; sourceTree = "<group>"; };
+		B55B2B802207007300BCFC81 /* SwiftyOnboard.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftyOnboard.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B55B2B82220701A700BCFC81 /* VCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCManager.swift; sourceTree = "<group>"; };
+		B55B2B842207027A00BCFC81 /* IntroController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroController.swift; sourceTree = "<group>"; };
 		B55C20F121B3252B006B1310 /* DatetimePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatetimePickerController.swift; sourceTree = "<group>"; };
 		B55C20F321B3263D006B1310 /* UIViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtension.swift; sourceTree = "<group>"; };
 		B55C20F521B4607F006B1310 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -136,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B55B2B812207007300BCFC81 /* SwiftyOnboard.framework in Frameworks */,
 				B5DA8EEC2205CD7800B20D6D /* FlagKit.framework in Frameworks */,
 				B5DA8EDB21FDCCA600B20D6D /* L10n_swift.framework in Frameworks */,
 				B5BE73F621FCC99500230618 /* Toaster.framework in Frameworks */,
@@ -154,6 +161,7 @@
 		0B5A073FA9189EF526DBB3F8 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B55B2B802207007300BCFC81 /* SwiftyOnboard.framework */,
 				B5DA8EEB2205CD7800B20D6D /* FlagKit.framework */,
 				B5DA8EDA21FDCCA600B20D6D /* L10n_swift.framework */,
 				B5BE73F521FCC99500230618 /* Toaster.framework */,
@@ -197,6 +205,7 @@
 				B55C20FD21B47425006B1310 /* FiltersController.swift */,
 				B5DA8EF52205D0AA00B20D6D /* LangListController.swift */,
 				B5DA8EF42205D0AA00B20D6D /* SettingsController.swift */,
+				B55B2B842207027A00BCFC81 /* IntroController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -363,6 +372,7 @@
 			isa = PBXGroup;
 			children = (
 				B5DA8EED2205CDE700B20D6D /* LangManager.swift */,
+				B55B2B82220701A700BCFC81 /* VCManager.swift */,
 				B55C210221B5A5EA006B1310 /* PrefsManager.swift */,
 			);
 			path = Managers;
@@ -484,6 +494,7 @@
 				"${BUILT_PRODUCTS_DIR}/SideMenu/SideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftIconFont/SwiftIconFont.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftReorder/SwiftReorder.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyOnboard/SwiftyOnboard.framework",
 				"${BUILT_PRODUCTS_DIR}/Toaster/Toaster.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -497,6 +508,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SideMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftIconFont.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftReorder.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyOnboard.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Toaster.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -547,6 +559,7 @@
 				22A98B812025922E0051183B /* CategoryDaoDbImpl.swift in Sources */,
 				B522E34021A9A20B00B8FAF8 /* ActionResultsDelegate.swift in Sources */,
 				B5BDC16121F1393100389486 /* EditPriorityController.swift in Sources */,
+				B55B2B83220701A700BCFC81 /* VCManager.swift in Sources */,
 				B50EA64421C829A600AC0D8A /* Checkable.swift in Sources */,
 				B50B860821A7336200AD0AB8 /* Crud.swift in Sources */,
 				B522E34321A9D58200B8FAF8 /* CategoryListController.swift in Sources */,
@@ -571,6 +584,7 @@
 				22759C791FDEA6E500E9A1E0 /* Planner.xcdatamodeld in Sources */,
 				B55C20F921B46610006B1310 /* SideMenuController.swift in Sources */,
 				B522E33321A9761B00B8FAF8 /* TaskNameCell.swift in Sources */,
+				B55B2B852207027A00BCFC81 /* IntroController.swift in Sources */,
 				B522E33721A98DFB00B8FAF8 /* TaskPriorityCell.swift in Sources */,
 				B522E34D21AAEFEA00B8FAF8 /* DictonaryController.swift in Sources */,
 				B55C210321B5A5EA006B1310 /* PrefsManager.swift in Sources */,
